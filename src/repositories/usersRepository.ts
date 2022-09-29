@@ -22,4 +22,8 @@ export async function findUser(userId: number): Promise<users | null> {
     const user: users | null = await prisma.users.findUnique({where: {id: userId}});
 
     return user;
+} 
+
+export async function updateMainPhoto(id: number, mainPhoto: string) { 
+    await prisma.users.update({ where: { id }, data: { mainPhoto }})
 }
