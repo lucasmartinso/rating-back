@@ -2,6 +2,7 @@ import { users } from "@prisma/client";
 import * as usersRepository from "../repositories/usersRepository"
 import { createUser, signUp } from "../types/usersType";
 import { crypts } from "../utils/cripts/crypts"
+import jwt from "jsonwebtoken"
 
 async function verifyExistUsername(username: string): Promise<users | null> { 
     const usernameExist: users | null = await usersRepository.verifyExistUsername(username);
@@ -40,20 +41,50 @@ function matchPassword(passEncrypt: string, password: string): void {
     if(!verify) throw { type: "Unauthorized", message: "User or password are wrong"}
 }
 
-export async function login(usernameOrEmail: string, password: string) { 
-    const existEmail = await verifyExistEmail(usernameOrEmail);
-    const existUsername =  await verifyExistUsername(usernameOrEmail);
+function gerateToken(userId: number,email: string): string {
+    const SECRET: string = process.env.TOKEN_SECRET_KEY ?? '';
+    const EXPERIES_IN: string | undefined = process.env.EXPERIES_IN
+
+    const payload: object = {
+        userId, 
+        email, 
+        level: 1
+    }
+
+    const jwtConfig: object = { 
+        experiesIn: EXPERIES_IN
+    }
+
+    const token: string = jwt.sign(payload,SECRET,jwtConfig);
+
+    return token;
+}
+
+export async function login(usernameOrEmail: string, password: string): Promise<{ user: users; token: string;} | undefined> { 
+    const existEmail: users | null = await verifyExistEmail(usernameOrEmail);
+    const existUsername: users | null =  await verifyExistUsername(usernameOrEmail);
 
     if(!existEmail && !existUsername) throw { type: "Unauthorized", message: "User or password are wrong"}
 
     if(existEmail) {
         const passEncrypt: string  = existEmail.password;
         matchPassword(passEncrypt,password);
-        return existEmail;
+        const token: string = gerateToken(existEmail.id,existEmail.email);
+
+        return { 
+            user: existEmail,
+            token: token
+        };
+
     } else if(existUsername) {
         const passEncrypt: string  = existUsername.password;
         matchPassword(passEncrypt,password);
-        return existUsername;
+        const token: string = gerateToken(existUsername.id,existUsername.email);
+        
+        return { 
+            user: existUsername,
+            token: token
+        }
     }
 }
 
