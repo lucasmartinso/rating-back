@@ -2,15 +2,27 @@ import { users } from "@prisma/client";
 import * as usersRepository from "../repositories/usersRepository"
 import { createUser, signUp } from "../types/usersType";
 
-async function verifyRepeteadUsername(username: string): Promise<void> { 
-    const repeteadOrNot: users | null = await usersRepository.verifyRepeteadUsername(username);
+async function verifyExistUsername(username: string): Promise<users | null> { 
+    const usernameExist: users | null = await usersRepository.verifyExistUsername(username);
+    
+    return usernameExist;
+} 
 
-    if(repeteadOrNot) throw { type: "Conflit", message: "This username already exist"}
+async function verifyExistEmail(email: string): Promise<users | null> { 
+    const emailExist: users | null = await usersRepository.verifyExistEmail(email);
+
+    return emailExist;
 }
 
 export async function signup(userData: signUp) {
-    await verifyRepeteadUsername(userData.username);
+    const usernameExist: users | null = await verifyExistUsername(userData.username);
+    if(usernameExist) throw { type: "Conflit", message: "This username already exist"}
+
+    const emailExist: users | null = await verifyExistEmail(userData.email);
+    if(emailExist) throw { type: "Conflit", message: "This email is registred yet"}
+
     const userWithoutConfirmPassword: createUser = exclude(userData,'confirmPassword');
+
     await usersRepository.createUser(userWithoutConfirmPassword);
 }
 

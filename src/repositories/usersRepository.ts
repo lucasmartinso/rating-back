@@ -6,8 +6,14 @@ export async function createUser(userData: createUser) {
     await prisma.users.create({ data: userData });
 }
 
-export async function verifyRepeteadUsername(username: string) {
-    const repeteadOrNot: users | null = await prisma.users.findUnique({ where: { username }});
+export async function verifyExistUsername(username: string) {
+    const existUsername: users | null = await prisma.users.findUnique({ where: { username }});
 
-    return repeteadOrNot;
+    return existUsername;
+} 
+
+export async function verifyExistEmail(email: string) {
+    const existEmail: users | null = await prisma.users.findUnique({ where: { email }});
+
+    return existEmail;
 }
