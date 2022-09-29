@@ -24,3 +24,8 @@ model typeFoodPlaces {
   id Int @id @default(autoincrement())
   name String @unique
 }
+
+model states { 
+  id Int @id @default(autoincrement())
+  name String @unique
+}
