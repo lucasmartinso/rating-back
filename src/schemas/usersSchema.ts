@@ -13,3 +13,7 @@ export const loginSchema = joi.object({
     usernameEmail: joi.string().pattern(/^[a-zA-Z0-9".""_""@""-"]{2,}/).required(),
     password: joi.string().min(8).max(50).required()
 })
+
+export const updatePhotoSchema = joi.object({
+    mainPhoto: joi.string().uri().required()
+}); 

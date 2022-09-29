@@ -100,6 +100,10 @@ export async function login(usernameEmail: string, password: string): Promise<{ 
     }
 }
 
+export async function updatePhoto(id:number, mainPhoto: string) {
+    await usersRepository.updateMainPhoto(id,mainPhoto);
+}
+
 function exclude<User, Key extends keyof User>(
     user: User,
     ...keys: Key[]

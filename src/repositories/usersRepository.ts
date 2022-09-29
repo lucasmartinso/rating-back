@@ -24,6 +24,6 @@ export async function findUser(userId: number): Promise<users | null> {
     return user;
 } 
 
-export async function updateMainPhoto(id: number, mainPhoto: string) { 
+export async function updateMainPhoto(id: number, mainPhoto: string): Promise<void> { 
     await prisma.users.update({ where: { id }, data: { mainPhoto }})
 }

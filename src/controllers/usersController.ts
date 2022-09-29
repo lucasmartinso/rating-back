@@ -20,5 +20,10 @@ export async function login(req: Request, res: Response) {
 } 
 
 export async function updateMainPhoto(req: Request, res: Response) { 
+    const { mainPhoto }: {mainPhoto: string} = req.body;
+    const { id }: {id:number} = res.locals.user;
+    console.log(id);
+
+    await usersService.updatePhoto(id,mainPhoto);
     res.sendStatus(200);
 }
