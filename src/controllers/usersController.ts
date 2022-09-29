@@ -1,4 +1,3 @@
-import { users } from "@prisma/client";
 import { Request, Response } from "express"
 import * as usersService from "../services/usersService"
 import { signUp } from "../types/usersType";
