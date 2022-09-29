@@ -1,6 +1,6 @@
 import { users } from "@prisma/client";
 import * as usersRepository from "../repositories/usersRepository"
-import { createUser, signUp } from "../types/usersType";
+import { createUser, signUp, userData } from "../types/usersType";
 import { crypts } from "../utils/cripts/crypts"
 import jwt from "jsonwebtoken"
 
@@ -52,7 +52,7 @@ function gerateToken(userId: number,email: string): string {
     }
 
     const jwtConfig: object = { 
-        experiesIn: EXPERIES_IN
+        expiresIn: EXPERIES_IN
     }
 
     const token: string = jwt.sign(payload,SECRET,jwtConfig);
@@ -60,9 +60,11 @@ function gerateToken(userId: number,email: string): string {
     return token;
 }
 
-export async function login(usernameOrEmail: string, password: string): Promise<{ user: users; token: string;} | undefined> { 
-    const existEmail: users | null = await verifyExistEmail(usernameOrEmail);
-    const existUsername: users | null =  await verifyExistUsername(usernameOrEmail);
+export async function login(usernameEmail: string, password: string): Promise<{ user: userData; token: string;} | undefined> { 
+    const existEmail: users | null = await verifyExistEmail(usernameEmail);
+    const existUsername: users | null =  await verifyExistUsername(usernameEmail);
+    console.log(existEmail);
+    console.log(existUsername);
 
     if(!existEmail && !existUsername) throw { type: "Unauthorized", message: "User or password are wrong"}
 
@@ -72,7 +74,12 @@ export async function login(usernameOrEmail: string, password: string): Promise<
         const token: string = gerateToken(existEmail.id,existEmail.email);
 
         return { 
-            user: existEmail,
+            user: { 
+                id: existEmail.id,
+                name: existEmail.name,
+                username: existEmail.username,
+                mainPhoto: existEmail.mainPhoto
+            },
             token: token
         };
 

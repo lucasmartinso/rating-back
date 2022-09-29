@@ -14,4 +14,6 @@ export type createUser = Omit<users, 'id' | 'createdAt'>
 export interface signIn { 
     usernameEmail: string;
     password: string;
-}
+} 
+
+export type userData = Omit<users, 'createdAt' | 'email' | 'password'>
