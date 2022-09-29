@@ -28,4 +28,12 @@ model typeFoodPlaces {
 model states { 
   id Int @id @default(autoincrement())
   name String @unique
+  citys citys[]
+} 
+
+model citys { 
+  id Int @id @default(autoincrement())
+  name String @unique
+  states states @relation(fields: [stateId], references: [id])
+  stateId Int
 }
