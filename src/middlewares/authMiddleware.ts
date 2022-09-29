@@ -1,5 +1,7 @@
+import { users } from "@prisma/client";
 import { NextFunction, Request, Response } from "express";
 import jwt from "jsonwebtoken";
+import * as usersRepository from "../repositories/usersRepository"
 
 export async function validateTokenAuth(req:Request, res: Response, next: NextFunction) { 
     const token = req.headers['authorization'];
@@ -9,7 +11,7 @@ export async function validateTokenAuth(req:Request, res: Response, next: NextFu
     try { 
         const SECRET: string = process.env.TOKEN_SECRET_KEY ?? ''; 
         const { userId } = jwt.verify(token,SECRET) as { userId: number}
-        const user: users | null = await 
+        const user: users | null = await usersRepository.findUser(userId);
         res.locals.user = user;
         next();
     } catch(error) { 
