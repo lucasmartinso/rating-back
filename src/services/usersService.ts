@@ -29,6 +29,7 @@ export async function signup(userData: signUp) {
     if(emailExist) throw { type: "Conflit", message: "This email is registred yet"}
 
     userData = {...userData, password: crypts.encriptByBcrypt(userData.password)}
+    console.log(userData);
     const userWithoutConfirmPassword: createUser = exclude(userData,'confirmPassword');
 
     await usersRepository.createUser(userWithoutConfirmPassword);
