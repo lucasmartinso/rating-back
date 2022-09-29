@@ -8,5 +8,6 @@ export async function schemaValidator(schema: ObjectSchema) {
         if(validation.error) { 
             throw { type: "Unprocessable Entity", message: validation.error.details[0].message }
         }
+        next();
     }
 }
