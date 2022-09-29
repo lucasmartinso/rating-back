@@ -8,4 +8,14 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+} 
+
+model users { 
+  id Int @id @default(autoincrement())
+  name String 
+  username String @unique
+  email String @unique
+  password String 
+  mainPhoto String?
+  createdAt DateTime @default(now()) @db.Timestamptz(6)   
 }
