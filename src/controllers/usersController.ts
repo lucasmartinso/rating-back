@@ -13,7 +13,6 @@ export async function signup(req: Request, res: Response) {
 
 export async function login(req: Request, res: Response) { 
     const { usernameEmail,password }: signIn = req.body;
-    console.log(usernameEmail);
 
     const userData: {user: userData, token: string} | undefined = await usersService.login(usernameEmail,password);
     

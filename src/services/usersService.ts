@@ -78,7 +78,7 @@ export async function login(usernameEmail: string, password: string): Promise<{ 
                 id: existEmail.id,
                 name: existEmail.name,
                 username: existEmail.username,
-                mainPhoto: existEmail.mainPhoto
+                mainPhoto: existEmail.mainPhoto,
             },
             token: token
         };
@@ -89,7 +89,12 @@ export async function login(usernameEmail: string, password: string): Promise<{ 
         const token: string = gerateToken(existUsername.id,existUsername.email);
         
         return { 
-            user: existUsername,
+            user: { 
+                id: existUsername.id,
+                name: existUsername.name,
+                username: existUsername.username,
+                mainPhoto: existUsername.mainPhoto,
+            },
             token: token
         }
     }
