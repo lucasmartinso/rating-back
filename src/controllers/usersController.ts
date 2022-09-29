@@ -4,7 +4,7 @@ import * as usersService from "../services/usersService"
 
 export async function signup(req: Request, res: Response) { 
     const userData: users = req.body
-    await usersService.signup(userData)
+    await usersService.signup(userData);
     res.sendStatus(200);
 } 
 
