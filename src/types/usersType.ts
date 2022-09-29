@@ -1,3 +1,5 @@
+import { users } from "@prisma/client";
+
 export interface signUp { 
     name: string;
     username: string; 
@@ -6,3 +8,5 @@ export interface signUp {
     confirmPassword: string; 
     mainPhoto: string;
 }
+
+export type createUser = Omit<users, 'id' | 'createdAt'>
