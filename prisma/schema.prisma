@@ -23,6 +23,7 @@ model users {
 model typeFoodPlaces { 
   id Int @id @default(autoincrement())
   name String @unique
+  foodPlaces foodPlaces[]
 }
 
 model states { 
@@ -36,4 +37,19 @@ model citys {
   name String @unique
   states states @relation(fields: [stateId], references: [id])
   stateId Int
+  foodPlaces foodPlaces[]
+}
+
+model foodPlaces { 
+  id Int @id @default(autoincrement())
+  name String @unique
+  score Int
+  description String
+  website String @unique
+  mainPhoto String
+  address String @unique
+  typeFoodPlaces typeFoodPlaces @relation(fields: [typeId], references: [id])
+  typeId Int 
+  citys citys @relation(fields: [cityId], references: [id])
+  cityId Int
 }
