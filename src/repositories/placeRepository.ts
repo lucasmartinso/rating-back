@@ -22,3 +22,7 @@ export async function existName(name: string) {
 export async function createPlace(placeData: Omit<foodPlaces, 'id' | 'score' | 'verify'>) { 
     await prisma.foodPlaces.create({data : placeData})
 }
+
+export async function updateVerify(id: number): Promise<void> { 
+    await prisma.foodPlaces.update({where: {id}, data: {verify: true}})
+}
