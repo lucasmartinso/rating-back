@@ -34,6 +34,7 @@ model states {
 
 model citys { 
   id Int @id @default(autoincrement())
+  code Int 
   name String @unique
   states states @relation(fields: [stateId], references: [id])
   stateId Int

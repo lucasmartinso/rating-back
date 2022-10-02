@@ -1,0 +1,26 @@
+/*INSERT INTO states ("name") VALUES ('Alagoas');
+INSERT INTO states ("name") VALUES ('Amapá');
+INSERT INTO states ("name") VALUES ('Amazonas');
+INSERT INTO states ("name") VALUES ('Bahia');
+INSERT INTO states ("name") VALUES ('Ceará');
+INSERT INTO states ("name") VALUES ('Distrito Federal');
+INSERT INTO states ("name") VALUES ('Espírito Santo');
+INSERT INTO states ("name") VALUES ('Goiás');
+INSERT INTO states ("name") VALUES ('Maranhão');
+INSERT INTO states ("name") VALUES ('Mato Grosso');
+INSERT INTO states ("name") VALUES ('Mato Grosso do Sul');
+INSERT INTO states ( "name") VALUES ('Minas Gerais');
+INSERT INTO states ("name") VALUES ('Pará');
+INSERT INTO states ("name") VALUES ('Paraíba');
+INSERT INTO states ( "name") VALUES ('Paraná');
+INSERT INTO states ("name") VALUES ('Pernambuco');
+INSERT INTO states ( "name") VALUES ('Piauí');
+INSERT INTO states ( "name") VALUES ('Rio de Janeiro');
+INSERT INTO states ("name") VALUES ('Rio Grande do Norte');
+INSERT INTO states ( "name") VALUES ('Rio Grande do Sul');
+INSERT INTO states ("name") VALUES ('Rondônia');
+INSERT INTO states ( "name") VALUES ('Roraima');
+INSERT INTO states ("name") VALUES ('Santa Catarina');
+INSERT INTO states ("name") VALUES ('São Paulo');
+INSERT INTO states ("name") VALUES ('Sergipe');
+INSERT INTO states ("name") VALUES ('Tocantins');*/
