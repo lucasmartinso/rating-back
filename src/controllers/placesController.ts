@@ -8,3 +8,9 @@ export async function createPlaces(req: Request, res: Response) {
     await placesService.createPlace(placeData);
     res.sendStatus(201);
 }
+
+export async function updateVerify(req: Request, res: Response) { 
+    //const id: number = req.params.id;
+
+    res.sendStatus(200);
+}

@@ -42,6 +42,10 @@ export async function createPlace(placeData: placeInfo): Promise<void> {
     await placeRepository.createPlace(place);
 }
 
+export async function updateVerify(id: number) { 
+  await placeRepository.updateVerify(id);
+}
+
 function exclude<User, Key extends keyof User>(
     user: User,
     ...keys: Key[]
