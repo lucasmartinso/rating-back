@@ -19,6 +19,6 @@ export async function existName(name: string) {
     return foodPlace;
 }
 
-export async function createPlace(placeData: Omit<foodPlaces, 'id' | 'score'>) { 
+export async function createPlace(placeData: Omit<foodPlaces, 'id' | 'score' | 'verify'>) { 
     await prisma.foodPlaces.create({data : placeData})
 }

@@ -29,7 +29,7 @@ export async function createPlace(placeData: placeInfo): Promise<void> {
     const typeId: number = await verifyType(placeData.type);
     await verifyName(placeData.name);
 
-    const place: Omit<foodPlaces, 'id' | 'score'> = { 
+    const place: Omit<foodPlaces, 'id' | 'score' | 'verify'> = { 
       name: placeData.name,
       description: placeData.description || null,
       website: placeData.website || null,
