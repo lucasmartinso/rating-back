@@ -18,14 +18,28 @@ async function verifyType(type: string): Promise<number> {
   return typeFood.id;
 }
 
+async function verifyName(name: string): Promise<void> { 
+  const foodPlace: foodPlaces | null = await placeRepository.existName(name); 
+
+  if(foodPlace) throw { type: "Conflit", message: "This name is already exists"}
+}
+
 export async function createPlace(placeData: placeInfo): Promise<void> {
     const cityId: number = await verifyCity(placeData.city);
     const typeId: number = await verifyType(placeData.type);
+    await verifyName(placeData.name);
 
-    //const place: foodPlaces
-    //}
+    const place: Omit<foodPlaces, 'id' | 'score'> = { 
+      name: placeData.name,
+      description: placeData.description || null,
+      website: placeData.website || null,
+      mainPhoto: placeData.mainPhoto,
+      address: placeData.address,
+      typeId: typeId,
+      cityId: cityId
+    }
 
-    //await placeRepository.createPlace();
+    await placeRepository.createPlace(place);
 }
 
 function exclude<User, Key extends keyof User>(

@@ -1,7 +1,7 @@
 export interface placeInfo {
     name: string;
-    description: string;
-    website: string;
+    description: string | null;
+    website: string | null;
     mainPhoto: string;
     address: string;
     type: string;

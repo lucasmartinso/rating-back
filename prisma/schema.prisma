@@ -45,8 +45,8 @@ model foodPlaces {
   id Int @id @default(autoincrement())
   name String @unique
   score Int @default(0)
-  description String
-  website String @unique
+  description String?
+  website String? @unique
   mainPhoto String
   address String @unique
   typeFoodPlaces typeFoodPlaces @relation(fields: [typeId], references: [id])
