@@ -44,7 +44,7 @@ model cities {
 model foodPlaces { 
   id Int @id @default(autoincrement())
   name String @unique
-  score Int
+  score Int @default(0)
   description String
   website String @unique
   mainPhoto String
