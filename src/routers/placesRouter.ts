@@ -1,11 +1,10 @@
 import { Router } from "express"; 
 import * as placesController from "../controllers/placesController"
-import { validateTokenAuth } from "../middlewares/authMiddleware";
 import schemaValidator from "../middlewares/schemasValidator";
-import { loginSchema, signupSchema, updatePhotoSchema } from "../schemas/usersSchema";
+import { restaurantSchema } from "../schemas/placesSchema";
 
-const usersRouter = Router();
+const placesRouter = Router();
 
-usersRouter.post("/places/create",placesController.createPlaces);
+placesRouter.post("/places/create",schemaValidator(restaurantSchema),placesController.createPlaces);
 
-export default usersRouter;
+export default placesRouter;
