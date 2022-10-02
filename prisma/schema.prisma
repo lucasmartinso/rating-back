@@ -29,10 +29,10 @@ model typeFoodPlaces {
 model states { 
   id Int @id @default(autoincrement())
   name String @unique
-  citys citys[]
+  cities cities[]
 } 
 
-model citys { 
+model cities { 
   id Int @id @default(autoincrement())
   code Int 
   name String @unique
@@ -51,6 +51,6 @@ model foodPlaces {
   address String @unique
   typeFoodPlaces typeFoodPlaces @relation(fields: [typeId], references: [id])
   typeId Int 
-  citys citys @relation(fields: [cityId], references: [id])
+  citiess cities @relation(fields: [cityId], references: [id])
   cityId Int
 }
