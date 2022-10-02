@@ -35,9 +35,9 @@ model states {
 model cities { 
   id Int @id @default(autoincrement())
   code Int 
-  name String @unique
-  states states @relation(fields: [stateId], references: [id])
-  stateId Int
+  name String
+  states states @relation(fields: [state_id], references: [id])
+  state_id Int
   foodPlaces foodPlaces[]
 }
 
