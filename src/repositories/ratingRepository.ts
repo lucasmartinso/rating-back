@@ -23,6 +23,6 @@ export async function allRatingsPlace(foodPlaceId: number): Promise<ratingFoodPl
     return ratings
 }
 
-export async function updatePlaceScore(foodPlaceId: number) { 
-    await prisma
+export async function updatePlaceScore(foodPlaceId: number,score: string) { 
+    await prisma.foodPlaces.update({where: {id: foodPlaceId}, data: {score}});
 }
