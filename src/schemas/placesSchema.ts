@@ -11,6 +11,10 @@ export const restaurantSchema = joi.object({
     address: joi.string().required()
 })
 
-//export const websiteSchema - joi.object({ 
-//
-//})
+export const websiteSchema = joi.object({ 
+    website: joi.string().uri().required()
+})
+
+export const descriptionSchema = joi.object({ 
+    description: joi.string().required()
+})

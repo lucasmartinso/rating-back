@@ -42,15 +42,28 @@ export async function createPlace(placeData: placeInfo): Promise<void> {
     await placeRepository.createPlace(place);
 }
 
+async function findPlace(id: number): Promise<boolean> { 
+  const place: foodPlaces | null = await placeRepository.findPlace(id);
+
+  if(!place) throw { type: "Not Found", message:"This place isn't registred at the database"}
+
+  return place.verify;
+}
+
 export async function updateVerify(id: number) { 
+  const verify: boolean = await findPlace(id);
+  if(verify) throw { type: "Bad Request", message:"This place is already verify"}
+
   await placeRepository.updateVerify(id);
 }
 
 export async function updateWebsite(id: number,website: string) { 
+  await findPlace(id);
   await placeRepository.updateWebsite(id,website);
 }
 
 export async function updateDescription(id: number,description: string) { 
+  await findPlace(id);
   await placeRepository.updateDescription(id,description);
 }
 

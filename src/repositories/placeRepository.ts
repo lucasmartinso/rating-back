@@ -13,7 +13,7 @@ export async function existType(type: string): Promise<typeFoodPlaces | null>  {
     return foodType;
 }
 
-export async function existName(name: string) { 
+export async function existName(name: string): Promise<foodPlaces | null> { 
     const foodPlace: foodPlaces | null = await prisma.foodPlaces.findUnique({where: {name}});
 
     return foodPlace;
@@ -21,6 +21,12 @@ export async function existName(name: string) {
 
 export async function createPlace(placeData: Omit<foodPlaces, 'id' | 'score' | 'verify'>) { 
     await prisma.foodPlaces.create({data : placeData})
+}
+
+export async function findPlace(id: number): Promise<foodPlaces | null> { 
+    const foodPlace: foodPlaces | null = await prisma.foodPlaces.findUnique({where: {id}});
+
+    return foodPlace;
 }
 
 export async function updateVerify(id: number): Promise<void> { 
