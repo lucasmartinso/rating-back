@@ -1,4 +1,4 @@
-import { cities, foodPlaces, typeFoodPlaces, users } from "@prisma/client"
+import { cities, foodPlaces, ratingFoodPlaces, typeFoodPlaces, users } from "@prisma/client"
 import prisma from "../databases/prisma"
 
 export async function findUser(id: number): Promise<users | null> { 
@@ -13,6 +13,6 @@ export async function findPlace(id: number): Promise<foodPlaces | null> {
     return foodPlace;
 }
 
-export async function createRating(placeData: Omit<foodPlaces, 'id' | 'score' | 'verify'>) { 
-    await prisma.foodPlaces.create({data : placeData})
+export async function createRating(ratingData: ratingFoodPlaces) { 
+    await prisma.ratingFoodPlaces.create({data: ratingData})
 }
