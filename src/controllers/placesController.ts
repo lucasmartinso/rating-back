@@ -12,12 +12,13 @@ export async function createPlaces(req: Request, res: Response) {
 export async function updateVerify(req: Request, res: Response) { 
     const id: number = Number(req.params.id);
 
+    await placesService.updateVerify(id);
     res.sendStatus(200);
 } 
 
 export async function updateWebsite(req: Request, res: Response) { 
     const id: number = Number(req.params.id);
-
+    
     res.sendStatus(200);
 } 
 

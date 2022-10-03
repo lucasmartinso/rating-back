@@ -26,3 +26,11 @@ export async function createPlace(placeData: Omit<foodPlaces, 'id' | 'score' | '
 export async function updateVerify(id: number): Promise<void> { 
     await prisma.foodPlaces.update({where: {id}, data: {verify: true}})
 }
+
+export async function updateWebsite(id: number,website: string): Promise<void> { 
+    await prisma.foodPlaces.update({where: {id}, data: {website}})
+}
+
+export async function updateDescription(id: number,description: string): Promise<void> { 
+    await prisma.foodPlaces.update({where: {id}, data: {description}})
+}
