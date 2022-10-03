@@ -6,11 +6,18 @@ import dayjs from "dayjs";
 async function verifyRatingTime(userId: number, foodPlaceId: number) { 
   const ratingsUser: ratingFoodPlaces[] | null = await ratingRepository.verifyRatingTime(userId,foodPlaceId);
   const date: string = ratingsUser[0].createdAt.toString();
-  const now = dayjs().locale("pt-br");
-  const hoje = now.format("ddd, DD MMMM YY");
+  const day: number = Number(date.substring(8,10))
+
+  const now : dayjs.Dayjs = dayjs().locale("pt-br");
+  const hoje: string = now.format("DD-MMM-YYYY");
+  const today: number = Number(hoje.substring(0,2));
+  const yearNow: number = Number(hoje.substring(6,10));
+  console.log(date);
   console.log(hoje);
   console.log(date.substring(16,18))
-  //if(date.substring(8))
+  if(day===today) { 
+
+  }
 }
 
 async function verifyPlace(id: number): Promise<void> { 
