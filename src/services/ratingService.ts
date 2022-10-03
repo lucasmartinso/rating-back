@@ -1,6 +1,10 @@
 import { foodPlaces, ratingFoodPlaces, typeFoodPlaces } from "@prisma/client";
 import * as ratingRepository from "../repositories/ratingRepository"
 
+async function verifyRatingTime(userId: number, foodPlaceId: number) { 
+  
+}
+
 async function verifyPlace(id: number): Promise<void> { 
   const foodPlace: foodPlaces | null = await ratingRepository.findPlace(id); 
   console.log(foodPlace);

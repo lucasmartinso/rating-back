@@ -1,11 +1,12 @@
 import { ratingFoodPlaces } from "@prisma/client";
 import { Request, Response } from "express"
 import * as ratingService from "../services/ratingService"
+import { ratingInfo } from "../types/ratingType";
 
 export async function createRating(req: Request, res: Response) { 
     const user = res.locals.user;
     const id: number = Number(req.params.id);
-    const ratingInfo: ratingFoodPlaces = req.body;//criar type
+    const ratingInfo: ratingInfo = req.body;
     const ratingData: Omit<ratingFoodPlaces, 'id' | 'createdAt'> = { 
         foodPlaceId: id,
         userId: user.id,
@@ -18,4 +19,4 @@ export async function createRating(req: Request, res: Response) {
 
     await ratingService.createRanting(ratingData);
     res.sendStatus(200);
-}
+} 
