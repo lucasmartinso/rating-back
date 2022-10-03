@@ -46,6 +46,14 @@ export async function updateVerify(id: number) {
   await placeRepository.updateVerify(id);
 }
 
+export async function updateWebsite(id: number,website: string) { 
+  await placeRepository.updateWebsite(id,website);
+}
+
+export async function updateDescription(id: number,description: string) { 
+  await placeRepository.updateDescription(id,description);
+}
+
 function exclude<User, Key extends keyof User>(
     user: User,
     ...keys: Key[]
