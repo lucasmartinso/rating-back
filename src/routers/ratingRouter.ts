@@ -1,10 +1,10 @@
 import { Router } from "express"; 
 import * as placesController from "../controllers/placesController"
 import schemaValidator from "../middlewares/schemasValidator";
-import { restaurantSchema } from "../schemas/placesSchema";
+import { ratingSchema } from "../schemas/ratingSchema";
 
 const ratingRouter = Router();
 
-ratingRouter.post("/rating/:id",schemaValidator(restaurantSchema),placesController.createPlaces);
+ratingRouter.post("/rating/:id",schemaValidator(ratingSchema),placesController.createPlaces);
 
 export default ratingRouter;
