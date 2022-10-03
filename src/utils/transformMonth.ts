@@ -1,4 +1,4 @@
-export default function trasnform(month: string) {
+export default function transform(month: string): number {
     switch(month) { 
         case "Jan": return 1;
         case "Feb": return 2;

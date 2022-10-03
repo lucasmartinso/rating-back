@@ -2,21 +2,24 @@ import { foodPlaces, ratingFoodPlaces, typeFoodPlaces } from "@prisma/client";
 import * as ratingRepository from "../repositories/ratingRepository"
 import "dayjs/locale/pt-br.js";
 import dayjs from "dayjs";
+import transform from "../utils/transformMonth";
 
-async function verifyRatingTime(userId: number, foodPlaceId: number) { 
+async function verifyRatingTime(userId: number, foodPlaceId: number): Promise<void> { 
   const ratingsUser: ratingFoodPlaces[] | null = await ratingRepository.verifyRatingTime(userId,foodPlaceId);
+  if(ratingsUser.length>= 5) throw { type: "Bad Request", message: "You reached the limit of rating this restaurant"}
   const date: string = ratingsUser[0].createdAt.toString();
-  const day: number = Number(date.substring(8,10))
+  const day: number = Number(date.substring(8,10)); 
+  const month: number = transform(date.substring(4,7));
+  const year: number = Number(date.substring(11,15));
 
   const now : dayjs.Dayjs = dayjs().locale("pt-br");
-  const hoje: string = now.format("DD-MMM-YYYY");
+  const hoje: string = now.format("DD-MM-YYYY");
   const today: number = Number(hoje.substring(0,2));
+  const monthNow: number = Number(hoje.substring(3,5))
   const yearNow: number = Number(hoje.substring(6,10));
-  console.log(date);
-  console.log(hoje);
-  console.log(date.substring(16,18))
-  if(day===today) { 
 
+  if(today-day<=2 && month===monthNow && yearNow===year) { 
+    throw { type: "Bad Request", message: "You have to await 72h to rating this restaurant again"}
   }
 }
 
