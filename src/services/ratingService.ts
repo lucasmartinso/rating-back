@@ -1,12 +1,15 @@
 import { foodPlaces, ratingFoodPlaces, typeFoodPlaces } from "@prisma/client";
-import * as ratingRepository from "../repositories/ratingRepository"
+import * as ratingRepository from "../repositories/ratingRepository";
+import * as placeRepository from "../repositories/placeRepository"
 import "dayjs/locale/pt-br.js";
 import dayjs from "dayjs";
 import transform from "../utils/transformMonth";
 
 async function verifyRatingTime(userId: number, foodPlaceId: number): Promise<void> { 
   const ratingsUser: ratingFoodPlaces[] | null = await ratingRepository.verifyRatingTime(userId,foodPlaceId);
+  
   if(ratingsUser.length>= 5) throw { type: "Bad Request", message: "You reached the limit of rating this restaurant"}
+
   const date: string = ratingsUser[0].createdAt.toString();
   const day: number = Number(date.substring(8,10)); 
   const month: number = transform(date.substring(4,7));
@@ -29,15 +32,21 @@ async function verifyPlace(id: number): Promise<void> {
   if(!foodPlace) throw { type: "Not Found", message: "This place doesn't exist at databse"}
 }
 
-export async function createRanting(ratingData: Omit<ratingFoodPlaces, 'id' | 'createdAt'>): Promise<void> {
+export async function createRanting(ratingData: Omit<ratingFoodPlaces, 'id' | 'createdAt'>): Promise<number> {
   await verifyPlace(ratingData.foodPlaceId);
   await verifyRatingTime(ratingData.userId,ratingData.foodPlaceId);
+  const average: number = (ratingData.food + ratingData.price + ratingData.environment + ratingData.attendance)/5;
 
   await ratingRepository.createRating(ratingData);
+
+  return average;
 }
 
-export async function updateScore(foodPlaceId: number) { 
-  
+export async function updateScore(foodPlaceId: number,average: number) { 
+  const ratings: ratingFoodPlaces[] | null = await ratingRepository.allRatingsPlace(foodPlaceId);
+  const actualRating: foodPlaces | null = await placeRepository.findPlace(foodPlaceId);
+
+
 }
 
 

@@ -17,7 +17,8 @@ export async function createRating(req: Request, res: Response) {
         comment: ratingInfo.comment || null
     }
 
-    await ratingService.createRanting(ratingData);
+    const average: number = await ratingService.createRanting(ratingData);
+    await ratingService.updateScore(id,average);
     res.sendStatus(200);
 } 
 
