@@ -10,3 +10,7 @@ export const restaurantSchema = joi.object({
     mainPlate: joi.string().pattern(/^[a-zA-Z0-9" "]{2,30}$/).required(),
     address: joi.string().required()
 })
+
+//export const websiteSchema - joi.object({ 
+//
+//})
