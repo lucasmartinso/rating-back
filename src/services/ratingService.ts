@@ -56,8 +56,8 @@ export async function updateScore(foodPlaceId: number,average: number): Promise<
   }
 }
 
-export async function getPlacesRating() {
-  
+export async function getAllPlacesRating() {
+  await ratingRepository.getAllPlacesRating();
 }
 
 
