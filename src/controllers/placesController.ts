@@ -13,17 +13,24 @@ export async function updateVerify(req: Request, res: Response) {
     const id: number = Number(req.params.id);
 
     await placesService.updateVerify(id);
+    
     res.sendStatus(200);
 } 
 
 export async function updateWebsite(req: Request, res: Response) { 
     const id: number = Number(req.params.id);
-    
+    const website: string = req.body.website;
+
+    await placesService.updateWebsite(id,website);
+
     res.sendStatus(200);
 } 
 
 export async function updateDescription(req: Request, res: Response) { 
     const id: number = Number(req.params.id);
+    const description: string = req.body.description;
+
+    await placesService.updateDescription(id,description);
 
     res.sendStatus(200);
 }
