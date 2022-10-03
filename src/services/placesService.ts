@@ -21,7 +21,7 @@ async function verifyType(type: string): Promise<number> {
 async function verifyName(name: string): Promise<void> { 
   const foodPlace: foodPlaces | null = await placeRepository.existName(name); 
 
-  if(foodPlace) throw { type: "Conflit", message: "This name is already exists"}
+  if(foodPlace) throw { type: "Conflit", message: "This place's name already exists"}
 }
 
 export async function createPlace(placeData: placeInfo): Promise<void> {
