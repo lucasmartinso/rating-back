@@ -8,7 +8,7 @@ export async function findPlace(id: number): Promise<foodPlaces | null> {
 }
 
 export async function verifyRatingTime(userId: number, foodPlaceId: number) { 
-    const ratings: ratingFoodPlaces[] | null = await prisma.ratingFoodPlaces.findMany({where: {userId, foodPlaceId}});
+    const ratings: ratingFoodPlaces[] | null = await prisma.ratingFoodPlaces.findMany({where: {userId, foodPlaceId},orderBy: {createdAt: 'desc'}});
 
     return ratings;
 } 
