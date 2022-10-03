@@ -33,7 +33,11 @@ export async function createRanting(ratingData: Omit<ratingFoodPlaces, 'id' | 'c
   await verifyPlace(ratingData.foodPlaceId);
   await verifyRatingTime(ratingData.userId,ratingData.foodPlaceId);
 
-  //await ratingRepository.createRating(ratingData);
+  await ratingRepository.createRating(ratingData);
+}
+
+export async function updateScore(foodPlaceId: number) { 
+  
 }
 
 

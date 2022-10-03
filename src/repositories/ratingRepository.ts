@@ -16,3 +16,13 @@ export async function verifyRatingTime(userId: number, foodPlaceId: number) {
 export async function createRating(ratingData:  Omit<ratingFoodPlaces, 'id' | 'createdAt'>): Promise<void> { 
     await prisma.ratingFoodPlaces.create({data: ratingData})
 }
+
+export async function allRatingsPlace(foodPlaceId: number): Promise<ratingFoodPlaces[] | null> { 
+    const ratings: ratingFoodPlaces[] | null = await prisma.ratingFoodPlaces.findMany({where: {foodPlaceId}});
+
+    return ratings
+}
+
+export async function updatePlaceScore(foodPlaceId: number) { 
+    await prisma
+}

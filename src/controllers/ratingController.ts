@@ -20,3 +20,7 @@ export async function createRating(req: Request, res: Response) {
     await ratingService.createRanting(ratingData);
     res.sendStatus(200);
 } 
+
+export async function getPlaces(req: Request, res: Response) { 
+
+}
