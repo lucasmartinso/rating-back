@@ -36,7 +36,7 @@ async function verifyPlace(id: number): Promise<void> {
 
 export async function createRanting(ratingData: Omit<ratingFoodPlaces, 'id' | 'createdAt'>): Promise<number> {
   await verifyPlace(ratingData.foodPlaceId);
-  //await verifyRatingTime(ratingData.userId,ratingData.foodPlaceId);
+  await verifyRatingTime(ratingData.userId,ratingData.foodPlaceId);
   const average: number = (ratingData.food + ratingData.price + ratingData.environment + ratingData.attendance)/4;
 
   await ratingRepository.createRating(ratingData);
@@ -54,6 +54,10 @@ export async function updateScore(foodPlaceId: number,average: number): Promise<
     console.log(score);
     await ratingRepository.updatePlaceScore(foodPlaceId,score.toString());
   }
+}
+
+export async function getPlacesRating() {
+  
 }
 
 
