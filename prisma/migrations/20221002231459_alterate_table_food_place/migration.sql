@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "foodPlaces" ALTER COLUMN "score" SET DEFAULT 0,
+ALTER COLUMN "description" DROP NOT NULL,
+ALTER COLUMN "website" DROP NOT NULL;

@@ -19,3 +19,39 @@ model users {
   mainPhoto String?
   createdAt DateTime @default(now()) @db.Timestamptz(6)   
 }
+
+model typeFoodPlaces { 
+  id Int @id @default(autoincrement())
+  name String @unique
+  foodPlaces foodPlaces[]
+}
+
+model states { 
+  id Int @id @default(autoincrement())
+  name String @unique
+  cities cities[]
+} 
+
+model cities { 
+  id Int @id @default(autoincrement())
+  code Int 
+  name String
+  states states @relation(fields: [state_id], references: [id])
+  state_id Int
+  foodPlaces foodPlaces[]
+}
+
+model foodPlaces { 
+  id Int @id @default(autoincrement())
+  name String @unique
+  score Int @default(0)
+  description String?
+  website String? @unique
+  mainPhoto String
+  address String @unique
+  typeFoodPlaces typeFoodPlaces @relation(fields: [typeId], references: [id])
+  typeId Int 
+  citiess cities @relation(fields: [cityId], references: [id])
+  cityId Int
+  verify Boolean @default(false)
+}
