@@ -4,7 +4,10 @@ import * as placeRepository from "../repositories/placeRepository"
 import "dayjs/locale/pt-br.js";
 import dayjs from "dayjs";
 import transform from "../utils/transformMonth";
-import * as foodRepository from "../repositories/foodRepository"
+import * as foodRepository from "../repositories/foodRepository";
+import * as enviromentRepository from "../repositories/enviromentRepository";
+import * as attendanceRepository from "../repositories/attendanceRepository";
+import * as priceRepository from "../repositories/priceRepository";
 
 async function verifyRatingTime(userId: number, foodPlaceId: number): Promise<void> { 
   const ratingsUser: ratingFoodPlaces[] | null = await ratingRepository.verifyRatingTime(userId,foodPlaceId);
@@ -82,6 +85,45 @@ export async function getFilterByFood(order: string) {
 
   } else if(order === 'best') { 
     const bestFood: any = await foodRepository.bestRatingFood();
+
+    return bestFood;
+  }
+}
+
+export async function getFilterByEnviroment(order: string) {
+  if(order === 'last') {
+    const worstEnviroment: any = await enviromentRepository.worstRatingEnviroment()
+
+    return worstEnviroment;
+
+  } else if(order === 'best') { 
+    const bestEnviroment: any = await enviromentRepository.bestRatingEnviroment()
+
+    return bestEnviroment;
+  }
+}
+
+export async function getFilterBy(order: string) {
+  if(order === 'last') {
+    const worstFood: any = await 
+
+    return worstFood;
+
+  } else if(order === 'best') { 
+    const bestFood: any = await 
+
+    return bestFood;
+  }
+}
+
+export async function getFilterBy(order: string) {
+  if(order === 'last') {
+    const worstFood: any = await 
+
+    return worstFood;
+
+  } else if(order === 'best') { 
+    const bestFood: any = await 
 
     return bestFood;
   }
