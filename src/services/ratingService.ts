@@ -123,7 +123,7 @@ export async function getFilterByPrice(order: string) {
     return worstPrice;
 
   } else if(order === 'best') { 
-    const bestPrice: any = await priceRepository.worstRatingPrice();
+    const bestPrice: any = await priceRepository.bestRatingPrice();
 
     return bestPrice;
   }
