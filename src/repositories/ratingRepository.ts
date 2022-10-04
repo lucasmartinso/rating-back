@@ -1,6 +1,7 @@
 import { foodPlaces, ratingFoodPlaces } from "@prisma/client"
 import prisma from "../databases/prisma"
 import connection from "../databases/postgres";
+import { querie } from "../utils/query";
 
 export async function findPlace(id: number): Promise<foodPlaces | null> { 
     const foodPlace: foodPlaces | null = await prisma.foodPlaces.findUnique({where: {id}});
@@ -30,11 +31,7 @@ export async function updatePlaceScore(foodPlaceId: number,score: string) {
 
 export async function getAllPlacesRating(): Promise<any[]> {
     const { rows: places }: any = await connection.query(`
-        SELECT fp.id, fp.name, fp.score, fp."mainPhoto", AVG(r.food) AS food, AVG(r.environment) AS environment, AVG(r.attendance) AS attendance, AVG(r.price) AS price, t.name, fp.verify 
-        FROM "foodPlaces" fp
-        JOIN "ratingFoodPlaces" r ON r."foodPlaceId"=fp.id
-        JOIN "typeFoodPlaces" t ON t.id=fp."typeId"
-        GROUP BY fp.id, t.name
+        ${querie}
     `)
    
     return places;
