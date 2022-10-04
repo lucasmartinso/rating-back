@@ -56,10 +56,21 @@ export async function updateScore(foodPlaceId: number,average: number): Promise<
   }
 }
 
-export async function getAllPlacesRating(): Promise<any[]> {
-  const places: any[] = await ratingRepository.getAllPlacesRating();
+function organize(places: any, placesWithoutRating: any) {
+  for(let i=0; i<placesWithoutRating.length; i++) { 
+    places.push(placesWithoutRating[i]);
+  }
 
   return places;
+}
+
+export async function getAllPlacesRating(): Promise<any[]> {
+  const places: any[] = await ratingRepository.getAllPlacesRating();
+  const placesWithoutRating: any = await ratingRepository.placesWithoutRating();
+
+  const allPlaces: any[] = organize(places,placesWithoutRating);
+
+  return allPlaces;
 }
 
 
