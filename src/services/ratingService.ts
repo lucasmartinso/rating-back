@@ -4,6 +4,7 @@ import * as placeRepository from "../repositories/placeRepository"
 import "dayjs/locale/pt-br.js";
 import dayjs from "dayjs";
 import transform from "../utils/transformMonth";
+import * as foodRepository from "../repositories/foodRepository"
 
 async function verifyRatingTime(userId: number, foodPlaceId: number): Promise<void> { 
   const ratingsUser: ratingFoodPlaces[] | null = await ratingRepository.verifyRatingTime(userId,foodPlaceId);
@@ -36,7 +37,7 @@ async function verifyPlace(id: number): Promise<void> {
 
 export async function createRanting(ratingData: Omit<ratingFoodPlaces, 'id' | 'createdAt'>): Promise<number> {
   await verifyPlace(ratingData.foodPlaceId);
-  //await verifyRatingTime(ratingData.userId,ratingData.foodPlaceId);
+  await verifyRatingTime(ratingData.userId,ratingData.foodPlaceId);
   const average: number = (ratingData.food + ratingData.price + ratingData.environment + ratingData.attendance)/4;
 
   await ratingRepository.createRating(ratingData);
@@ -73,10 +74,17 @@ export async function getAllPlacesRating(): Promise<any[]> {
   return allPlaces;
 }
 
-export async function getWorstByFood() {
-  const worstFood: any = await ratingRepository.worstRatingFood();
-  
-  return worstFood;
+export async function getFilterByFood(order: string) {
+  if(order === 'last') {
+    const worstFood: any = await foodRepository.worstRatingFood();
+
+    return worstFood;
+
+  } else if(order === 'best') { 
+    const bestFood: any = await foodRepository.bestRatingFood();
+
+    return bestFood;
+  }
 }
 
 

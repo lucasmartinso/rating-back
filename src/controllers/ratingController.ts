@@ -28,8 +28,9 @@ export async function getPlaces(req: Request, res: Response) {
     res.status(200).send(places);
 }
 
-export async function foodPlaces(req: Request, res: Response) { 
-    const worst: any = await ratingService.getWorstByFood();
+export async function foodPlaces(req: Request, res: Response) {
+    const type: string = req.params.type; 
+    const placeFilterFood: any = await ratingService.getFilterByFood(type);
     
-    res.status(200).send(worst);
+    res.status(200).send(placeFilterFood);
 }
