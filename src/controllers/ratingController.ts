@@ -23,6 +23,7 @@ export async function createRating(req: Request, res: Response) {
 } 
 
 export async function getPlaces(req: Request, res: Response) { 
-    await ratingService.getAllPlacesRating();
-    res.status(200).send("Oi");
+    const places: any[] = await ratingService.getAllPlacesRating();
+    
+    res.status(200).send(places);
 }

@@ -56,8 +56,10 @@ export async function updateScore(foodPlaceId: number,average: number): Promise<
   }
 }
 
-export async function getAllPlacesRating() {
-  await ratingRepository.getAllPlacesRating();
+export async function getAllPlacesRating(): Promise<any[]> {
+  const places: any[] = await ratingRepository.getAllPlacesRating();
+
+  return places;
 }
 
 

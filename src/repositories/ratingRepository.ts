@@ -28,22 +28,14 @@ export async function updatePlaceScore(foodPlaceId: number,score: string) {
     await prisma.foodPlaces.update({where: {id: foodPlaceId}, data: {score}});
 }
 
-export async function getAllPlacesRating() {
+export async function getAllPlacesRating(): Promise<any[]> {
     const { rows: places }: any = await connection.query(`
-        SELECT fp.id, fp.name, fp.score, AVG(r.food) AS food, AVG(r.environment) AS environment, AVG(r.attendance) AS attendance, AVG(r.price) AS price, fp."typeId", fp.verify 
+        SELECT fp.id, fp.name, fp.score, fp."mainPhoto", AVG(r.food) AS food, AVG(r.environment) AS environment, AVG(r.attendance) AS attendance, AVG(r.price) AS price, t.name, fp.verify 
         FROM "foodPlaces" fp
         JOIN "ratingFoodPlaces" r ON r."foodPlaceId"=fp.id
-        GROUP BY fp.id
+        JOIN "typeFoodPlaces" t ON t.id=fp."typeId"
+        GROUP BY fp.id, t.name
     `)
-    console.log(places);
+   
+    return places;
 } 
-
-/* id: number;
-    foodPlaceId: number;
-    userId: number;
-    food: number;
-    environment: number;
-    attendance: number;
-    price: number;
-    comment: string | null;
-    createdAt: Date;*/
