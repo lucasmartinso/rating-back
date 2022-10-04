@@ -34,3 +34,9 @@ export async function updateDescription(req: Request, res: Response) {
 
     res.sendStatus(200);
 }
+
+export async function getPlace(req: Request, res: Response) { 
+    const id: number = Number(req.params.id);
+
+    res.status(200).send("place");
+}
