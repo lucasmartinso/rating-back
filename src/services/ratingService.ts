@@ -103,16 +103,16 @@ export async function getFilterByEnviroment(order: string) {
   }
 }
 
-export async function getFilterBy(order: string) {
+export async function getFilterByAttendance(order: string) {
   if(order === 'last') {
-    const worstFood: any = await 
+    const worstAttendance: any = await attendanceRepository.worstRatingAttendance()
 
-    return worstFood;
+    return worstAttendance;
 
   } else if(order === 'best') { 
-    const bestFood: any = await 
+    const bestAttendance: any = await 
 
-    return bestFood;
+    return bestAttendance;
   }
 }
 
