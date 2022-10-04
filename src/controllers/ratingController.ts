@@ -29,7 +29,7 @@ export async function getPlaces(req: Request, res: Response) {
 }
 
 export async function foodPlaces(req: Request, res: Response) { 
-    /*const places: any[] = */ await ratingService.getratingByFood('DESC');
+    const worst: any = await ratingService.getWorstByFood();
     
-    res.status(200).send("places");
+    res.status(200).send(worst);
 }

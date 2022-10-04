@@ -36,7 +36,7 @@ async function verifyPlace(id: number): Promise<void> {
 
 export async function createRanting(ratingData: Omit<ratingFoodPlaces, 'id' | 'createdAt'>): Promise<number> {
   await verifyPlace(ratingData.foodPlaceId);
-  await verifyRatingTime(ratingData.userId,ratingData.foodPlaceId);
+  //await verifyRatingTime(ratingData.userId,ratingData.foodPlaceId);
   const average: number = (ratingData.food + ratingData.price + ratingData.environment + ratingData.attendance)/4;
 
   await ratingRepository.createRating(ratingData);
@@ -73,9 +73,10 @@ export async function getAllPlacesRating(): Promise<any[]> {
   return allPlaces;
 }
 
-export async function getratingByFood(order: 'DESC' | 'ASC') {
-  const foodRating: any = await ratingRepository.getRatingByFood('DESC');
-  console.log(foodRating);
+export async function getWorstByFood() {
+  const worstFood: any = await ratingRepository.worstRatingFood();
+  
+  return worstFood;
 }
 
 
