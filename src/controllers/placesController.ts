@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { getPlaceWithComments } from "../repositories/placeRepository";
 import * as placesService from "../services/placesService"
 import { placeInfo } from "../types/placesType";
 
@@ -37,6 +38,8 @@ export async function updateDescription(req: Request, res: Response) {
 
 export async function getPlace(req: Request, res: Response) { 
     const id: number = Number(req.params.id);
+    
+    const place: any = getPlaceWithComments(id);
 
-    res.status(200).send("place");
+    res.status(200).send(place);
 }

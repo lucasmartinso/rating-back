@@ -1,5 +1,6 @@
-import { cities, foodPlaces, typeFoodPlaces } from "@prisma/client"
-import prisma from "../databases/prisma"
+import { cities, foodPlaces, typeFoodPlaces } from "@prisma/client";
+import connection from "../databases/postgres";
+import prisma from "../databases/prisma";
 
 export async function existCity(city: string): Promise<cities | null> { 
     const cities: cities | null = await prisma.cities.findFirst({where: {name: city}});
@@ -39,4 +40,15 @@ export async function updateWebsite(id: number,website: string): Promise<void> {
 
 export async function updateDescription(id: number,description: string): Promise<void> { 
     await prisma.foodPlaces.update({where: {id}, data: {description}})
+}
+
+export async function getPlaceWithComments(id: number): Promise<any> { 
+    const place: any = await connection.query(`
+        SELECT fp.* 
+        FROM "foodPlace" fp
+        JOIN "ratingFoodPlaces" r ON r."placeId"=fp.id
+        GROUP BY fp.id, r."placeId"
+    `)
+
+    return place;
 }
