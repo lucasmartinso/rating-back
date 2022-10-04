@@ -73,6 +73,11 @@ export async function getAllPlacesRating(): Promise<any[]> {
   return allPlaces;
 }
 
+export async function getratingByFood(order: 'DESC' | 'ASC') {
+  const foodRating: any = await ratingRepository.getRatingByFood('DESC');
+  console.log(foodRating);
+}
+
 
 function exclude<User, Key extends keyof User>(
     user: User,
