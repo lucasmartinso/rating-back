@@ -8,6 +8,7 @@ import * as foodRepository from "../repositories/foodRepository";
 import * as enviromentRepository from "../repositories/enviromentRepository";
 import * as attendanceRepository from "../repositories/attendanceRepository";
 import * as priceRepository from "../repositories/priceRepository";
+import * as foodTypeRepository from "../repositories/foodTypeRepository";
 
 async function verifyRatingTime(userId: number, foodPlaceId: number): Promise<void> { 
   const ratingsUser: ratingFoodPlaces[] | null = await ratingRepository.verifyRatingTime(userId,foodPlaceId);
@@ -130,5 +131,7 @@ export async function getFilterByPrice(order: string) {
 }
 
 export async function getFilterByFoodType(typeId: number) { 
-  
+  const placesTypeFood: any = await foodTypeRepository.filterFoodType(typeId);
+
+  return placesTypeFood;
 }
