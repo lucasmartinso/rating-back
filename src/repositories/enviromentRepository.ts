@@ -1,7 +1,7 @@
 import connection from "../databases/postgres";
 import { querie } from "../utils/query";
 
-export async function worstRatingFood(): Promise<any[]> {
+export async function worstRatingEnviroment(): Promise<any[]> {
     const { rows: worstEnviroment }: any = await connection.query(`
         ${querie} ORDER BY enviroment
     `);
@@ -9,7 +9,7 @@ export async function worstRatingFood(): Promise<any[]> {
     return worstEnviroment;
 } 
 
-export async function bestRatingFood(): Promise<any[]> {
+export async function bestRatingEnviroment(): Promise<any[]> {
     const { rows: bestEnviroment }: any = await connection.query(`
         ${querie} ORDER BY enviroment DESC
     `);
