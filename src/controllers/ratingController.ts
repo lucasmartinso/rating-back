@@ -27,3 +27,9 @@ export async function getPlaces(req: Request, res: Response) {
     
     res.status(200).send(places);
 }
+
+export async function foodPlaces(req: Request, res: Response) { 
+    const places: any[] = await ratingService.getAllPlacesRating();
+    
+    res.status(200).send(places);
+}

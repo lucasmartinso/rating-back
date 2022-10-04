@@ -40,7 +40,6 @@ export async function getAllPlacesRating(): Promise<any[]> {
     return places;
 } 
 
-
 export async function placesWithoutRating() { 
     const { rows: placesWithoutRating }: any = await connection.query(`
     SELECT fp.id, fp.name, fp.score, fp."mainPhoto",t.name, fp.verify 
@@ -52,3 +51,16 @@ export async function placesWithoutRating() {
 
     return placesWithoutRating;
 }
+
+export async function getRatingByFood(order: 'DESC' | 'ASC'): Promise<any[]> {
+    const { rows: foodRating }: any = await connection.query(`
+        SELECT fp.id, fp.name, fp.score, fp."mainPhoto", AVG(r.food) AS food, AVG(r.environment) AS environment, AVG(r.attendance) AS attendance, AVG(r.price) AS price, t.name, fp.verify 
+        FROM "foodPlaces" fp
+        JOIN "ratingFoodPlaces" r ON r."foodPlaceId"=fp.id
+        JOIN "typeFoodPlaces" t ON t.id=fp."typeId"
+        GROUP BY fp.id, t.name
+        ORDER BY food $1
+    `,[order]);
+   
+    return foodRating;
+} 
