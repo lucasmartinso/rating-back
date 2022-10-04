@@ -57,8 +57,8 @@ export async function pricePlaces(req: Request, res: Response) {
 }
 
 export async function filterFoodType(req: Request, res: Response) {
-    const type: string = req.params.typeId; 
-    const placeFilterFood: any = await ratingService.getFilterByPrice(type);
+    const type: number = Number(req.params.typeId); 
+    const placeFilterTypeFood: any = await ratingService.getFilterByFoodType(type);
     
-    res.status(200).send(placeFilterFood);
+    res.status(200).send(placeFilterTypeFood);
 }

@@ -128,3 +128,7 @@ export async function getFilterByPrice(order: string) {
     return bestPrice;
   }
 }
+
+export async function getFilterByFoodType(typeId: number) { 
+  
+}
