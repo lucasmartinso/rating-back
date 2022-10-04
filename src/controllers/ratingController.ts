@@ -34,3 +34,24 @@ export async function foodPlaces(req: Request, res: Response) {
     
     res.status(200).send(placeFilterFood);
 }
+
+export async function attendancePlaces(req: Request, res: Response) {
+    const type: string = req.params.type; 
+    const placeFilterFood: any = await ratingService.getFilterByFood(type);
+    
+    res.status(200).send(placeFilterFood);
+}
+
+export async function enviromentPlaces(req: Request, res: Response) {
+    const type: string = req.params.type; 
+    const placeFilterFood: any = await ratingService.getFilterByFood(type);
+    
+    res.status(200).send(placeFilterFood);
+}
+
+export async function pricePlaces(req: Request, res: Response) {
+    const type: string = req.params.type; 
+    const placeFilterFood: any = await ratingService.getFilterByFood(type);
+    
+    res.status(200).send(placeFilterFood);
+}
