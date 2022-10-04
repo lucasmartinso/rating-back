@@ -92,12 +92,12 @@ export async function getFilterByFood(order: string) {
 
 export async function getFilterByEnviroment(order: string) {
   if(order === 'last') {
-    const worstEnviroment: any = await enviromentRepository.worstRatingEnviroment()
+    const worstEnviroment: any = await enviromentRepository.worstRatingEnviroment();
 
     return worstEnviroment;
 
   } else if(order === 'best') { 
-    const bestEnviroment: any = await enviromentRepository.bestRatingEnviroment()
+    const bestEnviroment: any = await enviromentRepository.bestRatingEnviroment();
 
     return bestEnviroment;
   }
@@ -105,37 +105,26 @@ export async function getFilterByEnviroment(order: string) {
 
 export async function getFilterByAttendance(order: string) {
   if(order === 'last') {
-    const worstAttendance: any = await attendanceRepository.worstRatingAttendance()
+    const worstAttendance: any = await attendanceRepository.worstRatingAttendance();
 
     return worstAttendance;
 
   } else if(order === 'best') { 
-    const bestAttendance: any = await 
+    const bestAttendance: any = await attendanceRepository.bestRatingAttendance();
 
     return bestAttendance;
   }
 }
 
-export async function getFilterBy(order: string) {
+export async function getFilterByPrice(order: string) {
   if(order === 'last') {
-    const worstFood: any = await 
+    const worstPrice: any = await priceRepository.worstRatingPrice();
 
-    return worstFood;
+    return worstPrice;
 
   } else if(order === 'best') { 
-    const bestFood: any = await 
+    const bestPrice: any = await priceRepository.worstRatingPrice();
 
-    return bestFood;
+    return bestPrice;
   }
 }
-
-
-function exclude<User, Key extends keyof User>(
-    user: User,
-    ...keys: Key[]
-  ): Omit<User, Key> {
-    for (let key of keys) {
-      delete user[key]
-    }
-    return user
-  }
