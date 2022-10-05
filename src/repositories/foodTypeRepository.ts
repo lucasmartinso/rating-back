@@ -1,5 +1,4 @@
 import connection from "../databases/postgres";
-import { querie } from "../utils/query";
 
 export async function filterFoodType(typeId: number): Promise<any[]> {
     const { rows: typePlaces }: any = await connection.query(`

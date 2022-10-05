@@ -7,7 +7,6 @@ import ratingRouter from "./ratingRouter";
 const router = Router();
 
 router.use(usersRouter); 
-router.use(validateTokenAuth);
 router.use(placesRouter);
 router.use(ratingRouter);
 
