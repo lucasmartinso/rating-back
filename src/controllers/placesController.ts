@@ -42,3 +42,9 @@ export async function getPlace(req: Request, res: Response) {
 
     res.status(200).send(place);
 }
+
+export async function searchPlace(req: Request, res: Response): Promise<any> { 
+    const { name }: any = req.query;
+    console.log(name);
+    res.status(200).send("places");
+}

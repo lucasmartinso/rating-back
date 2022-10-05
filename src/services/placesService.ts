@@ -73,6 +73,12 @@ export async function getPlaceWithRatings(placeId: number): Promise<any> {
   return place.map(element => element.json_build_object);
 }
 
+export async function search(name: string): Promise<any> { 
+  const places: any = await placeRepository.searchPlace(name);
+
+  return places;
+}
+
 function exclude<User, Key extends keyof User>(
     user: User,
     ...keys: Key[]
