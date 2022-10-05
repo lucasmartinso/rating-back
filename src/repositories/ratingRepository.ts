@@ -39,7 +39,7 @@ export async function getAllPlacesRating(): Promise<any[]> {
 
 export async function placesWithoutRating() { 
     const { rows: placesWithoutRating }: any = await connection.query(`
-    SELECT fp.id, fp.name, fp.score, fp."mainPhoto",t.name, fp.verify 
+    SELECT fp.id, fp.name, fp.score, fp."mainPhoto",t.name AS type, fp.verify 
     FROM "foodPlaces" fp
     JOIN "typeFoodPlaces" t ON t.id=fp."typeId"
     WHERE fp.score = '0'
