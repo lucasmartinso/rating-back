@@ -43,12 +43,37 @@ export async function updateDescription(id: number,description: string): Promise
 }
 
 export async function getPlaceWithComments(id: number): Promise<any> { 
-    const place: any = await connection.query(`
-        SELECT fp.* 
-        FROM "foodPlace" fp
-        JOIN "ratingFoodPlaces" r ON r."placeId"=fp.id
-        GROUP BY fp.id, r."placeId"
-    `)
+    const {rows: place}: any = await connection.query(`
+        SELECT json_build_object(
+            'id',fp.id,
+            'name',fp.name,
+            'score',fp.score,
+            'description',fp.description,
+            'website',fp.website,
+            'mainPhoto',fp."mainPhoto",
+            'address',fp.address,
+            'type', t.name,
+            'city',c.name,
+            'verify',fp.verify,
+            'ratings', json_agg(json_build_object(
+                'userId', u.id,
+                'username', u.username, 
+                'name', u.name,
+                'mainPhoto', u."mainPhoto",
+                'food', r.food, 
+                'environment', r.environment, 
+                'attendance', r.attendance, 
+                'price', r.price,
+                'time', r."createdAt"
+            )))
+        FROM "foodPlaces" fp
+        JOIN "ratingFoodPlaces" r ON r."foodPlaceId"=fp.id
+        JOIN cities c ON c.id = fp."cityId"
+        JOIN "typeFoodPlaces" t ON t.id = fp."typeId"
+        JOIN users u ON u.id = r."userId"
+        WHERE fp.id = $1
+        GROUP BY fp.id, r."foodPlaceId",c.name,t.name
+    `,[id]);
 
     return place;
 }

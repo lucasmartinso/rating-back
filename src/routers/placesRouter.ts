@@ -9,5 +9,6 @@ placesRouter.post("/places/create",schemaValidator(restaurantSchema),placesContr
 placesRouter.put("/places/:id/verify",placesController.updateVerify);
 placesRouter.put("/places/:id/website",schemaValidator(websiteSchema),placesController.updateWebsite);
 placesRouter.put("/places/:id/description",schemaValidator(descriptionSchema),placesController.updateDescription);
+placesRouter.get("/places/:id",placesController.getPlace);
 
 export default placesRouter;

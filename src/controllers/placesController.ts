@@ -38,8 +38,8 @@ export async function updateDescription(req: Request, res: Response) {
 
 export async function getPlace(req: Request, res: Response) { 
     const id: number = Number(req.params.id);
-    
-    const place: any = getPlaceWithComments(id);
+
+    const place: any = await getPlaceWithComments(id);
 
     res.status(200).send(place);
 }
