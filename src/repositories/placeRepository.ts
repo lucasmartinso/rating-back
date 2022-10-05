@@ -77,12 +77,12 @@ export async function getPlaceWithComments(id: number): Promise<any> {
     return place;
 }
 
-export async function searchPlace(name : string) {
-    const { rows: places } = await connection.query(`
-        SELECT * FROM ""foodPlaces"
+export async function searchPlace(name : string): Promise<any> {
+    const { rows: places }: any = await connection.query({
+    text:`SELECT * FROM "foodPlaces"
         WHERE name ILIKE ($1)
         OFFSET 0 LIMIT 5
-    `)
+    `,values: [`${name}%`]});
 
     return places;
 }
