@@ -63,8 +63,7 @@ export async function getPlaceWithComments(id: number): Promise<any> {
                 'food', r.food, 
                 'environment', r.environment, 
                 'attendance', r.attendance, 
-                'price', r.price,
-                'time', r."createdAt"
+                'price', r.price
             )))
         FROM "foodPlaces" fp
         JOIN "ratingFoodPlaces" r ON r."foodPlaceId"=fp.id
