@@ -67,6 +67,12 @@ export async function updateDescription(id: number,description: string) {
   await placeRepository.updateDescription(id,description);
 }
 
+export async function getPlaceWithRatings(placeId: number): Promise<any> {
+  const place: any[] = await placeRepository.getPlaceWithComments(placeId);
+
+  return place.map(element => element.json_build_object);
+}
+
 function exclude<User, Key extends keyof User>(
     user: User,
     ...keys: Key[]
