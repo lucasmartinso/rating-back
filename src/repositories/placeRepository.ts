@@ -55,6 +55,10 @@ export async function getPlaceWithComments(id: number): Promise<any> {
             'type', t.name,
             'city',c.name,
             'verify',fp.verify,
+            'food', AVG(r.food),
+            'attendance', AVG(r.attendance),
+            'environment', AVG(r.environment),
+            'price', AVG(r.price),
             'ratings', json_agg(json_build_object(
                 'userId', u.id,
                 'username', u.username, 
