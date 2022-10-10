@@ -1,3 +1,4 @@
+import { foodPlaces } from "@prisma/client";
 import { Request, Response } from "express";
 import * as placesService from "../services/placesService"
 import { placeInfo } from "../types/placesType";
@@ -38,7 +39,7 @@ export async function updateDescription(req: Request, res: Response) {
 export async function getPlace(req: Request, res: Response) { 
     const id: number = Number(req.params.id);
 
-    const place: any = await placesService.getPlaceWithRatings(id);
+    const place: any | foodPlaces = await placesService.getPlaceWithRatings(id);
 
     res.status(200).send(place);
 }

@@ -70,7 +70,12 @@ export async function updateDescription(id: number,description: string) {
 export async function getPlaceWithRatings(placeId: number): Promise<any> {
   const place: any[] = await placeRepository.getPlaceWithComments(placeId);
 
-  return place.map(element => element.json_build_object);
+  if(place.length !== 0) {
+    return place.map(element => element.json_build_object);
+  } else { 
+    const place: foodPlaces | null = await placeRepository.findPlace(placeId);
+    return place;
+  }
 }
 
 export async function search(name: string): Promise<any> { 
