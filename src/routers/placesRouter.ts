@@ -11,6 +11,6 @@ placesRouter.put("/places/:id/verify",validateTokenAuth,placesController.updateV
 placesRouter.put("/places/:id/website",validateTokenAuth, schemaValidator(websiteSchema),placesController.updateWebsite);
 placesRouter.put("/places/:id/description",validateTokenAuth, schemaValidator(descriptionSchema),placesController.updateDescription);
 placesRouter.get("/places/:id",placesController.getPlace);
-placesRouter.post("/places/search",placesController.searchPlace)
+placesRouter.post("/places/search",placesController.searchPlace);
 
 export default placesRouter;
