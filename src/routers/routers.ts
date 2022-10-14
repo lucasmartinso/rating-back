@@ -10,7 +10,7 @@ const router = Router();
 router.use(usersRouter); 
 router.use(placesRouter);
 router.use(ratingRouter);
-router.use(validateTokenAuth);
+//router.use(validateTokenAuth);
 router.use(localizationRouter);
 
 export default router;

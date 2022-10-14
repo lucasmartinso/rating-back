@@ -53,7 +53,7 @@ export async function searchPlace(req: Request, res: Response): Promise<any> {
 }
 
 export async function getStates(req: Request, res: Response): Promise<any> {
-    const states : states[] = await localizationRepository.getStates();
+    const states : states[] = await placesService.getStates();
 
     res.status(200).send(states);
 }
