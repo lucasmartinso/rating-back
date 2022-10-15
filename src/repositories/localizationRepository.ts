@@ -12,3 +12,5 @@ export async function getCities(): Promise<cities[]> {
 
     return cities;
 }
+
+//export async function 

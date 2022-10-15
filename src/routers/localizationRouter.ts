@@ -3,7 +3,7 @@ import * as placesController from "../controllers/placesController"
 
 const localizationRouter = Router();
 
-localizationRouter.get("/localization",placesController.getStates);
-//localizationRouter.post("/localization",placesController)
+localizationRouter.get("/states",placesController.getStates);
+localizationRouter.get("/cities",placesController.getCities)
 
 export default localizationRouter;

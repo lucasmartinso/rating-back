@@ -91,6 +91,12 @@ export async function getStates(): Promise<states[]> {
   return states;
 }
 
+export async function getCities(): Promise<cities[]> {
+  const cities: cities[] = await localizationRepository.getCities();
+
+  return cities;
+}
+
 function exclude<User, Key extends keyof User>(
     user: User,
     ...keys: Key[]
