@@ -91,8 +91,8 @@ export async function getStates(): Promise<states[]> {
   return states;
 }
 
-export async function getCities(): Promise<cities[]> {
-  const cities: cities[] = await localizationRepository.getCities();
+export async function getCities(id: number): Promise<cities[]> {
+  const cities: cities[] = await localizationRepository.getCities(id);
 
   return cities;
 }

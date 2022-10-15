@@ -7,8 +7,8 @@ export async function getStates(): Promise<states[]> {
     return states;
 }
 
-export async function getCities(): Promise<cities[]> {
-    const cities: cities[] = await prisma.cities.findMany({where: {}});
+export async function getCities(id: number): Promise<cities[]> {
+    const cities: cities[] = await prisma.cities.findMany({where: {state_id: id}});
 
     return cities;
 }
