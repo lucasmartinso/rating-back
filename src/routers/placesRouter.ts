@@ -12,5 +12,6 @@ placesRouter.put("/places/:id/website",validateTokenAuth, schemaValidator(websit
 placesRouter.put("/places/:id/description",validateTokenAuth, schemaValidator(descriptionSchema),placesController.updateDescription);
 placesRouter.get("/places/:id",placesController.getPlace);
 placesRouter.post("/places/search",placesController.searchPlace);
+placesRouter.get("/types",placesController.getTypes);
 
 export default placesRouter;

@@ -1,4 +1,4 @@
-import { cities, foodPlaces, states } from "@prisma/client";
+import { cities, foodPlaces, states, typeFoodPlaces } from "@prisma/client";
 import { Request, Response } from "express";
 import * as placesService from "../services/placesService"
 import { placeInfo } from "../types/placesType";
@@ -63,4 +63,10 @@ export async function getCities(req: Request, res: Response): Promise<void> {
     const cities : cities[] = await placesService.getCities(id);
 
     res.status(200).send(cities);
+}
+
+export async function getTypes(req: Request, res: Response): Promise<void> {
+    const types: typeFoodPlaces[] = await placesService.getTypes();
+
+    res.status(200).send(types);
 }
