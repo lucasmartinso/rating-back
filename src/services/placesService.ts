@@ -1,6 +1,7 @@
 import { cities, foodPlaces, states, typeFoodPlaces } from "@prisma/client";
 import * as placeRepository from "../repositories/placeRepository";
 import * as localizationRepository from "../repositories/localizationRepository";
+import * as foodTypeRepository from "../repositories/foodTypeRepository";
 import { placeInfo } from "../types/placesType";
 
 async function verifyCity(city: string): Promise<number> { 
@@ -97,12 +98,8 @@ export async function getCities(id: number): Promise<cities[]> {
   return cities;
 }
 
-function exclude<User, Key extends keyof User>(
-    user: User,
-    ...keys: Key[]
-  ): Omit<User, Key> {
-    for (let key of keys) {
-      delete user[key]
-    }
-    return user
-  }
+export async function getTypes() {
+  const types : typeFoodPlaces[] = await foodTypeRepository.getTypes();
+
+  return types;
+}

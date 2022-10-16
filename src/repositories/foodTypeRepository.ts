@@ -1,4 +1,6 @@
+import { typeFoodPlaces } from "@prisma/client";
 import connection from "../databases/postgres";
+import prisma from "../databases/prisma";
 
 export async function filterFoodType(typeId: number): Promise<any[]> {
     const { rows: typePlaces }: any = await connection.query(`
@@ -12,3 +14,9 @@ export async function filterFoodType(typeId: number): Promise<any[]> {
    
     return typePlaces;
 } 
+
+export async function getTypes(): Promise<typeFoodPlaces[]> {
+    const types = await prisma.typeFoodPlaces.findMany({where: {}});
+
+    return types;
+}
