@@ -1,4 +1,4 @@
-import { cities, states } from "@prisma/client";
+import { cities, states, typeFoodPlaces } from "@prisma/client";
 import prisma from "../databases/prisma"
 
 export async function getStates(): Promise<states[]> {
@@ -13,4 +13,8 @@ export async function getCities(id: number): Promise<cities[]> {
     return cities;
 }
 
-//export async function 
+export async function getTypes(): Promise<typeFoodPlaces[]> {
+    const types = await prisma.typeFoodPlaces.findMany({where: {}});
+
+    return types;
+}
