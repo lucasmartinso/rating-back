@@ -1,5 +1,7 @@
-import { cities, foodPlaces, typeFoodPlaces } from "@prisma/client";
-import * as placeRepository from "../repositories/placeRepository"
+import { cities, foodPlaces, states, typeFoodPlaces } from "@prisma/client";
+import * as placeRepository from "../repositories/placeRepository";
+import * as localizationRepository from "../repositories/localizationRepository";
+import * as foodTypeRepository from "../repositories/foodTypeRepository";
 import { placeInfo } from "../types/placesType";
 
 async function verifyCity(city: string): Promise<number> { 
@@ -42,24 +44,63 @@ export async function createPlace(placeData: placeInfo): Promise<void> {
     await placeRepository.createPlace(place);
 }
 
+async function findPlace(id: number): Promise<boolean> { 
+  const place: foodPlaces | null = await placeRepository.findPlace(id);
+
+  if(!place) throw { type: "Not Found", message:"This place isn't registred at the database"}
+
+  return place.verify;
+}
+
 export async function updateVerify(id: number) { 
+  const verify: boolean = await findPlace(id);
+  if(verify) throw { type: "Bad Request", message:"This place is already verify"}
+
   await placeRepository.updateVerify(id);
 }
 
 export async function updateWebsite(id: number,website: string) { 
+  await findPlace(id);
   await placeRepository.updateWebsite(id,website);
 }
 
 export async function updateDescription(id: number,description: string) { 
+  await findPlace(id);
   await placeRepository.updateDescription(id,description);
 }
 
-function exclude<User, Key extends keyof User>(
-    user: User,
-    ...keys: Key[]
-  ): Omit<User, Key> {
-    for (let key of keys) {
-      delete user[key]
-    }
-    return user
+export async function getPlaceWithRatings(placeId: number): Promise<any> {
+  const place: any[] = await placeRepository.getPlaceWithComments(placeId);
+
+  if(place.length !== 0) {
+    return place.map(element => element.json_build_object);
+  } else { 
+    const place: foodPlaces | null = await placeRepository.findPlace(placeId);
+    return place;
   }
+}
+
+export async function search(name: string): Promise<any> { 
+  const places: any = await placeRepository.searchPlace(name);
+
+  return places;
+}
+
+export async function getStates(): Promise<states[]> {
+  const states: states[] = await localizationRepository.getStates();
+
+  return states;
+}
+
+export async function getCities(id: number,name: string): Promise<cities[]> {
+  if(!name) name= "";
+  const cities: cities[] = await localizationRepository.getCities(id,name);
+
+  return cities;
+}
+
+export async function getTypes() {
+  const types : typeFoodPlaces[] = await foodTypeRepository.getTypes();
+
+  return types;
+}

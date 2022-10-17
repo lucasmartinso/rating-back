@@ -18,6 +18,7 @@ model users {
   password String 
   mainPhoto String?
   createdAt DateTime @default(now()) @db.Timestamptz(6)   
+  ratingFoodPlaces ratingFoodPlaces[]
 }
 
 model typeFoodPlaces { 
@@ -44,7 +45,7 @@ model cities {
 model foodPlaces { 
   id Int @id @default(autoincrement())
   name String @unique
-  score Int @default(0)
+  score String @default("0")
   description String?
   website String? @unique
   mainPhoto String
@@ -54,4 +55,19 @@ model foodPlaces {
   citiess cities @relation(fields: [cityId], references: [id])
   cityId Int
   verify Boolean @default(false)
+  rantingFoodPlaces ratingFoodPlaces[]
+} 
+
+model ratingFoodPlaces { 
+  id Int @id @default(autoincrement())
+  foodPlaces foodPlaces @relation(fields: [foodPlaceId],references: [id])
+  foodPlaceId Int
+  users users @relation(fields: [userId],references: [id])
+  userId Int
+  food Int
+  environment Int
+  attendance Int
+  price Int
+  comment String?
+  createdAt DateTime @default(now()) @db.Timestamptz(6)   
 }

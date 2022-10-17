@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "foodPlaces" ALTER COLUMN "score" SET DEFAULT 0,
+ALTER COLUMN "score" SET DATA TYPE DECIMAL(65,30);

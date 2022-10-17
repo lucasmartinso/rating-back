@@ -4,7 +4,8 @@ import jwt from "jsonwebtoken";
 import * as usersRepository from "../repositories/usersRepository"
 
 export async function validateTokenAuth(req:Request, res: Response, next: NextFunction) { 
-    const token = req.headers['authorization'];
+    const Authorization = req.headers.authorization;
+    const token = Authorization?.replace("Bearer ", "");
 
     if(!token) throw { type: "Unauthorized", message: "Insert token to enter"}
     
