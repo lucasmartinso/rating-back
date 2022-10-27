@@ -61,7 +61,7 @@ export async function getStates(req: Request, res: Response): Promise<void> {
 export async function getCities(req: Request, res: Response): Promise<void> {
     const id: number = Number(req.params.id);
     const { city }: any = req.query;
-    console.log(city);
+    
     const cities : cities[] = await placesService.getCities(id,city);
 
     res.status(200).send(cities);
