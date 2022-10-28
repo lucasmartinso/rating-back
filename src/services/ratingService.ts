@@ -105,7 +105,7 @@ export async function getFilterByFood(order: string) {
 
     else {
       const worstFood: any = await foodRepository.worstRatingFood();
-      redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(worstFood));
+      await redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(worstFood));
       return worstFood;
     }
     
@@ -115,7 +115,7 @@ export async function getFilterByFood(order: string) {
 
     else {
       const bestFood: any = await foodRepository.bestRatingFood();
-      redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(bestFood));
+      await redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(bestFood));
       return bestFood;
     }
   }
@@ -128,7 +128,7 @@ export async function getFilterByEnviroment(order: string) {
     if(cachedEnvironment) return JSON.parse(cachedEnvironment);
 
     const worstEnviroment: any = await enviromentRepository.worstRatingEnviroment();
-    redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(worstEnviroment));
+    await redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(worstEnviroment));
     return worstEnviroment;
 
   } else if(order === 'best') { 
@@ -136,7 +136,7 @@ export async function getFilterByEnviroment(order: string) {
     if(cachedEnvironment) return JSON.parse(cachedEnvironment);
   
     const bestEnviroment: any = await enviromentRepository.bestRatingEnviroment();
-    redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(bestEnviroment));
+    await redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(bestEnviroment));
     return bestEnviroment;
   }
 }
@@ -148,7 +148,7 @@ export async function getFilterByAttendance(order: string) {
     if(cachedAttendance) return JSON.parse(cachedAttendance);
     
     const worstAttendance: any = await attendanceRepository.worstRatingAttendance();
-    redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(worstAttendance));
+    await redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(worstAttendance));
     return worstAttendance;
 
   } else if(order === 'best') { 
@@ -156,7 +156,7 @@ export async function getFilterByAttendance(order: string) {
     if(cachedAttendance) return JSON.parse(cachedAttendance);
 
     const bestAttendance: any = await attendanceRepository.bestRatingAttendance();
-    redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(bestAttendance));
+    await redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(bestAttendance));
     return bestAttendance;
   }
 }
@@ -168,7 +168,7 @@ export async function getFilterByPrice(order: string) {
     if(cachedPrice) return JSON.parse(cachedPrice);
 
     const worstPrice: any = await priceRepository.worstRatingPrice();
-
+    await redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(worstPrice));
     return worstPrice;
 
   } else if(order === 'best') { 
@@ -176,7 +176,7 @@ export async function getFilterByPrice(order: string) {
     if(cachedPrice) return JSON.parse(cachedPrice);
 
     const bestPrice: any = await priceRepository.bestRatingPrice();
-
+    await redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(bestPrice));
     return bestPrice;
   }
 }
