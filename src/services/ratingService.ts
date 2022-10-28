@@ -127,21 +127,17 @@ export async function getFilterByEnviroment(order: string) {
     const cachedEnvironment: string | null = await cache(key,order);
     if(cachedEnvironment) return JSON.parse(cachedEnvironment);
 
-    else {
-      const worstEnviroment: any = await enviromentRepository.worstRatingEnviroment();
-      redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(worstEnviroment));
-      return worstEnviroment;
-    }
+    const worstEnviroment: any = await enviromentRepository.worstRatingEnviroment();
+    redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(worstEnviroment));
+    return worstEnviroment;
 
   } else if(order === 'best') { 
     const cachedEnvironment: string | null = await cache(key,order);
     if(cachedEnvironment) return JSON.parse(cachedEnvironment);
-    
-    else { 
-      const bestEnviroment: any = await enviromentRepository.bestRatingEnviroment();
-      redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(bestEnviroment));
-      return bestEnviroment;
-    }
+  
+    const bestEnviroment: any = await enviromentRepository.bestRatingEnviroment();
+    redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(bestEnviroment));
+    return bestEnviroment;
   }
 }
 
@@ -150,30 +146,35 @@ export async function getFilterByAttendance(order: string) {
   if(order === 'last') {
     const cachedAttendance: string | null = await cache(key,order);
     if(cachedAttendance) return JSON.parse(cachedAttendance);
-
+    
     const worstAttendance: any = await attendanceRepository.worstRatingAttendance();
-
+    redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(worstAttendance));
     return worstAttendance;
 
   } else if(order === 'best') { 
     const cachedAttendance: string | null = await cache(key,order);
     if(cachedAttendance) return JSON.parse(cachedAttendance);
 
-    else { 
-      const bestAttendance: any = await attendanceRepository.bestRatingAttendance();
-      redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(bestAttendance));
-      return bestAttendance;
-    }
+    const bestAttendance: any = await attendanceRepository.bestRatingAttendance();
+    redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(bestAttendance));
+    return bestAttendance;
   }
 }
 
 export async function getFilterByPrice(order: string) {
+  const key: string = 'price';
   if(order === 'last') {
+    const cachedPrice: string | null = await cache(key,order);
+    if(cachedPrice) return JSON.parse(cachedPrice);
+
     const worstPrice: any = await priceRepository.worstRatingPrice();
 
     return worstPrice;
 
   } else if(order === 'best') { 
+    const cachedPrice: string | null = await cache(key,order);
+    if(cachedPrice) return JSON.parse(cachedPrice);
+
     const bestPrice: any = await priceRepository.bestRatingPrice();
 
     return bestPrice;
