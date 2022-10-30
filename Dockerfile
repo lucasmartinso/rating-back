@@ -6,7 +6,7 @@ COPY . .
 
 RUN npm i 
 
-RUN npm build 
+RUN npm run build 
 
 RUN npx prisma migrate dev 
 

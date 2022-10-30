@@ -1,0 +1,22 @@
+services:
+  postgres-rating: 
+    image: postgres
+    container_name: postgres-rating 
+    restart: always 
+    ports: 
+      - 5432:5432
+    env_file:
+      - .env
+  
+  node-rating: 
+    container_name: node-rating
+    build: ./
+    ports: 
+      - 5000:5000
+    depends_on:
+      - postgres-rating
+    env_file:
+      - .env
+    
+volumes: 
+  postgres-rating:
