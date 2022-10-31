@@ -2,10 +2,12 @@
   "name": "rating-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "build": "tsc",
-    "start": "ts-node src/server.ts",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:deploy": "prisma migrate deploy",
+    "start": "npm run prisma:deploy && ts-node src/server.ts",
     "dev": "nodemon src/server.ts"
   },
   "keywords": [],

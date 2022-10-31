@@ -8,7 +8,7 @@ RUN npm i
 
 RUN npm run build 
 
-RUN npx prisma migrate dev 
+RUN npx prisma generate 
 
 EXPOSE 5000 
 
