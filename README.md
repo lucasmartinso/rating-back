@@ -1,4 +1,4 @@
-# <p align = "center"> Project Rating ⭐</p>
+# <p align = "center">⭐ Project Rating ⭐</p>
 
 <p align="center">
    <img src="https://www.impactplus.com/hubfs/customer-reviews-in-sales-featured.jpg" width="600" height="300" object-fit="cover"/>
@@ -60,7 +60,7 @@ PUT /user/photo (autentify)
     }
 ```
 
-### Places  
+### 🏣 Places  
 
 ```yml 
 POST /places/create (autentify)
@@ -78,10 +78,55 @@ POST /places/create (autentify)
 ```
 
 ```yml 
+PUT /places/:id/website (super autentify)
+    - Route change place's website 
+    - headers: { "Authorization": `Bearer $token` }
+    - params: id(number)
+    - body: {
+        "website": "https://lorem.com"
+    }
+```
+
+```yml 
 PUT /places/:id/verify (super autentify)
     - Route to add a verify symbol to especific place
     - headers: { "Authorization": `Bearer $token` }
+    - params: id(number)
     - body: {
         "verify": true || false 
     }
+```
+
+```yml 
+PUT /places/:id/description (super autentify)
+    - Route change place's description
+    - headers: { "Authorization": `Bearer $token` }
+    - params: id(number)
+    - body: {
+        "description": "lorem lorem lorem"
+    }
+```
+
+```yml 
+GET /places/:id
+    - Route to view a specifc place 
+    - headers: {}
+    - params: id(number)
+    - body: {}
+```
+
+```yml 
+POST /places/search
+    - Route to search places
+    - headers: {}
+    - query string: "?name=lorem"
+    - body: {}
+```
+
+```yml 
+GET /types
+    - Route to view all places that has an especific food type
+    - headers: {}
+    - params: id(number)
+    - body: {}
 ```
