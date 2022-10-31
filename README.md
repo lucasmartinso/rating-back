@@ -26,6 +26,8 @@ This is an backend aplication to controll the data flow of an website/ mobile ap
 
 ## :rocket: Routes
 
+### 👥 Users 
+
 ```yml
 POST /sign-up
     - Route to create new user
@@ -46,5 +48,40 @@ POST /login
     - body: {
         "usernameEmail": "lorem" || "lorem@gmail.com",
         "password": "lorem"
+    }
+```
+
+```yml 
+PUT /user/photo (autentify)
+    - Route change user profile photo
+    - headers: { "Authorization": `Bearer $token` }
+    - body: {
+        "mainPhoto": "loremipsum.jpg"
+    }
+```
+
+### Places  
+
+```yml 
+POST /places/create (autentify)
+    - Route to create a new place
+    - headers: { "Authorization": `Bearer $token` }
+    - body: {
+        "name": "Lorem Ipsum",
+        "description": "lorem lorem lorem...",
+        "mainPhoto": "lorem.jpg",
+        "type": enum,
+        "city": enum,
+        "address": "Street lorem, 001"
+        "website": "https://lorem.com"
+    }
+```
+
+```yml 
+PUT /places/:id/verify (super autentify)
+    - Route to add a verify symbol to especific place
+    - headers: { "Authorization": `Bearer $token` }
+    - body: {
+        "verify": true || false 
     }
 ```
