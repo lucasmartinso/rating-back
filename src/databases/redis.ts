@@ -4,8 +4,14 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const redis = createClient({ 
-    url: process.env.REDIS_URL
+    legacyMode: true,
+    socket: {
+        port: Number(process.env.REDIS_PORT),
+        host: process.env.REDIS_URL
+    }
 });
+
+redis.on('connect', ()=> console.log('Connect redis'));
 
 async function connecting() {
     await redis.connect();
