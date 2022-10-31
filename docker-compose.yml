@@ -7,6 +7,8 @@ services:
       - 5432:5432
     env_file:
       - .env
+    volumes:
+      - /usr/local/rating-pg/data:/var/lib/postgresql/data
   
   node-rating: 
     container_name: node-rating
