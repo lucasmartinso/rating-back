@@ -1,6 +1,7 @@
 import { signUp } from "../../src/types/usersType";
 import { __createUser } from "../factories/sign-up-factory";
 import serverSupertest from "../factories/jestConfig";
+import httpStatus from 'http-status';
 
 const server = serverSupertest()
 
@@ -10,6 +11,6 @@ describe('TEST POST /sign-up', () =>  {
 
         const { status }: { status: number } = await server.post('/sign-up').send(userData);
     
-        expect(status).toBe(200);
+        expect(status).toBe(httpStatus.CREATED);
     });
 })
