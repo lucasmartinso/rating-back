@@ -5,10 +5,14 @@
   "main": "server.js",
   "scripts": {
     "build": "tsc",
+    "test": "dotenv -e .env.test prisma migrate dev && dotenv -e .env.test prisma db seed && dotenv -e .env.test jest -- -i --coverage ",
     "prisma:migrate": "prisma migrate dev",
     "prisma:deploy": "prisma migrate deploy",
     "start": "npm run prisma:deploy && ts-node src/server.ts",
     "dev": "nodemon src/server.ts"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   },
   "keywords": [],
   "author": "",
@@ -36,7 +40,7 @@
     "@types/jest": "^29.0.3",
     "@types/joi": "^17.2.3",
     "@types/jsonwebtoken": "^8.5.9",
-    "@types/node": "^18.7.23",
+    "@types/node": "^18.11.8",
     "@types/pg": "^8.6.5",
     "@types/supertest": "^2.0.12",
     "dotenv-cli": "^6.0.0",
