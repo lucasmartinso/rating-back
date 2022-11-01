@@ -130,3 +130,21 @@ GET /types
     - params: id(number)
     - body: {}
 ```
+
+### 🌠 Rating  
+
+```yml 
+POST /rating/:id (autentify)
+    - Route to create a review
+    - headers: { "Authorization": `Bearer $token` }
+    - params: id(number)
+    - body: {
+        "food": 1 - 5 ,
+        "environment": 1 - 5,
+        "attendance": 1 - 5,
+        "price": 1 - 5,
+        "comment": "lorem"
+    }
+```
+
+### 🌍 Localization  
