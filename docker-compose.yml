@@ -1,0 +1,35 @@
+services:
+  postgres-rating: 
+    image: postgres
+    container_name: postgres-rating 
+    restart: always 
+    ports: 
+      - 2345:5432
+    env_file:
+      - .env.development
+    volumes:
+      - /usr/local/rating-pg/data:/var/lib/postgresql/data
+  
+  redis-rating: 
+    image: redis
+    container_name: redis-rating
+    restart: always
+    ports: 
+      - 6378:6379
+    env_file:
+      - .env.development
+    command: redis-server
+
+  node-rating: 
+    container_name: node-rating
+    build: ./
+    ports: 
+      - 5000:5000
+    depends_on:
+      - postgres-rating
+      - redis-rating
+    env_file:
+      - .env.development
+    
+volumes: 
+  postgres-rating:

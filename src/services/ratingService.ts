@@ -9,6 +9,7 @@ import * as enviromentRepository from "../repositories/enviromentRepository";
 import * as attendanceRepository from "../repositories/attendanceRepository";
 import * as priceRepository from "../repositories/priceRepository";
 import * as foodTypeRepository from "../repositories/foodTypeRepository";
+import redis from "../databases/redis";
 
 async function verifyRatingTime(userId: number, foodPlaceId: number): Promise<void> { 
   const ratingsUser: ratingFoodPlaces[] | null = await ratingRepository.verifyRatingTime(userId,foodPlaceId);
@@ -78,54 +79,104 @@ export async function getAllPlacesRating(): Promise<any[]> {
   return allPlaces;
 }
 
+function cachesKey(key: string, order: string): string { 
+  const cacheKey: string = `${key}?${order}`;
+
+  return cacheKey;
+}
+
+function expirateTime(): number { 
+  const expirationTime: number = 1000 * 60 * 10;
+
+  return expirationTime;
+}
+
+async function cache(key: string, order: string): Promise<string | null> { 
+  const cached: string | null = await redis.get(cachesKey(key,order));
+
+  return cached;
+}
+
 export async function getFilterByFood(order: string) {
+  const key: string = 'food';
   if(order === 'last') {
-    const worstFood: any = await foodRepository.worstRatingFood();
+    const cachedFood: string | null = await cache(key,order);
+    if(cachedFood) return JSON.parse(cachedFood);
 
-    return worstFood;
-
+    else {
+      const worstFood: any = await foodRepository.worstRatingFood();
+      await redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(worstFood));
+      return worstFood;
+    }
+    
   } else if(order === 'best') { 
-    const bestFood: any = await foodRepository.bestRatingFood();
+    const cachedFood: string | null = await cache(key,order);
+    if(cachedFood) return JSON.parse(cachedFood);
 
-    return bestFood;
+    else {
+      const bestFood: any = await foodRepository.bestRatingFood();
+      await redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(bestFood));
+      return bestFood;
+    }
   }
 }
 
 export async function getFilterByEnviroment(order: string) {
+  const key: string = 'environment';
   if(order === 'last') {
-    const worstEnviroment: any = await enviromentRepository.worstRatingEnviroment();
+    const cachedEnvironment: string | null = await cache(key,order);
+    if(cachedEnvironment) return JSON.parse(cachedEnvironment);
 
+    const worstEnviroment: any = await enviromentRepository.worstRatingEnviroment();
+    await redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(worstEnviroment));
     return worstEnviroment;
 
   } else if(order === 'best') { 
+    const cachedEnvironment: string | null = await cache(key,order);
+    if(cachedEnvironment) return JSON.parse(cachedEnvironment);
+  
     const bestEnviroment: any = await enviromentRepository.bestRatingEnviroment();
-
+    await redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(bestEnviroment));
     return bestEnviroment;
   }
 }
 
 export async function getFilterByAttendance(order: string) {
+  const key: string = 'attendance';
   if(order === 'last') {
+    const cachedAttendance: string | null = await cache(key,order);
+    if(cachedAttendance) return JSON.parse(cachedAttendance);
+    
     const worstAttendance: any = await attendanceRepository.worstRatingAttendance();
-
+    await redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(worstAttendance));
     return worstAttendance;
 
   } else if(order === 'best') { 
-    const bestAttendance: any = await attendanceRepository.bestRatingAttendance();
+    const cachedAttendance: string | null = await cache(key,order);
+    if(cachedAttendance) return JSON.parse(cachedAttendance);
 
+    const bestAttendance: any = await attendanceRepository.bestRatingAttendance();
+    await redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(bestAttendance));
     return bestAttendance;
   }
 }
 
 export async function getFilterByPrice(order: string) {
+  const key: string = 'price';
   if(order === 'last') {
-    const worstPrice: any = await priceRepository.worstRatingPrice();
+    const cachedPrice: string | null = await cache(key,order);
+    if(cachedPrice) return JSON.parse(cachedPrice);
 
+    const worstPrice: any = await priceRepository.worstRatingPrice();
+    await redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(worstPrice));
     return worstPrice;
 
   } else if(order === 'best') { 
-    const bestPrice: any = await priceRepository.bestRatingPrice();
+    const cachedPrice: string | null = await cache(key,order);
+    if(cachedPrice) return JSON.parse(cachedPrice);
 
+    const bestPrice: any = await priceRepository.bestRatingPrice();
+    await redis.setEx(cachesKey(key,order),expirateTime(),JSON.stringify(bestPrice));
     return bestPrice;
   }
 }
