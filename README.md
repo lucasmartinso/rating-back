@@ -37,7 +37,8 @@ POST /sign-up
         "username": "lorem",
         "email": "lorem@gmail.com",
         "password": "loremips",
-        "confirmPassword": "loremips"
+        "confirmPassword": "loremips",
+        "mainPhoto"?: "lorem.jpg"
 }
 ```
     
@@ -148,7 +149,7 @@ POST /rating/:id (autentify)
         "environment": 1 - 5,
         "attendance": 1 - 5,
         "price": 1 - 5,
-        "comment": "lorem"
+        "comment"?: "lorem"
     }
 ```
 
