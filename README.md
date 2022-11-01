@@ -159,4 +159,25 @@ GET /places/food/:type (autentify)
     - body: {}
 ```
 
+```yml 
+GET /places/environment/:type (autentify)
+    - Route to get places according to his environment rating
+    - params: type: "last" || "best" 
+    - body: {}
+```
+
+```yml 
+GET /places/attendance/:type (autentify)
+    - Route to get places according to his attendance rating
+    - params: type: "last" || "best" 
+    - body: {}
+```
+
+```yml 
+GET /places/price/:type (autentify)
+    - Route to get places according to his price rating
+    - params: type: "last" || "best" 
+    - body: {}
+```
+
 ### 🌍 Localization  
