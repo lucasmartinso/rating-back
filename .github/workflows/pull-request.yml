@@ -14,5 +14,5 @@ jobs:
           envkey_POSTGRES_PASSWORD: ${{secrets.POSTGRES_PASSWORD}}
           envkey_POSTGRES_DB: ${{secrets.POSTGRES_DB}}
           envkey_POSTGRES_URL: ${{secrets.POSTGRES_URL}}
-        - name: RUN TESTS
-          run: docker-compose -f docker-compose-test.yml run node_ci_cd npm run test
+      - name: RUN TESTS
+        run: docker-compose -f docker-compose-test.yml run node_ci_cd npm run test
