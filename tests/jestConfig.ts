@@ -1,5 +1,5 @@
 import supertest from "supertest";
-import app from "../../src/index"
+import app from "../src/index"
 
 export default function server() { 
     const server = supertest(app); 
