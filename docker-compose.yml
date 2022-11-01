@@ -12,9 +12,12 @@ services:
   
   redis-rating: 
     image: redis
+    container_name: redis-rating
     restart: always
     ports: 
-      - 6379:6379
+      - 6378:6379
+    env_file:
+      - .env.development
     command: redis-server
 
   node-rating: 

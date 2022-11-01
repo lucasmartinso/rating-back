@@ -5,10 +5,7 @@ dotenv.config();
 
 const redis = createClient({ 
     legacyMode: true,
-    socket: {
-        port: Number(process.env.REDIS_PORT),
-        host: process.env.REDIS_URL
-    }
+    url: process.env.REDIS_URL
 });
 
 redis.on('connect', ()=> console.log('Connect redis'));
