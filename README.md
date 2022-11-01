@@ -127,15 +127,20 @@ POST /places/search
 GET /types
     - Route to view all places that has an especific food type
     - headers: {}
-    - params: id(number)
     - body: {}
 ```
+```yml 
+GET /places (autentify)
+    - Route to get all Places
+    - body: {}
+```
+
 
 ### 🌠 Rating  
 
 ```yml 
 POST /rating/:id (autentify)
-    - Route to create a review
+    - Route to create a review about an especific place
     - headers: { "Authorization": `Bearer $token` }
     - params: id(number)
     - body: {
@@ -145,6 +150,13 @@ POST /rating/:id (autentify)
         "price": 1 - 5,
         "comment": "lorem"
     }
+```
+
+```yml 
+GET /places/food/:type (autentify)
+    - Route to get places according to his food rating
+    - params: type: "last" || "best" 
+    - body: {}
 ```
 
 ### 🌍 Localization  
