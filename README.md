@@ -180,4 +180,11 @@ GET /places/price/:type (autentify)
     - body: {}
 ```
 
+```yml 
+GET /places/food-type/:typeId (autentify)
+    - Route to get places about that food type
+    - params: typeId: number
+    - body: {}
+```
+
 ### 🌍 Localization  
