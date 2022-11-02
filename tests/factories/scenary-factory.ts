@@ -1,12 +1,16 @@
+import { Prisma } from "@prisma/client";
 import prisma from "../../src/databases/prisma";
 import redis from "../../src/databases/redis"
 
 export async function deleteAllData(): Promise<void> { 
     await prisma.$transaction([
-        prisma.$executeRaw`TRUNCATE TABLE "ratingFoodPlaces"`,
-        prisma.$executeRaw`TRUNCATE TABLE "foodPlaces"`,
-        prisma.$executeRaw`TRUNCATE TABLE users`,
-    ]);
+        prisma.ratingFoodPlaces.deleteMany({}),
+        prisma.foodPlaces.deleteMany({}),
+        prisma.users.deleteMany({}), 
+    ],
+    {
+        isolationLevel: Prisma.TransactionIsolationLevel.Serializable, // optional, default defined by database configuration
+    });
 } 
 
 export async function disconnectPrisma(): Promise<void> { 
