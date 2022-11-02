@@ -3,7 +3,9 @@ import redis from "../../src/databases/redis"
 
 export async function deleteAllData(): Promise<void> { 
     await prisma.$transaction([
-        prisma.$executeRaw`TRUNCATE TABLE recommendations`
+        prisma.$executeRaw`TRUNCATE TABLE "ratingFoodPlaces"`,
+        prisma.$executeRaw`TRUNCATE TABLE "foodPlaces"`,
+        prisma.$executeRaw`TRUNCATE TABLE users`,
     ]);
 } 
 
