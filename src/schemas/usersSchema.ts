@@ -10,7 +10,7 @@ export const signupSchema = joi.object({
 })
 
 export const loginSchema = joi.object({
-    usernameEmail: joi.string().pattern(/^[a-zA-Z0-9".""_""@""-"]{2,}$/).required(),
+    usernameEmail: joi.string().pattern(/^[a-zA-Z0-9".""_""@""-"]{2,}$/).required().label('Invalid user, allows only letters, numbers, ".","@", "_" and "-"'),
     password: joi.string().min(8).max(50).required()
 })
 

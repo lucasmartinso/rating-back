@@ -3,7 +3,7 @@ import httpStatus from 'http-status';
 import { connectPrisma, disconnectPrisma, disconnectRedis, deleteAllData } from "../factories/scenary-factory";
 import { faker } from "@faker-js/faker";
 import { signIn } from "../../src/types/usersType";
-import { __createUser } from "../factories/sign-up-factory";
+import { __createLogin } from "../factories/login-factory";
 
 const server = serverSupertest();
 
@@ -12,9 +12,16 @@ beforeEach( async() => {
     await deleteAllData();
 });
 
-describe('TEST SCHEMAS POST /sign-up', () => { 
-    it('Should answer 422, if user send name that doesn`t match with the pattern or is null', async () => { 
+describe('TEST SCHEMAS POST /login', () => { 
+    it('Should answer 422, if user send usernameEmail that doesn`t match with the pattern or is null', async () => { 
+        const loginData: signIn = await __createLogin();
+        loginData.usernameEmail = faker.lorem.words(2);
+        const errorMessage: string = 'Invalid user, allows only letters, numbers, ".","@", "_" and "-"';
 
+        const { status, text }: { status: number, text: string } = await server.post('/login').send(loginData);
+    
+        expect(status).toBe(httpStatus.UNPROCESSABLE_ENTITY);
+        expect(text).toContain(errorMessage);
     });
 });
 
