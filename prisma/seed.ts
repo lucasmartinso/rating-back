@@ -1,4 +1,5 @@
-/*INSERT INTO states ("name") VALUES ('Alagoas');
+/*INSERT INTO states ("name") VALUES ('Acre');
+INSERT INTO states ("name") VALUES ('Alagoas');
 INSERT INTO states ("name") VALUES ('Amapá');
 INSERT INTO states ("name") VALUES ('Amazonas');
 INSERT INTO states ("name") VALUES ('Bahia');
