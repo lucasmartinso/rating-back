@@ -23,6 +23,17 @@ describe('TEST SCHEMAS POST /login', () => {
         expect(status).toBe(httpStatus.UNPROCESSABLE_ENTITY);
         expect(text).toContain(errorMessage);
     });
+
+    it('Should answer 422, if user send password that doesn`t match with the pattern or is null', async () => { 
+        const loginData: signIn = await __createLogin();
+        loginData.password = faker.lorem.word(7);
+        const errorMessage: string = 'Invalid password, min 8 characters';
+
+        const { status, text }: { status: number, text: string } = await server.post('/login').send(loginData);
+    
+        expect(status).toBe(httpStatus.UNPROCESSABLE_ENTITY);
+        expect(text).toContain(errorMessage);
+    });
 });
 
 afterAll(async() => { 
