@@ -1,8 +1,8 @@
 import joi from "joi"
 
 export const signupSchema = joi.object({
-    name: joi.string().pattern(/^[a-zA-Z" "]{2,30}/).required().label('Name allows only letters and spaces'), 
-    username: joi.string().pattern(/^[a-zA-Z0-9".""_""-"]{2,30}/).required(), 
+    name: joi.string().pattern(/^[a-zA-Z" "]{2,30}$/).required().label('Name allows only letters and spaces'), 
+    username: joi.string().pattern(/^[a-zA-Z0-9".""_""-"]{2,30}$/).required().label('Name allows letters, numbers, ".","_","-"'), 
     email: joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }).required(), 
     password: joi.string().min(8).max(50).required(), 
     confirmPassword: joi.string().min(8).max(50).required(), 
@@ -10,7 +10,7 @@ export const signupSchema = joi.object({
 })
 
 export const loginSchema = joi.object({
-    usernameEmail: joi.string().pattern(/^[a-zA-Z0-9".""_""@""-"]{2,}/).required(),
+    usernameEmail: joi.string().pattern(/^[a-zA-Z0-9".""_""@""-"]{2,}$/).required(),
     password: joi.string().min(8).max(50).required()
 })
 
