@@ -1,8 +1,8 @@
-import { signUp } from "../../src/types/usersType";
-import { __createUser } from "../factories/sign-up-factory";
-import serverSupertest from "../jestConfig";
+import { signUp } from "../../../src/types/usersType";
+import { __createUser } from "../../factories/sign-up-factory";
+import serverSupertest from "../../jestConfig";
 import httpStatus from 'http-status';
-import { connectPrisma, deleteAllData, disconnectPrisma, disconnectRedis } from "../factories/scenary-factory";
+import { connectPrisma, deleteAllData, disconnectPrisma, disconnectRedis } from "../../factories/scenary-factory";
 import { faker }from "@faker-js/faker";
 
 const server = serverSupertest();
