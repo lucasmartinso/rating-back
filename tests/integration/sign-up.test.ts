@@ -43,6 +43,18 @@ describe('TEST POST /sign-up', () =>  {
         expect(status).toBe(httpStatus.CONFLICT);
         expect(text).toBe(errorMessage);
     });
+
+    it('Should answer 409, if the user send the corretly schema but email already exist', async() => { 
+        const userData: signUp = await __createUser();
+        const errorMessage: string = `The password and confirmPassord don't match`;
+
+        await server.post('/sign-up').send(userData);
+        userData.password = faker.lorem.word(10);
+        const { status, text }: { status: number, text: string } = await server.post('/sign-up').send(userData);
+    
+        expect(status).toBe(httpStatus.CONFLICT);
+        expect(text).toBe(errorMessage);
+    });
 });
 
 afterAll(async() => { 
