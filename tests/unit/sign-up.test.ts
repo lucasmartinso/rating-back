@@ -58,5 +58,31 @@ describe('UNIT TESTS sign-up', () => {
         expect(usersRepository.verifyExistUsername).toBeCalled();
         expect(usersRepository.verifyExistEmail).not.toBeCalled();
         expect(usersRepository.createUser).not.toBeCalled();
+    });
+
+    it('Have denied permission because already exist a user with that email', async() => {
+        const userData: signUp = await __createUser();
+
+        jest.spyOn(usersRepository, 'verifyExistUsername').mockImplementation((): any => {
+            return false;
+        });
+
+        jest.spyOn(usersRepository, 'verifyExistEmail').mockImplementation((): any => {
+            return true;
+        });
+
+        jest.spyOn(usersRepository, 'createUser').mockImplementation((): any => {});
+
+
+        const promise = usersService.signup(userData);
+
+        expect(promise).rejects.toEqual({
+            type: 'Conflit', 
+            message: "This email is registred yet"
+        }); 
+
+        expect(usersRepository.verifyExistUsername).toBeCalled();
+        expect(usersRepository.verifyExistEmail).not.toBeCalled();
+        expect(usersRepository.createUser).not.toBeCalled();
     })
 });
