@@ -21,7 +21,8 @@ describe('TEST POST /sign-in', () => {
         }
 
         await server.post('/sign-up').send(userData);
-        const { status }: { status: number } = await server.post('/login').send(loginData);
+        const { status, body }: { status: number, body:any } = await server.post('/login').send(loginData);
+        console.log(body);
     
         expect(status).toBe(httpStatus.OK);
     });
