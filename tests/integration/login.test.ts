@@ -21,9 +21,39 @@ describe('TEST POST /sign-in', () => {
         }
 
         await server.post('/sign-up').send(userData);
-        const { status }: { status: number, text: string } = await server.post('/login').send(loginData);
+        const { status }: { status: number } = await server.post('/login').send(loginData);
     
         expect(status).toBe(httpStatus.OK);
+    });
+
+    it(`Should answer 200, if the user send the corretly schema but the email or username doesn't match`, async () => { 
+        const userData: signUp = await __createUser();
+        const loginData: signIn = {
+            usernameEmail: faker.internet.email(),
+            password: userData.password
+        }
+        const errorMessage: string = 'User or password are wrong';
+
+        await server.post('/sign-up').send(userData);
+        const { status, text }: { status: number, text: string } = await server.post('/login').send(loginData);
+    
+        expect(status).toBe(httpStatus.UNAUTHORIZED);
+        expect(text).toBe(errorMessage);
+    });
+
+    it(`Should answer 200, if the user send the corretly schema but the password doesn't match`, async () => { 
+        const userData: signUp = await __createUser();
+        const loginData: signIn = {
+            usernameEmail: faker.internet.email(),
+            password: userData.password
+        }
+        const errorMessage: string = 'User or password are wrong';
+
+        await server.post('/sign-up').send(userData);
+        const { status, text }: { status: number, text: string } = await server.post('/login').send(loginData);
+    
+        expect(status).toBe(httpStatus.UNAUTHORIZED);
+        expect(text).toBe(errorMessage);
     });
 })
 
