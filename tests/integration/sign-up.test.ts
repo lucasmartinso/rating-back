@@ -37,7 +37,7 @@ describe('TEST POST /sign-up', () =>  {
         const errorMessage: string = 'This email is registred yet';
 
         await server.post('/sign-up').send(userData);
-        userData.username = faker.internet.email();
+        userData.username = faker.internet.userName();
         const { status, text }: { status: number, text: string } = await server.post('/sign-up').send(userData);
     
         expect(status).toBe(httpStatus.CONFLICT);
