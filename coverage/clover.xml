@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1667435488064" clover="3.2.0">
-  <project timestamp="1667435488064" name="All files">
+<coverage generated="1667435885883" clover="3.2.0">
+  <project timestamp="1667435885883" name="All files">
     <metrics statements="563" coveredstatements="254" conditionals="93" coveredconditionals="6" methods="101" coveredmethods="15" elements="757" coveredelements="275" complexity="0" loc="563" ncloc="563" packages="10" files="33" classes="33"/>
     <package name="src">
       <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -169,9 +169,9 @@
       <file name="errorHandler.ts" path="/home/lucas/projetos/rating-backend/src/middlewares/errorHandler.ts">
         <metrics statements="13" coveredstatements="6" conditionals="9" coveredconditionals="3" methods="1" coveredmethods="1"/>
         <line num="3" count="2" type="stmt"/>
-        <line num="4" count="5" type="stmt"/>
-        <line num="5" count="5" type="cond" truecount="2" falsecount="0"/>
-        <line num="6" count="3" type="stmt"/>
+        <line num="4" count="7" type="stmt"/>
+        <line num="5" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="5" type="stmt"/>
         <line num="7" count="2" type="cond" truecount="1" falsecount="1"/>
         <line num="8" count="2" type="stmt"/>
         <line num="9" count="0" type="cond" truecount="0" falsecount="2"/>
@@ -186,9 +186,9 @@
         <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
         <line num="4" count="2" type="stmt"/>
         <line num="5" count="14" type="stmt"/>
-        <line num="6" count="8" type="stmt"/>
-        <line num="8" count="8" type="cond" truecount="1" falsecount="0"/>
-        <line num="9" count="3" type="stmt"/>
+        <line num="6" count="10" type="stmt"/>
+        <line num="8" count="10" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="5" type="stmt"/>
         <line num="11" count="5" type="stmt"/>
       </file>
     </package>

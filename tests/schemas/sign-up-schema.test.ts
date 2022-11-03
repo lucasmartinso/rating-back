@@ -46,6 +46,30 @@ describe('TEST SCHEMAS POST /sign-up', () => {
         expect(status).toBe(httpStatus.UNPROCESSABLE_ENTITY);
         expect(text).toContain(errorMessage);
     });    
+
+    it('Should answer 422, if user send password that doesn`t match with the pattern or is null', async () => { 
+        const userData: signUp = await __createUser();
+        userData.password = faker.random.numeric(7);
+        const errorMessage: string = 'Invalid password, min 8 characters';
+
+        const { status, text } = await server.post('/sign-up').send(userData);
+        console.log(text);
+
+        expect(status).toBe(httpStatus.UNPROCESSABLE_ENTITY);
+        expect(text).toContain(errorMessage);
+    });
+
+    it('Should answer 422, if user send confirm password that doesn`t match with the pattern or is null', async () => { 
+        const userData: signUp = await __createUser();
+        userData.confirmPassword = faker.random.numeric(7);
+        const errorMessage: string = 'Invalid confirm password, min 8 characters';
+
+        const { status, text } = await server.post('/sign-up').send(userData);
+        console.log(text);
+
+        expect(status).toBe(httpStatus.UNPROCESSABLE_ENTITY);
+        expect(text).toContain(errorMessage);
+    });
 })
 
 afterAll(async() => { 
