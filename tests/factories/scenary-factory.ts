@@ -20,7 +20,3 @@ export async function disconnectPrisma(): Promise<void> {
 export async function connectPrisma(): Promise<void> {
     await prisma.$connect();
 }
-
-export async function disconnectRedis(): Promise<void> { 
-    await redis.disconnect();
-}
