@@ -63,8 +63,6 @@ function gerateToken(userId: number,email: string): string {
 export async function login(usernameEmail: string, password: string): Promise<{ user: userData; token: string;} | undefined> { 
     const existEmail: users | null = await verifyExistEmail(usernameEmail);
     const existUsername: users | null =  await verifyExistUsername(usernameEmail);
-    console.log(existEmail);
-    console.log(existUsername);
 
     if(!existEmail && !existUsername) throw { type: "Unauthorized", message: "User or password are wrong"}
 

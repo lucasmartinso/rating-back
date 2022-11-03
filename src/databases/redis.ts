@@ -8,7 +8,7 @@ const redis = createClient({
     url: process.env.REDIS_URL
 });
 
-redis.on('connect', ()=> console.log('Connect redis'));
+//redis.on('connect', ()=> console.log('Connect redis'));
 
 async function connecting() {
     await redis.connect();
