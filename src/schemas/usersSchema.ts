@@ -15,5 +15,5 @@ export const loginSchema = joi.object({
 })
 
 export const updatePhotoSchema = joi.object({
-    mainPhoto: joi.string().uri().required()
+    mainPhoto: joi.string().uri().required().label('Invalid image, wrong format')
 }); 

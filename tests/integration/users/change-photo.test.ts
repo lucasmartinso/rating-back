@@ -18,18 +18,20 @@ describe('PUT /user/photo', () => {
         const mainPhoto: string = faker.image.imageUrl(); 
         const token: string = await __createToken();
 
-        const { status }: { status: number, text: string } = await server.put('/user/photo').set("Authorization",token).send({mainPhoto});
+        const { status }: { status: number } = await server.put('/user/photo').set("Authorization",token).send({mainPhoto});
 
         expect(status).toBe(httpStatus.OK);
     });
 
     it('Should answer 422, if the user send corretly photo schema', async () => {
-        const mainPhoto: string = faker.image.imageUrl(); 
+        const mainPhoto: string = faker.lorem.words(2); 
         const token = await __createToken();
+        const errorMessage: string = 'Invalid image, wrong format'
 
-        const { status }: { status: number, text: string } = await server.put('/user/photo').set("Authorization",token).send({mainPhoto});
+        const { status, text }: { status: number, text: string } = await server.put('/user/photo').set("Authorization",token).send({mainPhoto});
 
-        expect(status).toBe(200);
+        expect(status).toBe(httpStatus.UNPROCESSABLE_ENTITY);
+        expect(text).toContain(errorMessage);
     });
 });
 
