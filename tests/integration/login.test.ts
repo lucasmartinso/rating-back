@@ -26,7 +26,7 @@ describe('TEST POST /sign-in', () => {
         expect(status).toBe(httpStatus.OK);
     });
 
-    it(`Should answer 200, if the user send the corretly schema but the email or username doesn't match`, async () => { 
+    it(`Should answer 401, if the user send the corretly schema but the email or username doesn't match`, async () => { 
         const userData: signUp = await __createUser();
         const loginData: signIn = {
             usernameEmail: faker.internet.email(),
@@ -41,11 +41,11 @@ describe('TEST POST /sign-in', () => {
         expect(text).toBe(errorMessage);
     });
 
-    it(`Should answer 200, if the user send the corretly schema but the password doesn't match`, async () => { 
+    it(`Should answer 401, if the user send the corretly schema but the password doesn't match`, async () => { 
         const userData: signUp = await __createUser();
         const loginData: signIn = {
-            usernameEmail: faker.internet.email(),
-            password: userData.password
+            usernameEmail: userData.email,
+            password: faker.internet.password(20)
         }
         const errorMessage: string = 'User or password are wrong';
 
