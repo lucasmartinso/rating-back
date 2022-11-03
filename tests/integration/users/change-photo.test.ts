@@ -1,4 +1,3 @@
-import { signIn, signUp } from "../../../src/types/usersType";
 import { __createUser } from "../../factories/sign-up-factory";
 import serverSupertest from "../../jestConfig";
 import httpStatus from 'http-status';
