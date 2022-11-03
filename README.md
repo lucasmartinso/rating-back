@@ -189,3 +189,9 @@ GET /places/food-type/:typeId (autentify)
 ```
 
 ### 🌍 Localization  
+
+```yml 
+GET /states
+    - Route to get all Brazil states
+    - body: {}
+```
