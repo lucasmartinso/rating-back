@@ -22,8 +22,11 @@ describe('TEST POST /sign-in', () => {
 
         await server.post('/sign-up').send(userData);
         const { status, body }: { status: number, body:any } = await server.post('/login').send(loginData);
+        console.log(body);
     
         expect(status).toBe(httpStatus.OK);
+        expect(body).toHaveProperty('user');
+        expect(body).toHaveProperty('token');
     });
 
     it(`Should answer 401, if the user send the corretly schema but the email or username doesn't match`, async () => { 
