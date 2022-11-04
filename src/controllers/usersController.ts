@@ -19,6 +19,10 @@ export async function login(req: Request, res: Response) {
     res.status(200).send(userData);
 } 
 
+export async function githubLogin(req: Request, res: Response) { 
+    const code = req.query.code;
+}
+
 export async function updateMainPhoto(req: Request, res: Response) { 
     const { mainPhoto }: {mainPhoto: string} = req.body;
     const { id }: {id:number} = res.locals.user;

@@ -9,5 +9,6 @@ const usersRouter = Router();
 usersRouter.post("/sign-up",schemaValidator(signupSchema),usersController.signup);
 usersRouter.post("/login",schemaValidator(loginSchema),usersController.login);
 usersRouter.put("/user/photo",schemaValidator(updatePhotoSchema),validateTokenAuth,usersController.updateMainPhoto);
+usersRouter.post('/login/github');
 
 export default usersRouter;
