@@ -1,7 +1,8 @@
 import axios from "axios";
 import qs from "query-string";
+import * as oauthRepository from '../repositories/oauthRepository';
 
-export async function github(code: string) { 
+export async function github(code: string): Promise<any> { 
     const GITHUB_ACCESS_TOKEN_URL: string = 'https://github.com/login/oauth/access_token';
     const { REDIRECT_URL, CLIENT_ID, CLIENT_SECRET } = process.env;
     const params: object = {
@@ -12,11 +13,7 @@ export async function github(code: string) {
         client_secret: CLIENT_SECRET
     };
 
-    const { data } = await axios.post(GITHUB_ACCESS_TOKEN_URL, params, {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-    });
+    const data = await oauthRepository.postGitHubInfo(GITHUB_ACCESS_TOKEN_URL,params);
 
     const parsedData = qs.parse(data);
     const user = await fetchUser(parsedData.access_token);
@@ -24,11 +21,7 @@ export async function github(code: string) {
 }
 
 async function fetchUser(token: string | (string | null)[] | null): Promise<any> { 
-    const response = await axios.get('https://api.github.com/user', {
-        headers: {
-            Authorization: `Bearer ${token}`
-        }
-    });
+    const data = oauthRepository.getGitHubInfo(token);
 
-    return response.data;
+    return data;
 }
