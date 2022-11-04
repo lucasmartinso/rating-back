@@ -2,7 +2,7 @@ import { users } from "@prisma/client";
 import * as usersRepository from "../repositories/usersRepository"
 import { createUser, signUp, userData } from "../types/usersType";
 import { crypts } from "../utils/cripts/crypts"
-import jwt from "jsonwebtoken"
+import jwt from "jsonwebtoken";
 
 async function verifyExistUsername(username: string): Promise<users | null> { 
     const usernameExist: users | null = await usersRepository.verifyExistUsername(username);

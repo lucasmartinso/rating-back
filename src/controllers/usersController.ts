@@ -1,9 +1,7 @@
-import { users } from "@prisma/client";
 import { Request, Response } from "express"
 import * as usersService from "../services/usersService"
 import { signIn, signUp, userData } from "../types/usersType";
-import axios from "axios";
-import qs from "querystring";
+import * as oauthService from "../services/oauthServices";
 
 export async function signup(req: Request, res: Response) { 
     const userData: signUp = req.body;
@@ -23,23 +21,7 @@ export async function login(req: Request, res: Response) {
 
 export async function githubLogin(req: Request, res: Response) { 
     const code: any = req.query.code;
-    const GITHUB_ACCESS_TOKEN_URL: string = 'https://github.com/login/oauth/access_token';
-    const { REDIRECT_URL, CLIENT_ID, CLIENT_SECRET } = process.env;
-    const params: object = {
-        code, 
-        grant_type: 'authorization_code',
-        redirect_uri: REDIRECT_URL,
-        client_id: CLIENT_ID,
-        client_secret: CLIENT_SECRET
-    };
-
-    const { data } = await axios.post(GITHUB_ACCESS_TOKEN_URL, params, {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-    });
-
-    const parsedData
+    await oauthService.github(code);
 }
 
 export async function updateMainPhoto(req: Request, res: Response) { 
