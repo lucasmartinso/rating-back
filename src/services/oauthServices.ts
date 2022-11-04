@@ -19,5 +19,16 @@ export async function github(code: string) {
     });
 
     const parsedData = qs.parse(data);
-    return parsedData.access_token;
+    const user = await fetchUser(parsedData.access_token);
+    return user;
+}
+
+async function fetchUser(token: string | (string | null)[] | null): Promise<any> { 
+    const response = await axios.get('https://api.github.com/user', {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    });
+
+    return response.data;
 }
