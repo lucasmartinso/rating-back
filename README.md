@@ -202,7 +202,7 @@ GET /cities/:id
     - query string: "?city=lorem"
     - body: {}
 ```
-## 🏁 Running the application
+## 🏁 Running the application locally
 
 First, make the clone repository in your machine:
 
@@ -225,6 +225,16 @@ npm run test
 To finish the process, to init the server
 ```
 npm start or npm run dev
+```
+## 🐳 Running the application on docker 
+
+Do the comand to create the images and the containers
+```
+docker-compose up --build
+```
+To finish the process, to init the server
+```
+docker-compose up
 ```
 
 :stop_sign: Don't forget to repeat the sequence above with [repository](https://github.com/lucasmartinso/rating-back) that contains the interface of aplication, to test the project per complet.
