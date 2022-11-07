@@ -154,35 +154,35 @@ POST /rating/:id (autentify)
 ```
 
 ```yml 
-GET /places/food/:type (autentify)
+GET /places/food/:type
     - Route to get places according to his food rating
     - params: type: "last" || "best" 
     - body: {}
 ```
 
 ```yml 
-GET /places/environment/:type (autentify)
+GET /places/environment/:type
     - Route to get places according to his environment rating
     - params: type: "last" || "best" 
     - body: {}
 ```
 
 ```yml 
-GET /places/attendance/:type (autentify)
+GET /places/attendance/:type 
     - Route to get places according to his attendance rating
     - params: type: "last" || "best" 
     - body: {}
 ```
 
 ```yml 
-GET /places/price/:type (autentify)
+GET /places/price/:type 
     - Route to get places according to his price rating
     - params: type: "last" || "best" 
     - body: {}
 ```
 
 ```yml 
-GET /places/food-type/:typeId (autentify)
+GET /places/food-type/:typeId 
     - Route to get places about that food type
     - params: typeId: number
     - body: {}
@@ -193,5 +193,12 @@ GET /places/food-type/:typeId (autentify)
 ```yml 
 GET /states
     - Route to get all Brazil states
+    - body: {}
+```
+
+```yml 
+GET /cities/:id
+    - Route to get cities of Brasil that id represents the state
+    - query string: "?city=lorem"
     - body: {}
 ```
