@@ -202,3 +202,29 @@ GET /cities/:id
     - query string: "?city=lorem"
     - body: {}
 ```
+## 🏁 Running the application
+
+First, make the clone repository in your machine:
+
+```
+git clone https://github.com/luanalessa/projeto20-repoprova.git
+```
+
+After, inside the folder, run the comand to install the dependencies.
+
+```
+npm install
+```
+Config the .env, .env.test and .env.development based on .env.example
+
+To run the tests 
+```
+npm run test
+```
+
+To finish the process, to init the server
+```
+npm start or npm run dev
+```
+
+:stop_sign: Don't forget to repeat the sequence above with [repository](https://github.com/lucasmartinso/rating-back) that contains the interface of aplication, to test the project per complet.
