@@ -21,7 +21,11 @@ export async function login(req: Request, res: Response) {
 
 export async function githubLogin(req: Request, res: Response) { 
     const code: any = req.query.code;
-    await oauthService.github(code);
+    const user: any = await oauthService.github(code);
+
+    console.log(user);
+
+    res.status(200).send(user);
 }
 
 export async function updateMainPhoto(req: Request, res: Response) { 

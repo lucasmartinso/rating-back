@@ -1,6 +1,8 @@
-import axios from "axios";
 import qs from "query-string";
 import * as oauthRepository from '../repositories/oauthRepository';
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export async function github(code: string): Promise<any> { 
     const GITHUB_ACCESS_TOKEN_URL: string = 'https://github.com/login/oauth/access_token';
@@ -17,6 +19,7 @@ export async function github(code: string): Promise<any> {
 
     const parsedData = qs.parse(data);
     const user = await fetchUser(parsedData.access_token);
+
     return user;
 }
 

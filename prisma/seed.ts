@@ -25,3 +25,14 @@ INSERT INTO states ("name") VALUES ('Santa Catarina');
 INSERT INTO states ("name") VALUES ('São Paulo');
 INSERT INTO states ("name") VALUES ('Sergipe');
 INSERT INTO states ("name") VALUES ('Tocantins');*/
+
+//INSERT INTO "typeFoodPlaces" ("name") VALUES('Chinese Food');
+//INSERT INTO "typeFoodPlaces" ("name") VALUES('Japonese Food');
+//INSERT INTO "typeFoodPlaces" ("name") VALUES('Italian Food');
+//INSERT INTO "typeFoodPlaces" ("name") VALUES('Confectionery');
+//INSERT INTO "typeFoodPlaces" ("name") VALUES('Fast-Food');
+//INSERT INTO "typeFoodPlaces" ("name") VALUES('Arabic Food');
+//INSERT INTO "typeFoodPlaces" ("name") VALUES('Vegan/Vegetarian');
+//INSERT INTO "typeFoodPlaces" ("name") VALUES('Brasilian Food');
+//INSERT INTO "typeFoodPlaces" ("name") VALUES('Coffee'); 
+//INSERT INTO "typeFoodPlaces" ("name") VALUES('Pizzeria');
