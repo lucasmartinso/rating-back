@@ -35,3 +35,7 @@ export async function updateMainPhoto(req: Request, res: Response) {
     await usersService.updatePhoto(id,mainPhoto);
     res.sendStatus(200);
 }
+
+export async function verifyAuth(req: Request, res: Response) { 
+    res.status(200).send('Logged');
+}
