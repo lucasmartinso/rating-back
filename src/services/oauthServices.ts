@@ -8,7 +8,7 @@ export async function github(code: string): Promise<any> {
     const GITHUB_ACCESS_TOKEN_URL: string = 'https://github.com/login/oauth/access_token';
     const { REDIRECT_URL, CLIENT_ID, CLIENT_SECRET } = process.env;
     const params: object = {
-        code, 
+        code: code, 
         grant_type: 'authorization_code',
         redirect_uri: REDIRECT_URL,
         client_id: CLIENT_ID,
@@ -24,7 +24,7 @@ export async function github(code: string): Promise<any> {
 }
 
 async function fetchUser(token: string | (string | null)[] | null): Promise<any> { 
-    const data = oauthRepository.getGitHubInfo(token);
+    const data = await oauthRepository.getGitHubInfo(token);
 
     return data;
 }

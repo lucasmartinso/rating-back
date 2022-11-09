@@ -25,7 +25,7 @@ export async function githubLogin(req: Request, res: Response) {
 
     console.log(user);
 
-    res.status(200).send(user);
+    res.status(200).send({user});
 }
 
 export async function updateMainPhoto(req: Request, res: Response) { 
