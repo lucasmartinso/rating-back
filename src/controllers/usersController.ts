@@ -1,7 +1,7 @@
-import { users } from "@prisma/client";
 import { Request, Response } from "express"
 import * as usersService from "../services/usersService"
 import { signIn, signUp, userData } from "../types/usersType";
+import * as oauthService from "../services/oauthServices";
 
 export async function signup(req: Request, res: Response) { 
     const userData: signUp = req.body;
@@ -19,10 +19,23 @@ export async function login(req: Request, res: Response) {
     res.status(200).send(userData);
 } 
 
+export async function githubLogin(req: Request, res: Response) { 
+    const code: any = req.query.code;
+    const user: any = await oauthService.github(code);
+
+    console.log(user);
+
+    res.status(200).send({user});
+}
+
 export async function updateMainPhoto(req: Request, res: Response) { 
     const { mainPhoto }: {mainPhoto: string} = req.body;
     const { id }: {id:number} = res.locals.user;
 
     await usersService.updatePhoto(id,mainPhoto);
     res.sendStatus(200);
+}
+
+export async function verifyAuth(req: Request, res: Response) { 
+    res.status(200).send('Logged');
 }

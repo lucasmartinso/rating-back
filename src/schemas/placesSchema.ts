@@ -5,7 +5,7 @@ export const restaurantSchema = joi.object({
     description: joi.string(),
     website: joi.string().uri(),
     mainPhoto: joi.string().uri().required(),
-    type: joi.string().pattern(/^[a-zA-Z" "]{2,30}$/).required(),
+    type: joi.string().required(),
     city: joi.string().min(2).max(50).required(),
     address: joi.string().required()
 })
