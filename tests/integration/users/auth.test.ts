@@ -34,6 +34,16 @@ describe('TEST the Auth', () => {
 
         expect(status).toBe(httpStatus.UNAUTHORIZED);
         expect(text).toBe(errorMessage);
+    });
+
+    it(`Should answer 200, if the user send corretly the auth token`, async () => { 
+        const token: string = await __createToken();
+        const confirmMessage: string = 'Logged';
+
+        const { status, text }: { status: number, text: string } = await server.post('/auth').set("Authorization",token);
+
+        expect(status).toBe(httpStatus.OK);
+        expect(text).toBe(confirmMessage);
     })
 })
 

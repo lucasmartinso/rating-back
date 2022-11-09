@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/repositories/attendanceRepository.ts</title>
+    <title>Code coverage report for src/services/oauthServices.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/repositories</a> attendanceRepository.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/services</a> oauthServices.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">35.71% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/8</span>
+                <span class='fraction'>5/14</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">35.71% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/8</span>
+                <span class='fraction'>5/14</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -80,41 +80,77 @@
 <a name='L15'></a><a href='#L15'>15</a>
 <a name='L16'></a><a href='#L16'>16</a>
 <a name='L17'></a><a href='#L17'>17</a>
-<a name='L18'></a><a href='#L18'>18</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">7x</span>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import connection from "../databases/postgres";
-import { querie } from "../utils/query";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import qs from "query-string";
+import * as oauthRepository from '../repositories/oauthRepository';
+import dotenv from "dotenv";
 &nbsp;
-export async function <span class="fstat-no" title="function not covered" >worstRatingAttendance(</span>): Promise&lt;any[]&gt; {
-    const { rows: worstAttendance }: any = <span class="cstat-no" title="statement not covered" >await connection.query(`</span>
-        ${querie} ORDER BY attendance
-    `);
-   
-<span class="cstat-no" title="statement not covered" >    return worstAttendance;</span>
-} 
+dotenv.config();
 &nbsp;
-export async function <span class="fstat-no" title="function not covered" >bestRatingAttendance(</span>): Promise&lt;any[]&gt; {
-    const { rows: bestAttendance }: any = <span class="cstat-no" title="statement not covered" >await connection.query(`</span>
-        ${querie} ORDER BY attendance DESC
-    `);
-   
-<span class="cstat-no" title="statement not covered" >    return bestAttendance;</span>
-} </pre></td></tr></table></pre>
+export async function <span class="fstat-no" title="function not covered" >github(</span>code: string): Promise&lt;any&gt; { 
+    const GITHUB_ACCESS_TOKEN_URL: string = <span class="cstat-no" title="statement not covered" >'https://github.com/login/oauth/access_token';</span>
+    const { REDIRECT_URL, CLIENT_ID, CLIENT_SECRET } = <span class="cstat-no" title="statement not covered" >process.env;</span>
+    const params: object = <span class="cstat-no" title="statement not covered" >{</span>
+        code: code, 
+        grant_type: 'authorization_code',
+        redirect_uri: REDIRECT_URL,
+        client_id: CLIENT_ID,
+        client_secret: CLIENT_SECRET
+    };
+&nbsp;
+    const data = <span class="cstat-no" title="statement not covered" >await oauthRepository.postGitHubInfo(GITHUB_ACCESS_TOKEN_URL,params);</span>
+&nbsp;
+    const parsedData = <span class="cstat-no" title="statement not covered" >qs.parse(data);</span>
+    const user = <span class="cstat-no" title="statement not covered" >await fetchUser(parsedData.access_token);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return user;</span>
+}
+&nbsp;
+async function <span class="fstat-no" title="function not covered" >fetchUser(</span>token: string | (string | null)[] | null): Promise&lt;any&gt; { 
+    const data = <span class="cstat-no" title="statement not covered" >await oauthRepository.getGitHubInfo(token);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return data;</span>
+}</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->

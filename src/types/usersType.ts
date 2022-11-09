@@ -17,3 +17,8 @@ export interface signIn {
 } 
 
 export type userData = Omit<users, 'createdAt' | 'email' | 'password'>
+
+export interface tokenType { 
+    user: object;
+    token: string;
+}
