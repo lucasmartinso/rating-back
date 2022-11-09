@@ -1,4 +1,4 @@
-import { signIn, signUp } from "../../../src/types/usersType";
+import { signIn, signUp, tokenType } from "../../../src/types/usersType";
 import { __createUser } from "../../factories/sign-up-factory";
 import serverSupertest from "../../jestConfig";
 import httpStatus from 'http-status';
@@ -21,7 +21,7 @@ describe('TEST POST /sign-in', () => {
         }
 
         await server.post('/sign-up').send(userData);
-        const { status, body }: { status: number, body:any } = await server.post('/login').send(loginData);
+        const { status, body }: { status: number, body: tokenType } = await server.post('/login').send(loginData);
         console.log(body);
     
         expect(status).toBe(httpStatus.OK);
