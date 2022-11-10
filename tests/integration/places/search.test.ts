@@ -41,13 +41,13 @@ describe('TEST POST /places/search', () => {
         const placeData: placeInfo = await __createRestaurant();
         const token: string = await __createToken();
         const badSearch: string = faker.lorem.paragraph();
+        const errorMessage: string = 'Any place was found'
 
         await server.post('/places/create').set("Authorization",token).send(placeData);
-        const { status, text, body }: { status: number, text: string, body: foodPlaces[] } = await server.post(`/places/search?name=${badSearch}`).send({});
-        console.log(body)
+        const { status, text }: { status: number, text: string } = await server.post(`/places/search?name=${badSearch}`).send({});
 
         expect(status).toBe(httpStatus.NOT_FOUND);
-        expect(text).toBe()
+        expect(text).toBe(errorMessage);
     });
 })
 
