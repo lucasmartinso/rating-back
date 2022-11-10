@@ -15,7 +15,7 @@ beforeEach( async() => {
 });
 
 describe('TEST POST /places/:id', () => { 
-    it.todo('Should answer 200 and return place info in the corretly format, if it exists', async() => { 
+    /*it.todo('Should answer 200 and return place info in the corretly format, if it exists', async() => { 
         const placeData: placeInfo = await __createRestaurant();
         const token: string = await __createToken();
 
@@ -24,7 +24,7 @@ describe('TEST POST /places/:id', () => {
         const { status, body }: { status: number, body: any } = await server.get('/places/').send({});
 
         expect(status).toBe(httpStatus.OK);
-    });
+    });*/
 
     it(`Should answer 404, if that send a place's id that doesn't exists`, async() => {
         const randomId: number = Number(faker.random.numeric());
