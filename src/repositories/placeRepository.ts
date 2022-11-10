@@ -26,6 +26,18 @@ export async function existName(name: string): Promise<foodPlaces | null> {
     return foodPlace;
 }
 
+export async function existAddress(address: string): Promise<foodPlaces | null> { 
+    const foodPlace: foodPlaces | null = await prisma.foodPlaces.findUnique({where: {address}});
+
+    return foodPlace;
+}
+
+export async function existWebsite(website: string): Promise<foodPlaces | null> { 
+    const foodPlace: foodPlaces | null = await prisma.foodPlaces.findUnique({where: {website}});
+
+    return foodPlace;
+}
+
 export async function createPlace(placeData: Omit<foodPlaces, 'id' | 'score' | 'verify'>) { 
     await prisma.foodPlaces.create({data : placeData})
 }

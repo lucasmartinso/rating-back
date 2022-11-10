@@ -43,6 +43,8 @@ export async function createPlace(placeData: placeInfo): Promise<void> {
     const typeId: number = await verifyType(placeData.type);
 
     await verifyName(placeData.name);
+    await verifyAddress(placeData.address);
+    if(placeData.website) await verifyWebsite(placeData.website);
 
     const place: Omit<foodPlaces, 'id' | 'score' | 'verify'> = { 
       name: placeData.name,
