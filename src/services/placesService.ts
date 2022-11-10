@@ -62,7 +62,7 @@ export async function createPlace(placeData: placeInfo): Promise<void> {
 async function findPlace(id: number): Promise<boolean> { 
   const place: foodPlaces | null = await placeRepository.findPlace(id);
 
-  if(!place) throw { type: "Not Found", message:"This place isn't registred at the database"}
+  if(!place) throw { type: "Not Found", message:"This place isn't registred at database"}
 
   return place.verify;
 }
@@ -85,6 +85,7 @@ export async function updateDescription(id: number,description: string) {
 }
 
 export async function getPlaceWithRatings(placeId: number): Promise<any> {
+  await findPlace(placeId);
   const place: any[] = await placeRepository.getPlaceWithComments(placeId);
 
   if(place.length !== 0) {

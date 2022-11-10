@@ -13,7 +13,7 @@ beforeEach( async() => {
 });
 
 describe('TEST POST /sign-in', () => {
-    it('Should answer 200, if the user send the corretly schema', async () => { 
+    it('Should answer 200 and return user info corretly, if the user send the corretly schema', async () => { 
         const userData: signUp = await __createUser();
         const loginData: signIn = {
             usernameEmail: userData.email,

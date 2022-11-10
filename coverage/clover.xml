@@ -1,73 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668106634010" clover="3.2.0">
-  <project timestamp="1668106634010" name="All files">
-    <metrics statements="610" coveredstatements="351" conditionals="105" coveredconditionals="37" methods="111" coveredmethods="38" elements="826" coveredelements="426" complexity="0" loc="610" ncloc="610" packages="10" files="35" classes="35"/>
+<coverage generated="1668108142468" clover="3.2.0">
+  <project timestamp="1668108142469" name="All files">
+    <metrics statements="610" coveredstatements="364" conditionals="105" coveredconditionals="37" methods="111" coveredmethods="43" elements="826" coveredelements="444" complexity="0" loc="610" ncloc="610" packages="10" files="35" classes="35"/>
     <package name="src">
       <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.ts" path="/home/lucas/projetos/rating-backend/src/index.ts">
         <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
-        <line num="5" count="8" type="stmt"/>
-        <line num="6" count="8" type="stmt"/>
-        <line num="7" count="8" type="stmt"/>
-        <line num="9" count="8" type="stmt"/>
-        <line num="10" count="8" type="stmt"/>
-        <line num="11" count="8" type="stmt"/>
-        <line num="13" count="8" type="stmt"/>
-        <line num="14" count="8" type="stmt"/>
-        <line num="16" count="8" type="stmt"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="3" count="9" type="stmt"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="5" count="9" type="stmt"/>
+        <line num="6" count="9" type="stmt"/>
+        <line num="7" count="9" type="stmt"/>
+        <line num="9" count="9" type="stmt"/>
+        <line num="10" count="9" type="stmt"/>
+        <line num="11" count="9" type="stmt"/>
+        <line num="13" count="9" type="stmt"/>
+        <line num="14" count="9" type="stmt"/>
+        <line num="16" count="9" type="stmt"/>
       </file>
     </package>
     <package name="src.controllers">
-      <metrics statements="92" coveredstatements="39" conditionals="2" coveredconditionals="0" methods="21" coveredmethods="5"/>
+      <metrics statements="92" coveredstatements="41" conditionals="2" coveredconditionals="0" methods="21" coveredmethods="6"/>
       <file name="placesController.ts" path="/home/lucas/projetos/rating-backend/src/controllers/placesController.ts">
         <metrics statements="38" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="1"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="7" count="8" type="stmt"/>
-        <line num="8" count="9" type="stmt"/>
-        <line num="10" count="9" type="stmt"/>
-        <line num="11" count="4" type="stmt"/>
-        <line num="14" count="8" type="stmt"/>
+        <line num="3" count="9" type="stmt"/>
+        <line num="7" count="9" type="stmt"/>
+        <line num="8" count="10" type="stmt"/>
+        <line num="10" count="10" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
+        <line num="14" count="9" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
-        <line num="22" count="8" type="stmt"/>
+        <line num="22" count="9" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
-        <line num="31" count="8" type="stmt"/>
+        <line num="31" count="9" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
         <line num="37" count="0" type="stmt"/>
-        <line num="40" count="8" type="stmt"/>
+        <line num="40" count="9" type="stmt"/>
         <line num="41" count="0" type="stmt"/>
         <line num="43" count="0" type="stmt"/>
         <line num="45" count="0" type="stmt"/>
-        <line num="48" count="8" type="stmt"/>
+        <line num="48" count="9" type="stmt"/>
         <line num="49" count="0" type="stmt"/>
         <line num="50" count="0" type="stmt"/>
         <line num="52" count="0" type="stmt"/>
-        <line num="55" count="8" type="stmt"/>
+        <line num="55" count="9" type="stmt"/>
         <line num="56" count="0" type="stmt"/>
         <line num="58" count="0" type="stmt"/>
-        <line num="61" count="8" type="stmt"/>
+        <line num="61" count="9" type="stmt"/>
         <line num="62" count="0" type="stmt"/>
         <line num="63" count="0" type="stmt"/>
         <line num="65" count="0" type="stmt"/>
         <line num="67" count="0" type="stmt"/>
-        <line num="70" count="8" type="stmt"/>
+        <line num="70" count="9" type="stmt"/>
         <line num="71" count="0" type="stmt"/>
         <line num="73" count="0" type="stmt"/>
       </file>
       <file name="ratingController.ts" path="/home/lucas/projetos/rating-backend/src/controllers/ratingController.ts">
-        <metrics statements="32" coveredstatements="8" conditionals="2" coveredconditionals="0" methods="7" coveredmethods="0"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="6" count="8" type="stmt"/>
+        <metrics statements="32" coveredstatements="10" conditionals="2" coveredconditionals="0" methods="7" coveredmethods="1"/>
+        <line num="3" count="9" type="stmt"/>
+        <line num="6" count="9" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
@@ -75,53 +75,53 @@
         <line num="20" count="0" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
-        <line num="25" count="8" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="31" count="8" type="stmt"/>
+        <line num="25" count="9" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="31" count="9" type="stmt"/>
         <line num="32" count="0" type="stmt"/>
         <line num="33" count="0" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
-        <line num="38" count="8" type="stmt"/>
+        <line num="38" count="9" type="stmt"/>
         <line num="39" count="0" type="stmt"/>
         <line num="40" count="0" type="stmt"/>
         <line num="42" count="0" type="stmt"/>
-        <line num="45" count="8" type="stmt"/>
+        <line num="45" count="9" type="stmt"/>
         <line num="46" count="0" type="stmt"/>
         <line num="47" count="0" type="stmt"/>
         <line num="49" count="0" type="stmt"/>
-        <line num="52" count="8" type="stmt"/>
+        <line num="52" count="9" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
         <line num="54" count="0" type="stmt"/>
         <line num="56" count="0" type="stmt"/>
-        <line num="59" count="8" type="stmt"/>
+        <line num="59" count="9" type="stmt"/>
         <line num="60" count="0" type="stmt"/>
         <line num="61" count="0" type="stmt"/>
         <line num="63" count="0" type="stmt"/>
       </file>
       <file name="usersController.ts" path="/home/lucas/projetos/rating-backend/src/controllers/usersController.ts">
         <metrics statements="22" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="4"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
-        <line num="6" count="8" type="stmt"/>
-        <line num="7" count="19" type="stmt"/>
-        <line num="9" count="19" type="stmt"/>
-        <line num="11" count="16" type="stmt"/>
-        <line num="14" count="8" type="stmt"/>
-        <line num="15" count="12" type="stmt"/>
-        <line num="17" count="12" type="stmt"/>
-        <line num="19" count="10" type="stmt"/>
-        <line num="22" count="8" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="6" count="9" type="stmt"/>
+        <line num="7" count="20" type="stmt"/>
+        <line num="9" count="20" type="stmt"/>
+        <line num="11" count="17" type="stmt"/>
+        <line num="14" count="9" type="stmt"/>
+        <line num="15" count="13" type="stmt"/>
+        <line num="17" count="13" type="stmt"/>
+        <line num="19" count="11" type="stmt"/>
+        <line num="22" count="9" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
         <line num="26" count="0" type="stmt"/>
         <line num="28" count="0" type="stmt"/>
-        <line num="31" count="8" type="stmt"/>
+        <line num="31" count="9" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
         <line num="33" count="1" type="stmt"/>
         <line num="35" count="1" type="stmt"/>
         <line num="36" count="1" type="stmt"/>
-        <line num="39" count="8" type="stmt"/>
+        <line num="39" count="9" type="stmt"/>
         <line num="40" count="1" type="stmt"/>
       </file>
     </package>
@@ -129,53 +129,53 @@
       <metrics statements="18" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="postgres.ts" path="/home/lucas/projetos/rating-backend/src/databases/postgres.ts">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
-        <line num="5" count="8" type="stmt"/>
-        <line num="7" count="8" type="stmt"/>
-        <line num="14" count="8" type="stmt"/>
-        <line num="15" count="8" type="stmt"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="5" count="9" type="stmt"/>
+        <line num="7" count="9" type="stmt"/>
+        <line num="14" count="9" type="stmt"/>
+        <line num="15" count="9" type="stmt"/>
       </file>
       <file name="prisma.ts" path="/home/lucas/projetos/rating-backend/src/databases/prisma.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="9" type="stmt"/>
-        <line num="3" count="9" type="stmt"/>
-        <line num="4" count="9" type="stmt"/>
-        <line num="5" count="9" type="stmt"/>
+        <line num="1" count="10" type="stmt"/>
+        <line num="3" count="10" type="stmt"/>
+        <line num="4" count="10" type="stmt"/>
+        <line num="5" count="10" type="stmt"/>
       </file>
       <file name="redis.ts" path="/home/lucas/projetos/rating-backend/src/databases/redis.ts">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
-        <line num="6" count="8" type="stmt"/>
-        <line num="14" count="8" type="stmt"/>
-        <line num="17" count="8" type="stmt"/>
-        <line num="19" count="8" type="stmt"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="6" count="9" type="stmt"/>
+        <line num="14" count="9" type="stmt"/>
+        <line num="17" count="9" type="stmt"/>
+        <line num="19" count="9" type="stmt"/>
       </file>
     </package>
     <package name="src.middlewares">
       <metrics statements="32" coveredstatements="29" conditionals="19" coveredconditionals="16" methods="4" coveredmethods="4"/>
       <file name="authMiddleware.ts" path="/home/lucas/projetos/rating-backend/src/middlewares/authMiddleware.ts">
         <metrics statements="13" coveredstatements="13" conditionals="9" coveredconditionals="8" methods="1" coveredmethods="1"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
-        <line num="6" count="8" type="stmt"/>
-        <line num="7" count="13" type="stmt"/>
-        <line num="8" count="13" type="cond" truecount="4" falsecount="0"/>
-        <line num="10" count="13" type="cond" truecount="1" falsecount="0"/>
-        <line num="12" count="12" type="stmt"/>
-        <line num="13" count="12" type="cond" truecount="3" falsecount="1"/>
-        <line num="14" count="12" type="stmt"/>
-        <line num="15" count="11" type="stmt"/>
-        <line num="16" count="11" type="stmt"/>
-        <line num="17" count="11" type="stmt"/>
+        <line num="3" count="9" type="stmt"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="6" count="9" type="stmt"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="8" count="14" type="cond" truecount="4" falsecount="0"/>
+        <line num="10" count="14" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="13" type="stmt"/>
+        <line num="13" count="13" type="cond" truecount="3" falsecount="1"/>
+        <line num="14" count="13" type="stmt"/>
+        <line num="15" count="12" type="stmt"/>
+        <line num="16" count="12" type="stmt"/>
+        <line num="17" count="12" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
       </file>
       <file name="errorHandler.ts" path="/home/lucas/projetos/rating-backend/src/middlewares/errorHandler.ts">
         <metrics statements="13" coveredstatements="10" conditionals="9" coveredconditionals="7" methods="1" coveredmethods="1"/>
-        <line num="3" count="8" type="stmt"/>
+        <line num="3" count="9" type="stmt"/>
         <line num="4" count="20" type="stmt"/>
         <line num="5" count="20" type="cond" truecount="2" falsecount="0"/>
         <line num="6" count="8" type="stmt"/>
@@ -191,172 +191,172 @@
       </file>
       <file name="schemasValidator.ts" path="/home/lucas/projetos/rating-backend/src/middlewares/schemasValidator.ts">
         <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
-        <line num="4" count="8" type="stmt"/>
-        <line num="5" count="56" type="stmt"/>
-        <line num="6" count="51" type="stmt"/>
-        <line num="8" count="51" type="cond" truecount="1" falsecount="0"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="5" count="63" type="stmt"/>
+        <line num="6" count="54" type="stmt"/>
+        <line num="8" count="54" type="cond" truecount="1" falsecount="0"/>
         <line num="9" count="8" type="stmt"/>
-        <line num="11" count="43" type="stmt"/>
+        <line num="11" count="46" type="stmt"/>
       </file>
     </package>
     <package name="src.repositories">
-      <metrics statements="128" coveredstatements="77" conditionals="0" coveredconditionals="0" methods="39" coveredmethods="11"/>
+      <metrics statements="128" coveredstatements="81" conditionals="0" coveredconditionals="0" methods="39" coveredmethods="13"/>
       <file name="attendanceRepository.ts" path="/home/lucas/projetos/rating-backend/src/repositories/attendanceRepository.ts">
         <metrics statements="8" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="4" count="9" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
-        <line num="12" count="8" type="stmt"/>
+        <line num="12" count="9" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
       </file>
       <file name="enviromentRepository.ts" path="/home/lucas/projetos/rating-backend/src/repositories/enviromentRepository.ts">
         <metrics statements="8" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="4" count="9" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
-        <line num="12" count="8" type="stmt"/>
+        <line num="12" count="9" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
       </file>
       <file name="foodRepository.ts" path="/home/lucas/projetos/rating-backend/src/repositories/foodRepository.ts">
         <metrics statements="8" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="4" count="9" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
-        <line num="12" count="8" type="stmt"/>
+        <line num="12" count="9" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
       </file>
       <file name="foodTypeRepository.ts" path="/home/lucas/projetos/rating-backend/src/repositories/foodTypeRepository.ts">
         <metrics statements="8" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="5" count="8" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="3" count="9" type="stmt"/>
+        <line num="5" count="9" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
-        <line num="18" count="8" type="stmt"/>
+        <line num="18" count="9" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
       </file>
       <file name="localizationRepository.ts" path="/home/lucas/projetos/rating-backend/src/repositories/localizationRepository.ts">
         <metrics statements="8" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="5" count="8" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="3" count="9" type="stmt"/>
+        <line num="5" count="9" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
-        <line num="11" count="8" type="stmt"/>
+        <line num="11" count="9" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
       </file>
       <file name="oauthRepository.ts" path="/home/lucas/projetos/rating-backend/src/repositories/oauthRepository.ts">
         <metrics statements="7" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="3" count="9" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
-        <line num="13" count="8" type="stmt"/>
+        <line num="13" count="9" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
       </file>
       <file name="placeRepository.ts" path="/home/lucas/projetos/rating-backend/src/repositories/placeRepository.ts">
         <metrics statements="37" coveredstatements="26" conditionals="0" coveredconditionals="0" methods="13" coveredmethods="6"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="5" count="8" type="stmt"/>
-        <line num="6" count="9" type="stmt"/>
-        <line num="8" count="9" type="stmt"/>
-        <line num="11" count="8" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="3" count="9" type="stmt"/>
+        <line num="5" count="9" type="stmt"/>
+        <line num="6" count="10" type="stmt"/>
+        <line num="8" count="10" type="stmt"/>
+        <line num="11" count="9" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
-        <line num="17" count="8" type="stmt"/>
-        <line num="18" count="8" type="stmt"/>
-        <line num="20" count="8" type="stmt"/>
-        <line num="23" count="8" type="stmt"/>
-        <line num="24" count="7" type="stmt"/>
-        <line num="26" count="7" type="stmt"/>
-        <line num="29" count="8" type="stmt"/>
-        <line num="30" count="6" type="stmt"/>
-        <line num="32" count="6" type="stmt"/>
-        <line num="35" count="8" type="stmt"/>
-        <line num="36" count="5" type="stmt"/>
-        <line num="38" count="5" type="stmt"/>
-        <line num="41" count="8" type="stmt"/>
-        <line num="42" count="4" type="stmt"/>
-        <line num="45" count="8" type="stmt"/>
+        <line num="17" count="9" type="stmt"/>
+        <line num="18" count="9" type="stmt"/>
+        <line num="20" count="9" type="stmt"/>
+        <line num="23" count="9" type="stmt"/>
+        <line num="24" count="8" type="stmt"/>
+        <line num="26" count="8" type="stmt"/>
+        <line num="29" count="9" type="stmt"/>
+        <line num="30" count="7" type="stmt"/>
+        <line num="32" count="7" type="stmt"/>
+        <line num="35" count="9" type="stmt"/>
+        <line num="36" count="6" type="stmt"/>
+        <line num="38" count="6" type="stmt"/>
+        <line num="41" count="9" type="stmt"/>
+        <line num="42" count="5" type="stmt"/>
+        <line num="45" count="9" type="stmt"/>
         <line num="46" count="0" type="stmt"/>
         <line num="48" count="0" type="stmt"/>
-        <line num="51" count="8" type="stmt"/>
+        <line num="51" count="9" type="stmt"/>
         <line num="52" count="0" type="stmt"/>
-        <line num="55" count="8" type="stmt"/>
+        <line num="55" count="9" type="stmt"/>
         <line num="56" count="0" type="stmt"/>
-        <line num="59" count="8" type="stmt"/>
+        <line num="59" count="9" type="stmt"/>
         <line num="60" count="0" type="stmt"/>
-        <line num="63" count="8" type="stmt"/>
+        <line num="63" count="9" type="stmt"/>
         <line num="64" count="0" type="stmt"/>
         <line num="100" count="0" type="stmt"/>
-        <line num="103" count="8" type="stmt"/>
+        <line num="103" count="9" type="stmt"/>
         <line num="104" count="0" type="stmt"/>
         <line num="110" count="0" type="stmt"/>
       </file>
       <file name="priceRepository.ts" path="/home/lucas/projetos/rating-backend/src/repositories/priceRepository.ts">
         <metrics statements="8" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="4" count="9" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
-        <line num="12" count="8" type="stmt"/>
+        <line num="12" count="9" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
       </file>
       <file name="ratingRepository.ts" path="/home/lucas/projetos/rating-backend/src/repositories/ratingRepository.ts">
-        <metrics statements="22" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="0"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
-        <line num="6" count="8" type="stmt"/>
+        <metrics statements="22" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="2"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="3" count="9" type="stmt"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="6" count="9" type="stmt"/>
         <line num="7" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
-        <line num="12" count="8" type="stmt"/>
+        <line num="12" count="9" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
-        <line num="18" count="8" type="stmt"/>
+        <line num="18" count="9" type="stmt"/>
         <line num="19" count="0" type="stmt"/>
-        <line num="22" count="8" type="stmt"/>
+        <line num="22" count="9" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="25" count="0" type="stmt"/>
-        <line num="28" count="8" type="stmt"/>
+        <line num="28" count="9" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
-        <line num="32" count="8" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="40" count="8" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
+        <line num="32" count="9" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="40" count="9" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
       </file>
       <file name="usersRepository.ts" path="/home/lucas/projetos/rating-backend/src/repositories/usersRepository.ts">
         <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
-        <line num="2" count="9" type="stmt"/>
-        <line num="5" count="9" type="stmt"/>
-        <line num="6" count="16" type="stmt"/>
-        <line num="9" count="9" type="stmt"/>
-        <line num="10" count="30" type="stmt"/>
-        <line num="12" count="30" type="stmt"/>
-        <line num="15" count="9" type="stmt"/>
-        <line num="16" count="29" type="stmt"/>
-        <line num="18" count="29" type="stmt"/>
-        <line num="21" count="9" type="stmt"/>
-        <line num="22" count="11" type="stmt"/>
-        <line num="24" count="11" type="stmt"/>
-        <line num="27" count="9" type="stmt"/>
+        <line num="2" count="10" type="stmt"/>
+        <line num="5" count="10" type="stmt"/>
+        <line num="6" count="17" type="stmt"/>
+        <line num="9" count="10" type="stmt"/>
+        <line num="10" count="32" type="stmt"/>
+        <line num="12" count="32" type="stmt"/>
+        <line num="15" count="10" type="stmt"/>
+        <line num="16" count="31" type="stmt"/>
+        <line num="18" count="31" type="stmt"/>
+        <line num="21" count="10" type="stmt"/>
+        <line num="22" count="12" type="stmt"/>
+        <line num="24" count="12" type="stmt"/>
+        <line num="27" count="10" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
       </file>
     </package>
@@ -364,108 +364,108 @@
       <metrics statements="57" coveredstatements="57" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="localizationRouter.ts" path="/home/lucas/projetos/rating-backend/src/routers/localizationRouter.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
-        <line num="6" count="8" type="stmt"/>
-        <line num="7" count="8" type="stmt"/>
-        <line num="9" count="8" type="stmt"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="6" count="9" type="stmt"/>
+        <line num="7" count="9" type="stmt"/>
+        <line num="9" count="9" type="stmt"/>
       </file>
       <file name="placesRouter.ts" path="/home/lucas/projetos/rating-backend/src/routers/placesRouter.ts">
         <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
-        <line num="5" count="8" type="stmt"/>
-        <line num="7" count="8" type="stmt"/>
-        <line num="9" count="8" type="stmt"/>
-        <line num="10" count="8" type="stmt"/>
-        <line num="11" count="8" type="stmt"/>
-        <line num="12" count="8" type="stmt"/>
-        <line num="13" count="8" type="stmt"/>
-        <line num="14" count="8" type="stmt"/>
-        <line num="15" count="8" type="stmt"/>
-        <line num="17" count="8" type="stmt"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="3" count="9" type="stmt"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="5" count="9" type="stmt"/>
+        <line num="7" count="9" type="stmt"/>
+        <line num="9" count="9" type="stmt"/>
+        <line num="10" count="9" type="stmt"/>
+        <line num="11" count="9" type="stmt"/>
+        <line num="12" count="9" type="stmt"/>
+        <line num="13" count="9" type="stmt"/>
+        <line num="14" count="9" type="stmt"/>
+        <line num="15" count="9" type="stmt"/>
+        <line num="17" count="9" type="stmt"/>
       </file>
       <file name="ratingRouter.ts" path="/home/lucas/projetos/rating-backend/src/routers/ratingRouter.ts">
         <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
-        <line num="5" count="8" type="stmt"/>
-        <line num="7" count="8" type="stmt"/>
-        <line num="9" count="8" type="stmt"/>
-        <line num="10" count="8" type="stmt"/>
-        <line num="11" count="8" type="stmt"/>
-        <line num="12" count="8" type="stmt"/>
-        <line num="13" count="8" type="stmt"/>
-        <line num="14" count="8" type="stmt"/>
-        <line num="15" count="8" type="stmt"/>
-        <line num="17" count="8" type="stmt"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="3" count="9" type="stmt"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="5" count="9" type="stmt"/>
+        <line num="7" count="9" type="stmt"/>
+        <line num="9" count="9" type="stmt"/>
+        <line num="10" count="9" type="stmt"/>
+        <line num="11" count="9" type="stmt"/>
+        <line num="12" count="9" type="stmt"/>
+        <line num="13" count="9" type="stmt"/>
+        <line num="14" count="9" type="stmt"/>
+        <line num="15" count="9" type="stmt"/>
+        <line num="17" count="9" type="stmt"/>
       </file>
       <file name="routers.ts" path="/home/lucas/projetos/rating-backend/src/routers/routers.ts">
         <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
-        <line num="5" count="8" type="stmt"/>
-        <line num="7" count="8" type="stmt"/>
-        <line num="9" count="8" type="stmt"/>
-        <line num="10" count="8" type="stmt"/>
-        <line num="11" count="8" type="stmt"/>
-        <line num="12" count="8" type="stmt"/>
-        <line num="14" count="8" type="stmt"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="3" count="9" type="stmt"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="5" count="9" type="stmt"/>
+        <line num="7" count="9" type="stmt"/>
+        <line num="9" count="9" type="stmt"/>
+        <line num="10" count="9" type="stmt"/>
+        <line num="11" count="9" type="stmt"/>
+        <line num="12" count="9" type="stmt"/>
+        <line num="14" count="9" type="stmt"/>
       </file>
       <file name="usersRouter.ts" path="/home/lucas/projetos/rating-backend/src/routers/usersRouter.ts">
         <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
-        <line num="5" count="8" type="stmt"/>
-        <line num="7" count="8" type="stmt"/>
-        <line num="9" count="8" type="stmt"/>
-        <line num="10" count="8" type="stmt"/>
-        <line num="11" count="8" type="stmt"/>
-        <line num="12" count="8" type="stmt"/>
-        <line num="13" count="8" type="stmt"/>
-        <line num="15" count="8" type="stmt"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="3" count="9" type="stmt"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="5" count="9" type="stmt"/>
+        <line num="7" count="9" type="stmt"/>
+        <line num="9" count="9" type="stmt"/>
+        <line num="10" count="9" type="stmt"/>
+        <line num="11" count="9" type="stmt"/>
+        <line num="12" count="9" type="stmt"/>
+        <line num="13" count="9" type="stmt"/>
+        <line num="15" count="9" type="stmt"/>
       </file>
     </package>
     <package name="src.schemas">
       <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="placesSchema.ts" path="/home/lucas/projetos/rating-backend/src/schemas/placesSchema.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="13" count="8" type="stmt"/>
-        <line num="17" count="8" type="stmt"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="3" count="9" type="stmt"/>
+        <line num="13" count="9" type="stmt"/>
+        <line num="17" count="9" type="stmt"/>
       </file>
       <file name="ratingSchema.ts" path="/home/lucas/projetos/rating-backend/src/schemas/ratingSchema.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="3" count="9" type="stmt"/>
       </file>
       <file name="usersSchema.ts" path="/home/lucas/projetos/rating-backend/src/schemas/usersSchema.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="12" count="8" type="stmt"/>
-        <line num="17" count="8" type="stmt"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="3" count="9" type="stmt"/>
+        <line num="12" count="9" type="stmt"/>
+        <line num="17" count="9" type="stmt"/>
       </file>
     </package>
     <package name="src.services">
-      <metrics statements="231" coveredstatements="99" conditionals="71" coveredconditionals="21" methods="41" coveredmethods="15"/>
+      <metrics statements="231" coveredstatements="106" conditionals="71" coveredconditionals="21" methods="41" coveredmethods="17"/>
       <file name="oauthServices.ts" path="/home/lucas/projetos/rating-backend/src/services/oauthServices.ts">
         <metrics statements="14" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="5" count="8" type="stmt"/>
-        <line num="7" count="8" type="stmt"/>
+        <line num="1" count="9" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="3" count="9" type="stmt"/>
+        <line num="5" count="9" type="stmt"/>
+        <line num="7" count="9" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
         <line num="10" count="0" type="stmt"/>
@@ -478,43 +478,43 @@
       </file>
       <file name="placesService.ts" path="/home/lucas/projetos/rating-backend/src/services/placesService.ts">
         <metrics statements="59" coveredstatements="31" conditionals="24" coveredconditionals="8" methods="16" coveredmethods="6"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
-        <line num="8" count="9" type="stmt"/>
-        <line num="10" count="9" type="cond" truecount="1" falsecount="0"/>
-        <line num="12" count="8" type="stmt"/>
-        <line num="16" count="8" type="stmt"/>
-        <line num="18" count="8" type="cond" truecount="1" falsecount="0"/>
-        <line num="20" count="7" type="stmt"/>
-        <line num="24" count="7" type="stmt"/>
-        <line num="26" count="7" type="cond" truecount="1" falsecount="0"/>
-        <line num="30" count="6" type="stmt"/>
-        <line num="32" count="6" type="cond" truecount="1" falsecount="0"/>
-        <line num="36" count="5" type="stmt"/>
-        <line num="38" count="5" type="cond" truecount="1" falsecount="0"/>
-        <line num="41" count="8" type="stmt"/>
-        <line num="42" count="9" type="stmt"/>
-        <line num="43" count="8" type="stmt"/>
-        <line num="45" count="7" type="stmt"/>
-        <line num="46" count="6" type="stmt"/>
-        <line num="47" count="5" type="cond" truecount="1" falsecount="0"/>
-        <line num="49" count="4" type="stmt"/>
-        <line num="59" count="4" type="stmt"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="3" count="9" type="stmt"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="8" count="10" type="stmt"/>
+        <line num="10" count="10" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="9" type="stmt"/>
+        <line num="16" count="9" type="stmt"/>
+        <line num="18" count="9" type="cond" truecount="1" falsecount="0"/>
+        <line num="20" count="8" type="stmt"/>
+        <line num="24" count="8" type="stmt"/>
+        <line num="26" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="30" count="7" type="stmt"/>
+        <line num="32" count="7" type="cond" truecount="1" falsecount="0"/>
+        <line num="36" count="6" type="stmt"/>
+        <line num="38" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="41" count="9" type="stmt"/>
+        <line num="42" count="10" type="stmt"/>
+        <line num="43" count="9" type="stmt"/>
+        <line num="45" count="8" type="stmt"/>
+        <line num="46" count="7" type="stmt"/>
+        <line num="47" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="49" count="5" type="stmt"/>
+        <line num="59" count="5" type="stmt"/>
         <line num="63" count="0" type="stmt"/>
         <line num="65" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="67" count="0" type="stmt"/>
-        <line num="70" count="8" type="stmt"/>
+        <line num="70" count="9" type="stmt"/>
         <line num="71" count="0" type="stmt"/>
         <line num="72" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="74" count="0" type="stmt"/>
-        <line num="77" count="8" type="stmt"/>
+        <line num="77" count="9" type="stmt"/>
         <line num="78" count="0" type="stmt"/>
         <line num="79" count="0" type="stmt"/>
-        <line num="82" count="8" type="stmt"/>
+        <line num="82" count="9" type="stmt"/>
         <line num="83" count="0" type="stmt"/>
         <line num="84" count="0" type="stmt"/>
-        <line num="87" count="8" type="stmt"/>
+        <line num="87" count="9" type="stmt"/>
         <line num="88" count="0" type="stmt"/>
         <line num="90" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="91" count="0" type="stmt"/>
@@ -524,33 +524,33 @@
         <line num="96" count="0" type="stmt"/>
         <line num="97" count="0" type="cond" truecount="0" falsecount="4"/>
         <line num="99" count="0" type="stmt"/>
-        <line num="103" count="8" type="stmt"/>
+        <line num="103" count="9" type="stmt"/>
         <line num="104" count="0" type="stmt"/>
         <line num="106" count="0" type="stmt"/>
-        <line num="109" count="8" type="stmt"/>
+        <line num="109" count="9" type="stmt"/>
         <line num="110" count="0" type="stmt"/>
         <line num="112" count="0" type="stmt"/>
-        <line num="115" count="8" type="stmt"/>
+        <line num="115" count="9" type="stmt"/>
         <line num="116" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="117" count="0" type="stmt"/>
         <line num="119" count="0" type="stmt"/>
-        <line num="122" count="8" type="stmt"/>
+        <line num="122" count="9" type="stmt"/>
         <line num="123" count="0" type="stmt"/>
         <line num="125" count="0" type="stmt"/>
       </file>
       <file name="ratingService.ts" path="/home/lucas/projetos/rating-backend/src/services/ratingService.ts">
-        <metrics statements="114" coveredstatements="19" conditionals="33" coveredconditionals="0" methods="14" coveredmethods="0"/>
-        <line num="2" count="8" type="stmt"/>
-        <line num="3" count="8" type="stmt"/>
-        <line num="4" count="8" type="stmt"/>
-        <line num="5" count="8" type="stmt"/>
-        <line num="6" count="8" type="stmt"/>
-        <line num="7" count="8" type="stmt"/>
-        <line num="8" count="8" type="stmt"/>
-        <line num="9" count="8" type="stmt"/>
-        <line num="10" count="8" type="stmt"/>
-        <line num="11" count="8" type="stmt"/>
-        <line num="12" count="8" type="stmt"/>
+        <metrics statements="114" coveredstatements="26" conditionals="33" coveredconditionals="0" methods="14" coveredmethods="2"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="3" count="9" type="stmt"/>
+        <line num="4" count="9" type="stmt"/>
+        <line num="5" count="9" type="stmt"/>
+        <line num="6" count="9" type="stmt"/>
+        <line num="7" count="9" type="stmt"/>
+        <line num="8" count="9" type="stmt"/>
+        <line num="9" count="9" type="stmt"/>
+        <line num="10" count="9" type="stmt"/>
+        <line num="11" count="9" type="stmt"/>
+        <line num="12" count="9" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
         <line num="17" count="0" type="cond" truecount="0" falsecount="1"/>
         <line num="19" count="0" type="cond" truecount="0" falsecount="1"/>
@@ -567,13 +567,13 @@
         <line num="32" count="0" type="stmt"/>
         <line num="38" count="0" type="stmt"/>
         <line num="40" count="0" type="cond" truecount="0" falsecount="1"/>
-        <line num="43" count="8" type="stmt"/>
+        <line num="43" count="9" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
         <line num="45" count="0" type="stmt"/>
         <line num="46" count="0" type="stmt"/>
         <line num="48" count="0" type="stmt"/>
         <line num="50" count="0" type="stmt"/>
-        <line num="53" count="8" type="stmt"/>
+        <line num="53" count="9" type="stmt"/>
         <line num="54" count="0" type="stmt"/>
         <line num="55" count="0" type="stmt"/>
         <line num="56" count="0" type="stmt"/>
@@ -581,21 +581,21 @@
         <line num="59" count="0" type="stmt"/>
         <line num="60" count="0" type="stmt"/>
         <line num="61" count="0" type="stmt"/>
-        <line num="66" count="0" type="stmt"/>
-        <line num="67" count="0" type="stmt"/>
-        <line num="70" count="0" type="stmt"/>
-        <line num="73" count="8" type="stmt"/>
-        <line num="74" count="0" type="stmt"/>
-        <line num="75" count="0" type="stmt"/>
-        <line num="77" count="0" type="stmt"/>
-        <line num="79" count="0" type="stmt"/>
+        <line num="66" count="2" type="stmt"/>
+        <line num="67" count="2" type="stmt"/>
+        <line num="70" count="2" type="stmt"/>
+        <line num="73" count="9" type="stmt"/>
+        <line num="74" count="2" type="stmt"/>
+        <line num="75" count="2" type="stmt"/>
+        <line num="77" count="2" type="stmt"/>
+        <line num="79" count="2" type="stmt"/>
         <line num="83" count="0" type="stmt"/>
         <line num="85" count="0" type="stmt"/>
         <line num="89" count="0" type="stmt"/>
         <line num="91" count="0" type="stmt"/>
         <line num="95" count="0" type="stmt"/>
         <line num="97" count="0" type="stmt"/>
-        <line num="100" count="8" type="stmt"/>
+        <line num="100" count="9" type="stmt"/>
         <line num="101" count="0" type="stmt"/>
         <line num="102" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="103" count="0" type="stmt"/>
@@ -609,7 +609,7 @@
         <line num="117" count="0" type="stmt"/>
         <line num="118" count="0" type="stmt"/>
         <line num="119" count="0" type="stmt"/>
-        <line num="124" count="8" type="stmt"/>
+        <line num="124" count="9" type="stmt"/>
         <line num="125" count="0" type="stmt"/>
         <line num="126" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="127" count="0" type="stmt"/>
@@ -623,7 +623,7 @@
         <line num="138" count="0" type="stmt"/>
         <line num="139" count="0" type="stmt"/>
         <line num="140" count="0" type="stmt"/>
-        <line num="144" count="8" type="stmt"/>
+        <line num="144" count="9" type="stmt"/>
         <line num="145" count="0" type="stmt"/>
         <line num="146" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="147" count="0" type="stmt"/>
@@ -637,7 +637,7 @@
         <line num="158" count="0" type="stmt"/>
         <line num="159" count="0" type="stmt"/>
         <line num="160" count="0" type="stmt"/>
-        <line num="164" count="8" type="stmt"/>
+        <line num="164" count="9" type="stmt"/>
         <line num="165" count="0" type="stmt"/>
         <line num="166" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="167" count="0" type="stmt"/>
@@ -651,67 +651,67 @@
         <line num="178" count="0" type="stmt"/>
         <line num="179" count="0" type="stmt"/>
         <line num="180" count="0" type="stmt"/>
-        <line num="184" count="8" type="stmt"/>
+        <line num="184" count="9" type="stmt"/>
         <line num="185" count="0" type="stmt"/>
         <line num="187" count="0" type="stmt"/>
       </file>
       <file name="usersService.ts" path="/home/lucas/projetos/rating-backend/src/services/usersService.ts">
         <metrics statements="44" coveredstatements="44" conditionals="14" coveredconditionals="13" methods="9" coveredmethods="9"/>
-        <line num="2" count="9" type="stmt"/>
-        <line num="4" count="9" type="stmt"/>
-        <line num="5" count="9" type="stmt"/>
-        <line num="8" count="35" type="stmt"/>
-        <line num="10" count="35" type="stmt"/>
-        <line num="14" count="33" type="stmt"/>
-        <line num="16" count="33" type="stmt"/>
-        <line num="20" count="22" type="cond" truecount="1" falsecount="0"/>
-        <line num="23" count="9" type="stmt"/>
-        <line num="24" count="22" type="stmt"/>
-        <line num="26" count="21" type="stmt"/>
-        <line num="27" count="21" type="cond" truecount="1" falsecount="0"/>
-        <line num="29" count="19" type="stmt"/>
-        <line num="30" count="19" type="cond" truecount="1" falsecount="0"/>
-        <line num="32" count="17" type="stmt"/>
-        <line num="33" count="17" type="stmt"/>
-        <line num="35" count="17" type="stmt"/>
-        <line num="39" count="12" type="stmt"/>
-        <line num="41" count="12" type="cond" truecount="1" falsecount="0"/>
-        <line num="45" count="11" type="cond" truecount="3" falsecount="1"/>
-        <line num="46" count="11" type="stmt"/>
-        <line num="48" count="11" type="stmt"/>
-        <line num="54" count="11" type="stmt"/>
-        <line num="58" count="11" type="stmt"/>
-        <line num="60" count="11" type="stmt"/>
-        <line num="63" count="9" type="stmt"/>
-        <line num="64" count="14" type="stmt"/>
-        <line num="65" count="14" type="stmt"/>
-        <line num="67" count="14" type="cond" truecount="3" falsecount="0"/>
-        <line num="69" count="12" type="cond" truecount="2" falsecount="0"/>
-        <line num="70" count="11" type="stmt"/>
-        <line num="71" count="11" type="stmt"/>
-        <line num="72" count="10" type="stmt"/>
-        <line num="74" count="10" type="stmt"/>
+        <line num="2" count="10" type="stmt"/>
+        <line num="4" count="10" type="stmt"/>
+        <line num="5" count="10" type="stmt"/>
+        <line num="8" count="37" type="stmt"/>
+        <line num="10" count="37" type="stmt"/>
+        <line num="14" count="35" type="stmt"/>
+        <line num="16" count="35" type="stmt"/>
+        <line num="20" count="23" type="cond" truecount="1" falsecount="0"/>
+        <line num="23" count="10" type="stmt"/>
+        <line num="24" count="23" type="stmt"/>
+        <line num="26" count="22" type="stmt"/>
+        <line num="27" count="22" type="cond" truecount="1" falsecount="0"/>
+        <line num="29" count="20" type="stmt"/>
+        <line num="30" count="20" type="cond" truecount="1" falsecount="0"/>
+        <line num="32" count="18" type="stmt"/>
+        <line num="33" count="18" type="stmt"/>
+        <line num="35" count="18" type="stmt"/>
+        <line num="39" count="13" type="stmt"/>
+        <line num="41" count="13" type="cond" truecount="1" falsecount="0"/>
+        <line num="45" count="12" type="cond" truecount="3" falsecount="1"/>
+        <line num="46" count="12" type="stmt"/>
+        <line num="48" count="12" type="stmt"/>
+        <line num="54" count="12" type="stmt"/>
+        <line num="58" count="12" type="stmt"/>
+        <line num="60" count="12" type="stmt"/>
+        <line num="63" count="10" type="stmt"/>
+        <line num="64" count="15" type="stmt"/>
+        <line num="65" count="15" type="stmt"/>
+        <line num="67" count="15" type="cond" truecount="3" falsecount="0"/>
+        <line num="69" count="13" type="cond" truecount="2" falsecount="0"/>
+        <line num="70" count="12" type="stmt"/>
+        <line num="71" count="12" type="stmt"/>
+        <line num="72" count="11" type="stmt"/>
+        <line num="74" count="11" type="stmt"/>
         <line num="84" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="85" count="1" type="stmt"/>
         <line num="86" count="1" type="stmt"/>
         <line num="87" count="1" type="stmt"/>
         <line num="89" count="1" type="stmt"/>
-        <line num="101" count="9" type="stmt"/>
+        <line num="101" count="10" type="stmt"/>
         <line num="102" count="1" type="stmt"/>
-        <line num="109" count="17" type="stmt"/>
-        <line num="110" count="17" type="stmt"/>
-        <line num="112" count="17" type="stmt"/>
+        <line num="109" count="18" type="stmt"/>
+        <line num="110" count="18" type="stmt"/>
+        <line num="112" count="18" type="stmt"/>
       </file>
     </package>
     <package name="src.utils">
       <metrics statements="16" coveredstatements="2" conditionals="13" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="query.ts" path="/home/lucas/projetos/rating-backend/src/utils/query.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
+        <line num="1" count="9" type="stmt"/>
       </file>
       <file name="transformMonth.ts" path="/home/lucas/projetos/rating-backend/src/utils/transformMonth.ts">
         <metrics statements="15" coveredstatements="1" conditionals="13" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="1" count="8" type="stmt"/>
+        <line num="1" count="9" type="stmt"/>
         <line num="2" count="0" type="cond" truecount="0" falsecount="13"/>
         <line num="3" count="0" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
@@ -732,19 +732,19 @@
       <metrics statements="13" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
       <file name="crypts.ts" path="/home/lucas/projetos/rating-backend/src/utils/cripts/crypts.ts">
         <metrics statements="13" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
-        <line num="1" count="9" type="stmt"/>
-        <line num="2" count="9" type="stmt"/>
+        <line num="1" count="10" type="stmt"/>
+        <line num="2" count="10" type="stmt"/>
         <line num="5" count="0" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
-        <line num="19" count="17" type="stmt"/>
-        <line num="21" count="17" type="stmt"/>
-        <line num="25" count="11" type="stmt"/>
-        <line num="27" count="11" type="stmt"/>
-        <line num="30" count="9" type="stmt"/>
+        <line num="19" count="18" type="stmt"/>
+        <line num="21" count="18" type="stmt"/>
+        <line num="25" count="12" type="stmt"/>
+        <line num="27" count="12" type="stmt"/>
+        <line num="30" count="10" type="stmt"/>
       </file>
     </package>
   </project>
