@@ -13,8 +13,8 @@ beforeEach( async() => {
     await deleteAllData();
 });
 
-describe('TEST POST /places/:id', () => { 
-    it.todo('Should answer 200 and return place info in the corretly format, if it exists')/*, async() => { 
+describe('TEST PUT /places/:id/verify', () => { 
+    it.todo(`Should answer 200, if change restaurant's verify state`)/*, async() => { 
         const placeData: placeInfo = await __createRestaurant();
         const token: string = await __createToken();
 
@@ -24,16 +24,6 @@ describe('TEST POST /places/:id', () => {
 
         expect(status).toBe(httpStatus.OK);
     });*/
-
-    it(`Should answer 404, if that send a place's id that doesn't exists`, async() => {
-        const randomId: number = Number(faker.random.numeric());
-        const errorMessage: string = `This place isn't registred at database`
-
-        const { status, text }: { status: number, text: string } = await server.get(`/places/${randomId}`).send({});
-
-        expect(status).toBe(httpStatus.NOT_FOUND);
-        expect(text).toBe(errorMessage);
-    });
 });
 
 afterAll(async() => { 
