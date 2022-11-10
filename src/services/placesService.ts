@@ -69,7 +69,7 @@ async function findPlace(id: number): Promise<boolean> {
 
 export async function updateVerify(id: number) { 
   const verify: boolean = await findPlace(id);
-  if(verify) throw { type: "Bad Request", message:"This place is already verify"}
+  if(verify) throw { type: "Bad Request", message:"This place is already verify" }
 
   await placeRepository.updateVerify(id);
 }
@@ -103,6 +103,8 @@ export async function getPlaceWithRatings(placeId: number): Promise<any> {
 
 export async function search(name: string): Promise<any> { 
   const places: any = await placeRepository.searchPlace(name);
+
+  if(places.length === 0) throw { type: "Not Found", message:"Any place was found" }
 
   return places;
 }
