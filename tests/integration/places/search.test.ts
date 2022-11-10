@@ -37,7 +37,7 @@ describe('TEST POST /places/search', () => {
         expect(body[0]).toHaveProperty('verify');
     });
 
-    it(`Should answer 404, if restaurant's search is faill`, async() => { 
+    it(`Should answer 404, if restaurant's search is fail`, async() => { 
         const placeData: placeInfo = await __createRestaurant();
         const token: string = await __createToken();
         const badSearch: string = faker.lorem.paragraph();
