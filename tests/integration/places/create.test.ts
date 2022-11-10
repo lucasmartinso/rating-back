@@ -18,12 +18,15 @@ describe('TEST POST /places/create', () => {
     it('Should answer 200, if the user send the corretly schema', async() => { 
         const placeData: placeInfo = await __createRestaurant();
         const token: string = await __createToken();
-        console.log(placeData);
 
-        const { status }: { status: number } = await server.post('/sign-up').set("Authorization",token).send(placeData);
+        const { status }: { status: number } = await server.post('/places/create').set("Authorization",token).send(placeData);
 
-        expect(200).toBe(httpStatus.CREATED);
-    })
+        expect(status).toBe(httpStatus.CREATED);
+    });
+
+    it(`Should answer 409, if the user send the corretly schema but restaurant's already exist`, async() => {
+        
+    });
 })
 
 afterAll(async() => { 

@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/controllers/usersController.ts</title>
+    <title>Code coverage report for utils/cripts/crypts.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/controllers</a> usersController.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">utils/cripts</a> crypts.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">81.81% </span>
+                <span class="strong">38.46% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>18/22</span>
+                <span class='fraction'>5/13</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">25% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/5</span>
+                <span class='fraction'>1/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">81.81% </span>
+                <span class="strong">38.46% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>18/22</span>
+                <span class='fraction'>5/13</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -97,92 +97,74 @@
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a>
-<a name='L41'></a><a href='#L41'>41</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">11x</span>
+<a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Request, Response } from "express"
-import * as usersService from "../services/usersService"
-import { signIn, signUp, userData } from "../types/usersType";
-import * as oauthService from "../services/oauthServices";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Cryptr from "cryptr";
+import bcrypt from "bcrypt";
 &nbsp;
-export async function signup(req: Request, res: Response) { 
-    const userData: signUp = req.body;
+function <span class="fstat-no" title="function not covered" >encryptByCrypt(</span>infoDescrypt: string): string { 
+    const cryptr: Cryptr = <span class="cstat-no" title="statement not covered" >new Cryptr('myTotallySecretKey');</span>
+    const encrypt: string = <span class="cstat-no" title="statement not covered" >cryptr.encrypt(infoDescrypt);</span>
 &nbsp;
-    await usersService.signup(userData);
-&nbsp;
-    res.sendStatus(201);
-} 
-&nbsp;
-export async function login(req: Request, res: Response) { 
-    const { usernameEmail,password }: signIn = req.body;
-&nbsp;
-    const userData: {user: userData, token: string} | undefined = await usersService.login(usernameEmail,password);
-    
-    res.status(200).send(userData);
-} 
-&nbsp;
-export async function <span class="fstat-no" title="function not covered" >githubLogin(</span>req: Request, res: Response) { 
-    const code: any = <span class="cstat-no" title="statement not covered" >req.query.code;</span>
-    const user: any = <span class="cstat-no" title="statement not covered" >await oauthService.github(code);</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >    console.log(user);</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >    res.status(200).send({user});</span>
+<span class="cstat-no" title="statement not covered" >    return encrypt;</span>
 }
 &nbsp;
-export async function updateMainPhoto(req: Request, res: Response) { 
-    const { mainPhoto }: {mainPhoto: string} = req.body;
-    const { id }: {id:number} = res.locals.user;
+function <span class="fstat-no" title="function not covered" >descriptByCrypt(</span>infoEncrypt: string): string { 
+    const cryptr: Cryptr = <span class="cstat-no" title="statement not covered" >new Cryptr('myTotallySecretKey');</span>
+    const descrypt: string = <span class="cstat-no" title="statement not covered" >cryptr.decrypt(infoEncrypt); </span>
 &nbsp;
-    await usersService.updatePhoto(id,mainPhoto);
-    res.sendStatus(200);
-}
+<span class="cstat-no" title="statement not covered" >    return descrypt;</span>
+} 
 &nbsp;
-export async function verifyAuth(req: Request, res: Response) { 
-    res.status(200).send('Logged');
+function encriptByBcrypt(infoDescrypt: string): string {
+    const encrypt: string = bcrypt.hashSync(infoDescrypt, 10); 
+&nbsp;
+    return encrypt; 
+}  
+&nbsp;
+function <span class="fstat-no" title="function not covered" >descriptByBcrypt(</span>infoEncrypt: string, password: string): boolean {
+    const encrypt: boolean = <span class="cstat-no" title="statement not covered" >bcrypt.compareSync(password,infoEncrypt); </span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return encrypt; </span>
+} 
+&nbsp;
+export const crypts = { 
+    encriptByBcrypt,
+    encryptByCrypt,
+    descriptByBcrypt,
+    descriptByCrypt
 }</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -190,7 +172,7 @@ export async function verifyAuth(req: Request, res: Response) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-10T18:05:53.797Z
+                at 2022-11-10T18:05:09.863Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

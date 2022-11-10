@@ -1,7 +1,7 @@
 import joi from "joi"
 
 export const restaurantSchema = joi.object({
-    name: joi.string().pattern(/^[a-zA-Z0-9" ""-"".""?""@""!"","]{2,30}$/).required(), 
+    name: joi.string().min(2).max(30).required(), 
     description: joi.string(),
     website: joi.string().uri(),
     mainPhoto: joi.string().uri().required(),

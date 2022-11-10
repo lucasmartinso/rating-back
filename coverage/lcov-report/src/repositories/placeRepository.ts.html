@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">41.93% </span>
+                <span class="strong">64.51% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/31</span>
+                <span class='fraction'>20/31</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">36.36% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>4/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">41.93% </span>
+                <span class="strong">64.51% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/31</span>
+                <span class='fraction'>20/31</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -166,15 +166,9 @@
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
@@ -184,13 +178,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
@@ -263,10 +263,10 @@
 import connection from "../databases/postgres";
 import prisma from "../databases/prisma";
 &nbsp;
-export async function <span class="fstat-no" title="function not covered" >existCity(</span>city: string): Promise&lt;cities | null&gt; { 
-    const cities: cities | null = <span class="cstat-no" title="statement not covered" >await prisma.cities.findFirst({where: {name: city}});</span>
+export async function existCity(city: string): Promise&lt;cities | null&gt; { 
+    const cities: cities | null = await prisma.cities.findFirst({where: {name: city}});
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return cities;</span>
+    return cities;
 }
 &nbsp;
 export async function <span class="fstat-no" title="function not covered" >existCityId(</span>cityId: number): Promise&lt;cities | null&gt; { 
@@ -275,20 +275,20 @@ export async function <span class="fstat-no" title="function not covered" >exist
 <span class="cstat-no" title="statement not covered" >    return cities;</span>
 }
 &nbsp;
-export async function <span class="fstat-no" title="function not covered" >existType(</span>type: string): Promise&lt;typeFoodPlaces | null&gt;  { 
-    const foodType: typeFoodPlaces | null = <span class="cstat-no" title="statement not covered" >await prisma.typeFoodPlaces.findUnique({ where: {name: type}});</span>
+export async function existType(type: string): Promise&lt;typeFoodPlaces | null&gt;  { 
+    const foodType: typeFoodPlaces | null = await prisma.typeFoodPlaces.findUnique({ where: {name: type}});
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return foodType;</span>
+    return foodType;
 }
 &nbsp;
-export async function <span class="fstat-no" title="function not covered" >existName(</span>name: string): Promise&lt;foodPlaces | null&gt; { 
-    const foodPlace: foodPlaces | null = <span class="cstat-no" title="statement not covered" >await prisma.foodPlaces.findUnique({where: {name}});</span>
+export async function existName(name: string): Promise&lt;foodPlaces | null&gt; { 
+    const foodPlace: foodPlaces | null = await prisma.foodPlaces.findUnique({where: {name}});
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return foodPlace;</span>
+    return foodPlace;
 }
 &nbsp;
-export async function <span class="fstat-no" title="function not covered" >createPlace(</span>placeData: Omit&lt;foodPlaces, 'id' | 'score' | 'verify'&gt;) { 
-<span class="cstat-no" title="statement not covered" >    await prisma.foodPlaces.create({data : placeData})</span>
+export async function createPlace(placeData: Omit&lt;foodPlaces, 'id' | 'score' | 'verify'&gt;) { 
+    await prisma.foodPlaces.create({data : placeData})
 }
 &nbsp;
 export async function <span class="fstat-no" title="function not covered" >findPlace(</span>id: number): Promise&lt;foodPlaces | null&gt; { 
@@ -364,7 +364,7 @@ export async function <span class="fstat-no" title="function not covered" >searc
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-10T17:53:13.734Z
+                at 2022-11-10T18:05:53.797Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

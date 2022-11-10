@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20% </span>
+                <span class="strong">41.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/60</span>
+                <span class='fraction'>25/60</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">9.52% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/21</span>
+                <span class='fraction'>2/21</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">28.57% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>4/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">22.64% </span>
+                <span class="strong">47.16% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/53</span>
+                <span class='fraction'>25/53</span>
             </div>
         
             
@@ -180,35 +180,33 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -216,7 +214,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -289,44 +289,44 @@ import * as localizationRepository from "../repositories/localizationRepository"
 import * as foodTypeRepository from "../repositories/foodTypeRepository";
 import { placeInfo } from "../types/placesType";
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >verifyCity(</span>city: string): Promise&lt;number&gt; { 
-  const cities: cities | null = <span class="cstat-no" title="statement not covered" >await placeRepository.existCity(city);</span>
+async function verifyCity(city: string): Promise&lt;number&gt; { 
+  const cities: cities | null = await placeRepository.existCity(city);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  <span class="missing-if-branch" title="if path not taken" >I</span>if(!cities) <span class="cstat-no" title="statement not covered" >throw { type: "Not Found", message:"This city isn't registred at the database"}</span></span>
+  <span class="missing-if-branch" title="if path not taken" >I</span>if(!cities) <span class="cstat-no" title="statement not covered" >throw { type: "Not Found", message:"This city isn't registred at the database"}</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return cities.id;</span>
+  return cities.id;
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >verifyType(</span>type: string): Promise&lt;number&gt; { 
-  const typeFood: typeFoodPlaces | null = <span class="cstat-no" title="statement not covered" >await placeRepository.existType(type);</span>
+async function verifyType(type: string): Promise&lt;number&gt; { 
+  const typeFood: typeFoodPlaces | null = await placeRepository.existType(type);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  <span class="missing-if-branch" title="if path not taken" >I</span>if(!typeFood) <span class="cstat-no" title="statement not covered" >throw { type: "Not Found", message:"This type food isn't registred at the database"}</span></span>
+  <span class="missing-if-branch" title="if path not taken" >I</span>if(!typeFood) <span class="cstat-no" title="statement not covered" >throw { type: "Not Found", message:"This type food isn't registred at the database"}</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return typeFood.id;</span>
+  return typeFood.id;
 }
 &nbsp;
-async function <span class="fstat-no" title="function not covered" >verifyName(</span>name: string): Promise&lt;void&gt; { 
-  const foodPlace: foodPlaces | null = <span class="cstat-no" title="statement not covered" >await placeRepository.existName(name); </span>
+async function verifyName(name: string): Promise&lt;void&gt; { 
+  const foodPlace: foodPlaces | null = await placeRepository.existName(name); 
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  <span class="missing-if-branch" title="if path not taken" >I</span>if(foodPlace) <span class="cstat-no" title="statement not covered" >throw { type: "Conflit", message: "This place's name already exists"}</span></span>
+  <span class="missing-if-branch" title="if path not taken" >I</span>if(foodPlace) <span class="cstat-no" title="statement not covered" >throw { type: "Conflit", message: "This place's name already exists"}</span>
 }
 &nbsp;
-export async function <span class="fstat-no" title="function not covered" >createPlace(</span>placeData: placeInfo): Promise&lt;void&gt; {
-    const cityId: number = <span class="cstat-no" title="statement not covered" >await verifyCity(placeData.city);</span>
-    const typeId: number = <span class="cstat-no" title="statement not covered" >await verifyType(placeData.type);</span>
-<span class="cstat-no" title="statement not covered" >    await verifyName(placeData.name);</span>
+export async function createPlace(placeData: placeInfo): Promise&lt;void&gt; {
+    const cityId: number = await verifyCity(placeData.city);
+    const typeId: number = await verifyType(placeData.type);
+    await verifyName(placeData.name);
 &nbsp;
-    const place: Omit&lt;foodPlaces, 'id' | 'score' | 'verify'&gt; = <span class="cstat-no" title="statement not covered" >{ </span>
+    const place: Omit&lt;foodPlaces, 'id' | 'score' | 'verify'&gt; = { 
       name: placeData.name,
-      description: placeData.description || null,
-      website: placeData.website || null,
+      description: placeData.description || <span class="branch-1 cbranch-no" title="branch not covered" >null,</span>
+      website: placeData.website || <span class="branch-1 cbranch-no" title="branch not covered" >null,</span>
       mainPhoto: placeData.mainPhoto,
       address: placeData.address,
       typeId: typeId,
       cityId: cityId
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    await placeRepository.createPlace(place);</span>
+    await placeRepository.createPlace(place);
 }
 &nbsp;
 async function <span class="fstat-no" title="function not covered" >findPlace(</span>id: number): Promise&lt;boolean&gt; { 
@@ -400,7 +400,7 @@ export async function <span class="fstat-no" title="function not covered" >getTy
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-10T17:53:13.734Z
+                at 2022-11-10T18:05:53.797Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
