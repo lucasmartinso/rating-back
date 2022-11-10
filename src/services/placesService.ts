@@ -26,9 +26,22 @@ async function verifyName(name: string): Promise<void> {
   if(foodPlace) throw { type: "Conflit", message: "This place's name already exists"}
 }
 
+async function verifyAddress(name: string): Promise<void> { 
+  const foodPlace: foodPlaces | null = await placeRepository.existName(name); 
+
+  if(foodPlace) throw { type: "Conflit", message: "This place's address already exists"}
+}
+
+async function verifyWebsite(name: string): Promise<void> { 
+  const foodPlace: foodPlaces | null = await placeRepository.existName(name); 
+
+  if(foodPlace) throw { type: "Conflit", message: "This place's website already exists"}
+}
+
 export async function createPlace(placeData: placeInfo): Promise<void> {
     const cityId: number = await verifyCity(placeData.city);
     const typeId: number = await verifyType(placeData.type);
+
     await verifyName(placeData.name);
 
     const place: Omit<foodPlaces, 'id' | 'score' | 'verify'> = { 

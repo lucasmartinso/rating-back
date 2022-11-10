@@ -19,8 +19,6 @@ export async function __createRestaurant(): Promise<placeInfo> {
     const city: cities = faker.helpers.arrayElement(await allCities());
     const foodType: typeFoodPlaces = faker.helpers.arrayElement(await allFoodType());
 
-    console.log(foodType);
-
     const placeData: placeInfo = {
         name: faker.company.name(),
         description: faker.company.bsAdjective(),
