@@ -54,8 +54,8 @@ describe('TEST GET /types', () => {
 
         expect(status).toBe(httpStatus.OK);
         expect(body).toBeInstanceOf(Array);
-        expect(body).toHaveProperty('id');
-        expect(body).toHaveProperty('name');
+        expect(body[0]).toHaveProperty('id');
+        expect(body[0]).toHaveProperty('name');
     })
 });
 
