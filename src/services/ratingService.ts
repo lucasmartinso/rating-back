@@ -57,7 +57,6 @@ export async function updateScore(foodPlaceId: number,average: number): Promise<
 
   if(actualRating && ratings && ratings.length>0){
     const score: number = (((ratings.length-1) * Number(actualRating.score)) + average)/(ratings.length);
-    console.log(score);
     await ratingRepository.updatePlaceScore(foodPlaceId,score.toString());
   }
 }
