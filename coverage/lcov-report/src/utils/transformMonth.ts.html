@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.66% </span>
+                <span class="strong">20% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/15</span>
+                <span class='fraction'>3/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">7.69% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>1/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">6.66% </span>
+                <span class="strong">20% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/15</span>
+                <span class='fraction'>3/15</span>
             </div>
         
             
@@ -80,6 +80,7 @@
 <a name='L15'></a><a href='#L15'>15</a>
 <a name='L16'></a><a href='#L16'>16</a>
 <a name='L17'></a><a href='#L17'>17</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -90,26 +91,25 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export default function <span class="fstat-no" title="function not covered" >transform(</span>month: string): number {
-<span class="cstat-no" title="statement not covered" >    switch(month) { </span>
-        case "Jan": <span class="cstat-no" title="statement not covered" >return 1;</span>
-        case "Feb": <span class="cstat-no" title="statement not covered" >return 2;</span>
-        case "Mar": <span class="cstat-no" title="statement not covered" >return 3;</span>
-        case "Apr": <span class="cstat-no" title="statement not covered" >return 4;</span>
-        case "May": <span class="cstat-no" title="statement not covered" >return 5; </span>
-        case "Jun": <span class="cstat-no" title="statement not covered" >return 6; </span>
-        case "Jul": <span class="cstat-no" title="statement not covered" >return 7; </span>
-        case "Aug": <span class="cstat-no" title="statement not covered" >return 8; </span>
-        case "Sep": <span class="cstat-no" title="statement not covered" >return 9; </span>
-        case "Oct": <span class="cstat-no" title="statement not covered" >return 10; </span>
-        case "Nov": <span class="cstat-no" title="statement not covered" >return 11; </span>
-        case "Dec": <span class="cstat-no" title="statement not covered" >return 12;</span>
-        default: <span class="cstat-no" title="statement not covered" >throw { type: "Not Found", message: "This month doesn't exist"}</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export default function transform(month: string): number {
+    switch(month) { 
+<span class="branch-0 cbranch-no" title="branch not covered" >        case "Jan": <span class="cstat-no" title="statement not covered" >return 1;</span></span>
+<span class="branch-1 cbranch-no" title="branch not covered" >        case "Feb": <span class="cstat-no" title="statement not covered" >return 2;</span></span>
+<span class="branch-2 cbranch-no" title="branch not covered" >        case "Mar": <span class="cstat-no" title="statement not covered" >return 3;</span></span>
+<span class="branch-3 cbranch-no" title="branch not covered" >        case "Apr": <span class="cstat-no" title="statement not covered" >return 4;</span></span>
+<span class="branch-4 cbranch-no" title="branch not covered" >        case "May": <span class="cstat-no" title="statement not covered" >return 5; </span></span>
+<span class="branch-5 cbranch-no" title="branch not covered" >        case "Jun": <span class="cstat-no" title="statement not covered" >return 6; </span></span>
+<span class="branch-6 cbranch-no" title="branch not covered" >        case "Jul": <span class="cstat-no" title="statement not covered" >return 7; </span></span>
+<span class="branch-7 cbranch-no" title="branch not covered" >        case "Aug": <span class="cstat-no" title="statement not covered" >return 8; </span></span>
+<span class="branch-8 cbranch-no" title="branch not covered" >        case "Sep": <span class="cstat-no" title="statement not covered" >return 9; </span></span>
+<span class="branch-9 cbranch-no" title="branch not covered" >        case "Oct": <span class="cstat-no" title="statement not covered" >return 10; </span></span>
+        case "Nov": return 11; 
+<span class="branch-11 cbranch-no" title="branch not covered" >        case "Dec": <span class="cstat-no" title="statement not covered" >return 12;</span></span>
+<span class="branch-12 cbranch-no" title="branch not covered" >        default: <span class="cstat-no" title="statement not covered" >throw { type: "Not Found", message: "This month doesn't exist"}</span></span>
     }
  }</pre></td></tr></table></pre>
 
@@ -118,7 +118,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-11T19:45:03.160Z
+                at 2022-11-11T20:00:21.832Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
