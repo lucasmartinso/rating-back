@@ -56,7 +56,7 @@ describe('TEST PUT /places/:id/website', () => {
 });
 
 describe('TEST PUT /places/:id/description', () => { 
-    it(`Should answer 200, if change restaurant's website`, async() => {
+    it(`Should answer 200, if change restaurant's description`, async() => {
         const placeData: placeInfo = await __createRestaurant();
         const token: string = await __createToken();
         const fakeDescription: string = faker.lorem.words(1);

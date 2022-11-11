@@ -22,7 +22,6 @@ describe('TEST GET /places/:id', () => {
         await server.post('/places/create').set("Authorization",token).send(placeData);
         const place = await server.get('/places').send({});
         const { status, body }: { status: number, body: any } = await server.get(`/places/${place.body[0].id}`).send({});
-        console.log(body);
 
         expect(status).toBe(httpStatus.OK);
         expect(body).toHaveProperty('id');
@@ -47,6 +46,17 @@ describe('TEST GET /places/:id', () => {
         expect(status).toBe(httpStatus.NOT_FOUND);
         expect(text).toBe(errorMessage);
     });
+});
+
+describe('TEST GET /types', () => { 
+    it('Should answer 200 and return food types info in the corretly format', async() => { 
+        const { status, body }: { status: number, body: any } = await server.get(`/types`).send({});
+
+        expect(status).toBe(httpStatus.OK);
+        expect(body).toBeInstanceOf(Array);
+        expect(body).toHaveProperty('id');
+        expect(body).toHaveProperty('name');
+    })
 });
 
 afterAll(async() => { 
