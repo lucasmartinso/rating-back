@@ -20,7 +20,7 @@ export async function __createRestaurant(): Promise<placeInfo> {
     const foodType: typeFoodPlaces = faker.helpers.arrayElement(await allFoodType());
 
     const placeData: placeInfo = {
-        name: faker.lorem.word(20),
+        name: faker.name.firstName(),
         description: faker.company.bsAdjective(),
         website: faker.internet.url(),
         mainPhoto: faker.internet.url(),

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">31.25% </span>
+                <span class="strong">62.5% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>10/32</span>
+                <span class='fraction'>20/32</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">14.28% </span>
+                <span class="strong">42.85% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/7</span>
+                <span class='fraction'>3/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">31.25% </span>
+                <span class="strong">62.5% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>10/32</span>
+                <span class='fraction'>20/32</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -132,10 +132,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -145,9 +145,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">15x</span>
@@ -157,10 +157,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">15x</span>
@@ -194,23 +194,23 @@ import { Request, Response } from "express"
 import * as ratingService from "../services/ratingService"
 import { ratingInfo } from "../types/ratingType";
 &nbsp;
-export async function <span class="fstat-no" title="function not covered" >createRating(</span>req: Request, res: Response) { 
-    const user = <span class="cstat-no" title="statement not covered" >res.locals.user;</span>
-    const id: number = <span class="cstat-no" title="statement not covered" >Number(req.params.id);</span>
-    const ratingInfo: ratingInfo = <span class="cstat-no" title="statement not covered" >req.body;</span>
-    const ratingData: Omit&lt;ratingFoodPlaces, 'id' | 'createdAt'&gt; = <span class="cstat-no" title="statement not covered" >{ </span>
+export async function createRating(req: Request, res: Response) { 
+    const user = res.locals.user;
+    const id: number = Number(req.params.id);
+    const ratingInfo: ratingInfo = req.body;
+    const ratingData: Omit&lt;ratingFoodPlaces, 'id' | 'createdAt'&gt; = { 
         foodPlaceId: id,
         userId: user.id,
         food: ratingInfo.food,
         environment: ratingInfo.environment,
         attendance: ratingInfo.attendance,
         price: ratingInfo.price,
-        comment: ratingInfo.comment || null
+        comment: ratingInfo.comment || <span class="branch-1 cbranch-no" title="branch not covered" >null</span>
     }
 &nbsp;
-    const average: number = <span class="cstat-no" title="statement not covered" >await ratingService.createRanting(ratingData);</span>
-<span class="cstat-no" title="statement not covered" >    await ratingService.updateScore(id,average);</span>
-<span class="cstat-no" title="statement not covered" >    res.sendStatus(200);</span>
+    const average: number = await ratingService.createRanting(ratingData);
+    await ratingService.updateScore(id,average);
+    res.sendStatus(200);
 } 
 &nbsp;
 export async function getPlaces(req: Request, res: Response) { 
@@ -219,11 +219,11 @@ export async function getPlaces(req: Request, res: Response) {
     res.status(200).send(places);
 }
 &nbsp;
-export async function <span class="fstat-no" title="function not covered" >foodPlaces(</span>req: Request, res: Response) {
-    const type: string = <span class="cstat-no" title="statement not covered" >req.params.type; </span>
-    const placeFilterFood: any = <span class="cstat-no" title="statement not covered" >await ratingService.getFilterByFood(type);</span>
+export async function foodPlaces(req: Request, res: Response) {
+    const type: string = req.params.type; 
+    const placeFilterFood: any = await ratingService.getFilterByFood(type);
     
-<span class="cstat-no" title="statement not covered" >    res.status(200).send(placeFilterFood);</span>
+    res.status(200).send(placeFilterFood);
 }
 &nbsp;
 export async function <span class="fstat-no" title="function not covered" >attendancePlaces(</span>req: Request, res: Response) {
@@ -259,7 +259,7 @@ export async function <span class="fstat-no" title="function not covered" >filte
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-11T20:31:28.919Z
+                at 2022-11-11T20:34:53.838Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
