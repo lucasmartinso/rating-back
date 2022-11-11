@@ -1,6 +1,5 @@
-import { cities, foodPlaces, states, typeFoodPlaces } from "@prisma/client";
+import { cities, foodPlaces, typeFoodPlaces } from "@prisma/client";
 import * as placeRepository from "../repositories/placeRepository";
-import * as localizationRepository from "../repositories/localizationRepository";
 import * as foodTypeRepository from "../repositories/foodTypeRepository";
 import { placeInfo } from "../types/placesType";
 
@@ -107,19 +106,6 @@ export async function search(name: string): Promise<any> {
   if(places.length === 0) throw { type: "Not Found", message:"Any place was found" }
 
   return places;
-}
-
-export async function getStates(): Promise<states[]> {
-  const states: states[] = await localizationRepository.getStates();
-
-  return states;
-}
-
-export async function getCities(id: number,name: string): Promise<cities[]> {
-  if(!name) name= "";
-  const cities: cities[] = await localizationRepository.getCities(id,name);
-
-  return cities;
 }
 
 export async function getTypes() {

@@ -1,5 +1,5 @@
 import * as localizationService from "../services";
-import { cities, foodPlaces, states, typeFoodPlaces } from "@prisma/client";
+import { cities, states } from "@prisma/client";
 import { Request, Response } from "express";
 
 export async function getStates(req: Request, res: Response): Promise<void> {

@@ -1,8 +1,7 @@
-import { cities, foodPlaces, states, typeFoodPlaces } from "@prisma/client";
+import { foodPlaces, typeFoodPlaces } from "@prisma/client";
 import { Request, Response } from "express";
 import * as placesService from "../services/placesService"
 import { placeInfo } from "../types/placesType";
-import * as localizationRepository from "../repositories/localizationRepository";
 
 export async function createPlaces(req: Request, res: Response) { 
     const placeData: placeInfo = req.body;
@@ -50,21 +49,6 @@ export async function searchPlace(req: Request, res: Response): Promise<any> {
     const places: any = await placesService.search(name);
 
     res.status(200).send(places)
-}
-
-export async function getStates(req: Request, res: Response): Promise<void> {
-    const states : states[] = await placesService.getStates();
-
-    res.status(200).send(states);
-}
-
-export async function getCities(req: Request, res: Response): Promise<void> {
-    const id: number = Number(req.params.id);
-    const { city }: any = req.query;
-    
-    const cities : cities[] = await placesService.getCities(id,city);
-
-    res.status(200).send(cities);
 }
 
 export async function getTypes(req: Request, res: Response): Promise<void> {
