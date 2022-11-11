@@ -19,7 +19,7 @@ describe('TEST GET /states', () => {
         expect(body).toBeInstanceOf(Array);
         expect(body).toHaveLength(27);
 
-    })
+    });
 });
 
 afterAll(async() => { 
