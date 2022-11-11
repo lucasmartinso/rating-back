@@ -1,9 +1,9 @@
 import { Router } from "express"; 
-import * as placesController from "../controllers/placesController"
+import * as localizationController from "../controllers/localizationController"
 
 const localizationRouter = Router();
 
-localizationRouter.get("/states",placesController.getStates);
-localizationRouter.post("/cities/:id",placesController.getCities)
+localizationRouter.get("/states",localizationController.getStates);
+localizationRouter.post("/cities/:id",localizationController.getCities)
 
 export default localizationRouter;

@@ -12,21 +12,25 @@ beforeEach( async() => {
     await deleteAllData();
 });
 
-describe('TEST GET /cities/:id', () => { 
-    it.todo(`Should answer 404, if the user send nothing`)/*, async() => { 
+describe('TEST POST /cities/:id', () => { 
+    it(`Should answer 200, if the user send some part of city's name`, async() => { 
         const randomState: number = Number(faker.datatype.number({ min: 1, max: 27 }));
         const stateNumber: number = 22;
+        const cityLetter: string = 'a';
 
-        const { status, body }: { status: number, body: cities[] } = await server.get(`/cities/${stateNumber}`).send({});
+        const { status, body }: { status: number, body: cities[] } = await server.post(`/cities/${stateNumber}?city=${cityLetter}`).send({});
         console.log(body);
 
         expect(status).toBe(httpStatus.OK);
-    });*/
+        expect(body).toBeInstanceOf(Array);
+    });
 
     it(`Should answer 404, if the user send nothing`, async() => { 
         const randomState: number = Number(faker.datatype.number({ min: 1, max: 27 }));
+        const randomAddress: string = faker.address.streetAddress(true);
+        const errorMessage: string = ''
 
-        const { status, body }: { status: number, body: cities[] } = await server.get(`/cities/${randomState}`).send({});
+        const { status, body, text }: { status: number, body: cities[], text: string } = await server.post(`/cities/${randomState}?city=${randomAddress}`).send({});
 
         expect(status).toBe(httpStatus.NOT_FOUND);
         expect(body).not.toBeInstanceOf(Array);
