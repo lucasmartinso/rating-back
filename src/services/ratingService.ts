@@ -183,5 +183,7 @@ export async function getFilterByPrice(order: string) {
 export async function getFilterByFoodType(typeId: number) { 
   const placesTypeFood: any = await foodTypeRepository.filterFoodType(typeId);
 
+  if(placesTypeFood.length === 0) throw { type: "Not Found", message: "None restaurant with that type has been registred yet"}
+
   return placesTypeFood;
 }
