@@ -26,7 +26,7 @@ describe('TEST GET /places/food-type/:typeId', () => {
         await server.post('/places/create').set("Authorization",token).send(placeData);
         const place = await server.get('/places').send({});
 
-        const { status, body , text}: { status: number, body: any, text: string } = await server.get(`/places/food-type/${typeId?.id}`).send({});
+        const { status, body , text }: { status: number, body: any, text: string } = await server.get(`/places/food-type/${typeId?.id}`).send({});
         console.log(typeId);
         console.log(place.body);
         console.log(body);

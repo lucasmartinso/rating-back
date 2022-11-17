@@ -1,9 +1,9 @@
 import { jest } from '@jest/globals';
-import * as usersRepository from '../../src/repositories/usersRepository'
-import * as usersService from '../../src/services/usersService';
-import { signIn } from '../../src/types/usersType';
-import { __createLogin } from '../factories/login-factory';
-import { crypts } from "../../src/utils/cripts/crypts";
+import * as usersRepository from '../../../src/repositories/usersRepository'
+import * as usersService from '../../../src/services/usersService';
+import { signIn } from '../../../src/types/usersType';
+import { __createLogin } from '../../factories/login-factory';
+import { crypts } from "../../../src/utils/cripts/crypts";
 
 beforeEach(() => {
     jest.resetAllMocks();

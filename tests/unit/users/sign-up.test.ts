@@ -1,8 +1,8 @@
 import { jest } from '@jest/globals';
-import * as usersRepository from '../../src/repositories/usersRepository'
-import * as usersService from '../../src/services/usersService';
-import { signUp } from '../../src/types/usersType';
-import { __createUser } from '../factories/sign-up-factory';
+import * as usersRepository from '../../../src/repositories/usersRepository'
+import * as usersService from '../../../src/services/usersService';
+import { signUp } from '../../../src/types/usersType';
+import { __createUser } from '../../factories/sign-up-factory';
 
 beforeEach(() => {
     jest.resetAllMocks();
