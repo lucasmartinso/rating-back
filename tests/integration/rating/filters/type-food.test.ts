@@ -18,7 +18,7 @@ beforeEach( async() => {
 });
 
 describe('TEST GET /places/food-type/:typeId', () => { 
-    it('Should answer 200, send type best', async() => { 
+    it.todo('Should answer 200, send type best')/*, async() => { 
         const placeData: placeInfo = await __createRestaurant();
         const token: string = await __createToken();
         const typeId: typeFoodPlaces | null = await prisma.typeFoodPlaces.findUnique({where: {name: placeData.type}});
@@ -35,7 +35,7 @@ describe('TEST GET /places/food-type/:typeId', () => {
         expect(body).toBeInstanceOf(Array);
         expect(body[0].typeId).toBe(typeId?.id);
         
-    });
+    });*/
 
     it('Should answer 200, send type best', async() => {
         const randomNumber: number = Number(faker.random.numeric(3));
