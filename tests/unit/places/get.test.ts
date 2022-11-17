@@ -1,9 +1,8 @@
 import { jest } from '@jest/globals';
 import * as placeRepository from '../../../src/repositories/placeRepository'
 import * as placesService from '../../../src/services/placesService';
-import { signIn } from '../../../src/types/usersType';
+import * as  localizationRepository from '../../../src/repositories/localizationRepository';
 import { __createLogin } from '../../factories/login-factory';
-import { crypts } from "../../../src/utils/cripts/crypts";
 import { faker } from '@faker-js/faker';
 
 beforeEach(() => {
@@ -38,10 +37,19 @@ describe('UNIT TESTS about get place', () => {
             };
         });
 
+        jest.spyOn(localizationRepository, 'existCityId').mockImplementation((): any => {
+            return {
+                id: 1,
+                code: 1,
+                name: 'Rio de Janeiro',
+                state_id: 1,
+            };
+        });
+
         await placesService.getPlaceWithRatings(randomNumber);
 
         expect(placeRepository.getPlaceWithComments).toBeCalled();
         expect(placeRepository.findPlace).toBeCalled();
-        expect(placeRepository.existCityId).toBeCalled();
+        expect(localizationRepository.existCityId).toBeCalled();
     });
 });
