@@ -1,10 +1,11 @@
 import { cities, foodPlaces, typeFoodPlaces } from "@prisma/client";
 import * as placeRepository from "../repositories/placeRepository";
 import * as foodTypeRepository from "../repositories/foodTypeRepository";
+import * as localizationRepository from "../repositories/localizationRepository";
 import { placeInfo } from "../types/placesType";
 
 async function verifyCity(city: string): Promise<number> { 
-  const cities: cities | null = await placeRepository.existCity(city);
+  const cities: cities | null = await localizationRepository.existCity(city);
 
   if(!cities) throw { type: "Not Found", message:"This city isn't registred at the database"}
 
@@ -93,7 +94,7 @@ export async function getPlaceWithRatings(placeId: number): Promise<any> {
     const place: foodPlaces | null = await placeRepository.findPlace(placeId);
     const cityId: number | undefined = place?.cityId;
     if(cityId) {
-      const city: cities | null = await placeRepository.existCityId(cityId);
+      const city: cities | null = await  localizationRepository.existCityId(cityId);
       return { ...place, city: city?.name}
     }
     return place;
