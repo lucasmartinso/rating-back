@@ -41,7 +41,7 @@ describe('TEST GET /places/food-type/:typeId', () => {
         const randomNumber: number = Number(faker.random.numeric(3));
         const errorMessage: string = 'None restaurant with that type has been registred yet'
        
-        const { status , text}: { status: number, text: string } = await server.get(`/places/food-type/${randomNumber}`).send({});
+        const { status , text }: { status: number, text: string } = await server.get(`/places/food-type/${randomNumber}`).send({});
         
         expect(status).toBe(httpStatus.NOT_FOUND);
         expect(text).toBe(errorMessage);
