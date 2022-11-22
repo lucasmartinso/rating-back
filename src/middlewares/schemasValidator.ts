@@ -6,7 +6,7 @@ export default function schemaValidator(schema: ObjectSchema) {
         const validation = schema.validate(req.body);
 
         if(validation.error) { 
-            throw { type: "Unprocessable Entity", message: validation.error.details[0].message }
+            throw { type: "Unprocessable Entity", message: validation.error.details[0].context?.label }
         }
         next();
     }
