@@ -3,7 +3,7 @@ import * as ratingRepository from "../repositories/ratingRepository";
 import * as placeRepository from "../repositories/placeRepository"
 import "dayjs/locale/pt-br.js";
 import dayjs from "dayjs";
-import transform from "../utils/transformMonth";
+import { transformMonth } from "../utils/transformMonth";
 import * as foodRepository from "../repositories/foodRepository";
 import * as enviromentRepository from "../repositories/enviromentRepository";
 import * as attendanceRepository from "../repositories/attendanceRepository";
@@ -13,13 +13,15 @@ import redis from "../databases/redis";
 
 async function verifyRatingTime(userId: number, foodPlaceId: number): Promise<void> { 
   const ratingsUser: ratingFoodPlaces[] | null = await ratingRepository.verifyRatingTime(userId,foodPlaceId);
+  console.log(ratingsUser)
 
   if(ratingsUser.length>= 5) throw { type: "Bad Request", message: "You reached the limit of rating this restaurant"}
 
   if(ratingsUser.length>0) {
     const date: string = ratingsUser[0].createdAt.toString();
+    console.log(date);
     const day: number = Number(date.substring(8,10)); 
-    const month: number = transform(date.substring(4,7));
+    const month: number = transformMonth.transform(date.substring(4,7));
     const year: number = Number(date.substring(11,15));
 
     const now : dayjs.Dayjs = dayjs().locale("pt-br");

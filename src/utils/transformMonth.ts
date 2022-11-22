@@ -1,4 +1,4 @@
-export default function transform(month: string): number {
+function transform(month: string): number {
     switch(month) { 
         case "Jan": return 1;
         case "Feb": return 2;
@@ -14,4 +14,8 @@ export default function transform(month: string): number {
         case "Dec": return 12;
         default: throw { type: "Not Found", message: "This month doesn't exist"}
     }
+ }
+
+ export const transformMonth = {
+    transform
  }
