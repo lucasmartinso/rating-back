@@ -13,13 +13,11 @@ import redis from "../databases/redis";
 
 async function verifyRatingTime(userId: number, foodPlaceId: number): Promise<void> { 
   const ratingsUser: ratingFoodPlaces[] | null = await ratingRepository.verifyRatingTime(userId,foodPlaceId);
-  console.log(ratingsUser)
 
   if(ratingsUser.length>= 5) throw { type: "Bad Request", message: "You reached the limit of rating this restaurant"}
 
   if(ratingsUser.length>0) {
     const date: string = ratingsUser[0].createdAt.toString();
-    console.log(date);
     const day: number = Number(date.substring(8,10)); 
     const month: number = transformMonth.transform(date.substring(4,7));
     const year: number = Number(date.substring(11,15));

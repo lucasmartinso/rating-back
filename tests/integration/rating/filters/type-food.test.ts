@@ -30,6 +30,7 @@ describe('TEST GET /places/food-type/:typeId', () => {
         console.log(typeId);
         console.log(place.body);
         console.log(body);
+        console.log(status);
 
         expect(status).toBe(httpStatus.OK);
         expect(body).toBeInstanceOf(Array);
@@ -37,7 +38,7 @@ describe('TEST GET /places/food-type/:typeId', () => {
         
     });*/
 
-    it('Should answer 200, send type best', async() => {
+    it('Should answer 404, if none restaurant has the type the user send', async() => {
         const randomNumber: number = Number(faker.random.numeric(3));
         const errorMessage: string = 'None restaurant with that type has been registred yet'
        
