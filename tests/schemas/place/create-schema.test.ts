@@ -4,10 +4,8 @@ import { connectPrisma, disconnectPrisma, deleteAllData } from "../../factories/
 import { faker } from "@faker-js/faker";
 import { __createRating } from "../../factories/rating-factory";
 import { __createToken } from "../../factories/login-factory";
-import { ratingInfo } from "../../../src/types/ratingType";
 import { __createRestaurant } from "../../factories/place-factory";
 import { placeInfo } from "../../../src/types/placesType";
-import { foodPlaces } from "@prisma/client";
 
 const server = serverSupertest();
 
