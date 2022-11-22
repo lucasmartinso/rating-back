@@ -207,7 +207,7 @@ GET /cities/:id
 First, make the clone repository in your machine:
 
 ```
-git clone https://github.com/luanalessa/projeto20-repoprova.git
+git clone https://github.com/lucasmartinso/rating-back.git
 ```
 
 After, inside the folder, run the comand to install the dependencies.
