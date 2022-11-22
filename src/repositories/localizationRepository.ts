@@ -17,3 +17,15 @@ export async function getCities(id: number,name: string): Promise<any[]> {
     
     return cities;
 }
+
+export async function existCity(city: string): Promise<cities | null> { 
+    const cities: cities | null = await prisma.cities.findFirst({where: {name: city}});
+
+    return cities;
+}
+
+export async function existCityId(cityId: number): Promise<cities | null> { 
+    const cities: cities | null = await prisma.cities.findFirst({where: {id: cityId}});
+
+    return cities;
+}

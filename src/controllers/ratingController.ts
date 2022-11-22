@@ -37,23 +37,23 @@ export async function foodPlaces(req: Request, res: Response) {
 
 export async function attendancePlaces(req: Request, res: Response) {
     const type: string = req.params.type; 
-    const placeFilterFood: any = await ratingService.getFilterByAttendance(type);
+    const placeFilterAttendance: any = await ratingService.getFilterByAttendance(type);
     
-    res.status(200).send(placeFilterFood);
+    res.status(200).send(placeFilterAttendance);
 }
 
 export async function enviromentPlaces(req: Request, res: Response) {
     const type: string = req.params.type; 
-    const placeFilterFood: any = await ratingService.getFilterByEnviroment(type);
+    const placeFilterEnvironment: any = await ratingService.getFilterByEnviroment(type);
     
-    res.status(200).send(placeFilterFood);
+    res.status(200).send(placeFilterEnvironment);
 }
 
 export async function pricePlaces(req: Request, res: Response) {
     const type: string = req.params.type; 
-    const placeFilterFood: any = await ratingService.getFilterByPrice(type);
+    const placeFilterPrice: any = await ratingService.getFilterByPrice(type);
     
-    res.status(200).send(placeFilterFood);
+    res.status(200).send(placeFilterPrice);
 }
 
 export async function filterFoodType(req: Request, res: Response) {

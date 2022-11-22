@@ -1,4 +1,4 @@
-import { signIn, signUp } from "../../../src/types/usersType";
+import { signIn, signUp, tokenType } from "../../../src/types/usersType";
 import { __createUser } from "../../factories/sign-up-factory";
 import serverSupertest from "../../jestConfig";
 import httpStatus from 'http-status';
@@ -13,7 +13,7 @@ beforeEach( async() => {
 });
 
 describe('TEST POST /sign-in', () => {
-    it('Should answer 200, if the user send the corretly schema', async () => { 
+    it('Should answer 200 and return user info corretly, if the user send the corretly schema', async () => { 
         const userData: signUp = await __createUser();
         const loginData: signIn = {
             usernameEmail: userData.email,
@@ -21,8 +21,7 @@ describe('TEST POST /sign-in', () => {
         }
 
         await server.post('/sign-up').send(userData);
-        const { status, body }: { status: number, body:any } = await server.post('/login').send(loginData);
-        console.log(body);
+        const { status, body }: { status: number, body: tokenType } = await server.post('/login').send(loginData);
     
         expect(status).toBe(httpStatus.OK);
         expect(body).toHaveProperty('user');

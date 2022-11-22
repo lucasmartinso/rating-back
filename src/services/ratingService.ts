@@ -3,7 +3,7 @@ import * as ratingRepository from "../repositories/ratingRepository";
 import * as placeRepository from "../repositories/placeRepository"
 import "dayjs/locale/pt-br.js";
 import dayjs from "dayjs";
-import transform from "../utils/transformMonth";
+import { transformMonth } from "../utils/transformMonth";
 import * as foodRepository from "../repositories/foodRepository";
 import * as enviromentRepository from "../repositories/enviromentRepository";
 import * as attendanceRepository from "../repositories/attendanceRepository";
@@ -19,7 +19,7 @@ async function verifyRatingTime(userId: number, foodPlaceId: number): Promise<vo
   if(ratingsUser.length>0) {
     const date: string = ratingsUser[0].createdAt.toString();
     const day: number = Number(date.substring(8,10)); 
-    const month: number = transform(date.substring(4,7));
+    const month: number = transformMonth.transform(date.substring(4,7));
     const year: number = Number(date.substring(11,15));
 
     const now : dayjs.Dayjs = dayjs().locale("pt-br");
@@ -57,7 +57,6 @@ export async function updateScore(foodPlaceId: number,average: number): Promise<
 
   if(actualRating && ratings && ratings.length>0){
     const score: number = (((ratings.length-1) * Number(actualRating.score)) + average)/(ratings.length);
-    console.log(score);
     await ratingRepository.updatePlaceScore(foodPlaceId,score.toString());
   }
 }
@@ -183,6 +182,8 @@ export async function getFilterByPrice(order: string) {
 
 export async function getFilterByFoodType(typeId: number) { 
   const placesTypeFood: any = await foodTypeRepository.filterFoodType(typeId);
+
+  if(placesTypeFood.length === 0) throw { type: "Not Found", message: "None restaurant with that type has been registred yet"}
 
   return placesTypeFood;
 }

@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from "express"
+import { appError } from "../types/errorType";
 
-export default function errorHandler(error: any, req: Request, res: Response, next: NextFunction) {
+export default function errorHandler(error: appError, req: Request, res: Response, next: NextFunction) {
     console.log(error);
     if(error.type === "Unprocessable Entity") { 
         return res.status(422).send(error.message);

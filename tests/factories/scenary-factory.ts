@@ -1,6 +1,5 @@
 import { Prisma } from "@prisma/client";
 import prisma from "../../src/databases/prisma";
-import redis from "../../src/databases/redis"
 
 export async function deleteAllData(): Promise<void> { 
     await prisma.$transaction([
