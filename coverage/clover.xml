@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1669144916167" clover="3.2.0">
-  <project timestamp="1669144916168" name="All files">
+<coverage generated="1669145983421" clover="3.2.0">
+  <project timestamp="1669145983421" name="All files">
     <metrics statements="606" coveredstatements="576" conditionals="112" coveredconditionals="84" methods="109" coveredmethods="104" elements="827" coveredelements="764" complexity="0" loc="606" ncloc="606" packages="10" files="37" classes="37"/>
     <package name="src">
       <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -39,9 +39,9 @@
         <metrics statements="30" coveredstatements="30" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7"/>
         <line num="3" count="23" type="stmt"/>
         <line num="6" count="23" type="stmt"/>
-        <line num="7" count="39" type="stmt"/>
-        <line num="9" count="39" type="stmt"/>
-        <line num="10" count="34" type="stmt"/>
+        <line num="7" count="38" type="stmt"/>
+        <line num="9" count="38" type="stmt"/>
+        <line num="10" count="33" type="stmt"/>
         <line num="13" count="23" type="stmt"/>
         <line num="14" count="3" type="stmt"/>
         <line num="16" count="3" type="stmt"/>
@@ -80,8 +80,8 @@
         <line num="21" count="18" type="stmt"/>
         <line num="22" count="18" type="stmt"/>
         <line num="25" count="23" type="stmt"/>
-        <line num="26" count="20" type="stmt"/>
-        <line num="28" count="20" type="stmt"/>
+        <line num="26" count="19" type="stmt"/>
+        <line num="28" count="19" type="stmt"/>
         <line num="31" count="23" type="stmt"/>
         <line num="32" count="2" type="stmt"/>
         <line num="33" count="2" type="stmt"/>
@@ -99,8 +99,8 @@
         <line num="54" count="2" type="stmt"/>
         <line num="56" count="2" type="stmt"/>
         <line num="59" count="23" type="stmt"/>
-        <line num="60" count="3" type="stmt"/>
-        <line num="61" count="3" type="stmt"/>
+        <line num="60" count="2" type="stmt"/>
+        <line num="61" count="2" type="stmt"/>
         <line num="63" count="1" type="stmt"/>
       </file>
       <file name="usersController.ts" path="/home/lucas/projetos/rating-backend/src/controllers/usersController.ts">
@@ -108,13 +108,13 @@
         <line num="2" count="23" type="stmt"/>
         <line num="4" count="23" type="stmt"/>
         <line num="6" count="23" type="stmt"/>
-        <line num="7" count="50" type="stmt"/>
-        <line num="9" count="50" type="stmt"/>
-        <line num="11" count="47" type="stmt"/>
+        <line num="7" count="49" type="stmt"/>
+        <line num="9" count="49" type="stmt"/>
+        <line num="11" count="46" type="stmt"/>
         <line num="14" count="23" type="stmt"/>
-        <line num="15" count="43" type="stmt"/>
-        <line num="17" count="43" type="stmt"/>
-        <line num="19" count="41" type="stmt"/>
+        <line num="15" count="42" type="stmt"/>
+        <line num="17" count="42" type="stmt"/>
+        <line num="19" count="40" type="stmt"/>
         <line num="22" count="23" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="24" count="0" type="stmt"/>
@@ -166,29 +166,29 @@
         <line num="3" count="23" type="stmt"/>
         <line num="4" count="23" type="stmt"/>
         <line num="6" count="23" type="stmt"/>
-        <line num="7" count="67" type="stmt"/>
-        <line num="8" count="67" type="cond" truecount="4" falsecount="0"/>
-        <line num="10" count="67" type="cond" truecount="1" falsecount="0"/>
-        <line num="12" count="66" type="stmt"/>
-        <line num="13" count="66" type="cond" truecount="3" falsecount="1"/>
-        <line num="14" count="66" type="stmt"/>
-        <line num="15" count="65" type="stmt"/>
-        <line num="16" count="65" type="stmt"/>
-        <line num="17" count="65" type="stmt"/>
+        <line num="7" count="66" type="stmt"/>
+        <line num="8" count="66" type="cond" truecount="4" falsecount="0"/>
+        <line num="10" count="66" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="65" type="stmt"/>
+        <line num="13" count="65" type="cond" truecount="3" falsecount="1"/>
+        <line num="14" count="65" type="stmt"/>
+        <line num="15" count="64" type="stmt"/>
+        <line num="16" count="64" type="stmt"/>
+        <line num="17" count="64" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
       </file>
       <file name="errorHandler.ts" path="/home/lucas/projetos/rating-backend/src/middlewares/errorHandler.ts">
         <metrics statements="13" coveredstatements="12" conditionals="9" coveredconditionals="9" methods="1" coveredmethods="1"/>
         <line num="4" count="23" type="stmt"/>
-        <line num="5" count="40" type="stmt"/>
-        <line num="6" count="40" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="39" type="stmt"/>
+        <line num="6" count="39" type="cond" truecount="2" falsecount="0"/>
         <line num="7" count="21" type="stmt"/>
-        <line num="8" count="19" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="18" type="cond" truecount="2" falsecount="0"/>
         <line num="9" count="6" type="stmt"/>
-        <line num="10" count="13" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="12" type="cond" truecount="2" falsecount="0"/>
         <line num="11" count="4" type="stmt"/>
-        <line num="12" count="9" type="cond" truecount="2" falsecount="0"/>
-        <line num="13" count="7" type="stmt"/>
+        <line num="12" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="6" type="stmt"/>
         <line num="14" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="15" count="2" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
@@ -197,10 +197,10 @@
         <metrics statements="6" coveredstatements="6" conditionals="5" coveredconditionals="4" methods="2" coveredmethods="2"/>
         <line num="4" count="23" type="stmt"/>
         <line num="5" count="161" type="stmt"/>
-        <line num="6" count="177" type="stmt"/>
-        <line num="8" count="177" type="cond" truecount="1" falsecount="0"/>
+        <line num="6" count="174" type="stmt"/>
+        <line num="8" count="174" type="cond" truecount="1" falsecount="0"/>
         <line num="9" count="21" type="cond" truecount="3" falsecount="1"/>
-        <line num="11" count="156" type="stmt"/>
+        <line num="11" count="153" type="stmt"/>
       </file>
     </package>
     <package name="src.repositories">
@@ -243,8 +243,8 @@
         <line num="2" count="25" type="stmt"/>
         <line num="3" count="25" type="stmt"/>
         <line num="5" count="25" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
         <line num="18" count="25" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
         <line num="21" count="1" type="stmt"/>
@@ -260,8 +260,8 @@
         <line num="12" count="2" type="stmt"/>
         <line num="18" count="2" type="stmt"/>
         <line num="21" count="24" type="stmt"/>
-        <line num="22" count="39" type="stmt"/>
-        <line num="24" count="39" type="stmt"/>
+        <line num="22" count="38" type="stmt"/>
+        <line num="24" count="38" type="stmt"/>
         <line num="27" count="24" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
         <line num="30" count="1" type="stmt"/>
@@ -281,19 +281,19 @@
         <line num="2" count="25" type="stmt"/>
         <line num="3" count="25" type="stmt"/>
         <line num="5" count="25" type="stmt"/>
-        <line num="6" count="38" type="stmt"/>
-        <line num="8" count="38" type="stmt"/>
+        <line num="6" count="37" type="stmt"/>
+        <line num="8" count="37" type="stmt"/>
         <line num="11" count="25" type="stmt"/>
-        <line num="12" count="37" type="stmt"/>
-        <line num="14" count="37" type="stmt"/>
+        <line num="12" count="36" type="stmt"/>
+        <line num="14" count="36" type="stmt"/>
         <line num="17" count="25" type="stmt"/>
-        <line num="18" count="36" type="stmt"/>
-        <line num="20" count="36" type="stmt"/>
+        <line num="18" count="35" type="stmt"/>
+        <line num="20" count="35" type="stmt"/>
         <line num="23" count="25" type="stmt"/>
-        <line num="24" count="35" type="stmt"/>
-        <line num="26" count="35" type="stmt"/>
+        <line num="24" count="34" type="stmt"/>
+        <line num="26" count="34" type="stmt"/>
         <line num="29" count="25" type="stmt"/>
-        <line num="30" count="34" type="stmt"/>
+        <line num="30" count="33" type="stmt"/>
         <line num="33" count="25" type="stmt"/>
         <line num="34" count="26" type="stmt"/>
         <line num="36" count="26" type="stmt"/>
@@ -340,26 +340,26 @@
         <line num="28" count="24" type="stmt"/>
         <line num="29" count="18" type="stmt"/>
         <line num="32" count="24" type="stmt"/>
-        <line num="33" count="20" type="stmt"/>
-        <line num="37" count="20" type="stmt"/>
+        <line num="33" count="19" type="stmt"/>
+        <line num="37" count="19" type="stmt"/>
         <line num="40" count="24" type="stmt"/>
-        <line num="41" count="20" type="stmt"/>
-        <line num="49" count="20" type="stmt"/>
+        <line num="41" count="19" type="stmt"/>
+        <line num="49" count="19" type="stmt"/>
       </file>
       <file name="usersRepository.ts" path="/home/lucas/projetos/rating-backend/src/repositories/usersRepository.ts">
         <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
         <line num="2" count="24" type="stmt"/>
         <line num="5" count="24" type="stmt"/>
-        <line num="6" count="47" type="stmt"/>
+        <line num="6" count="46" type="stmt"/>
         <line num="9" count="24" type="stmt"/>
-        <line num="10" count="92" type="stmt"/>
-        <line num="12" count="92" type="stmt"/>
+        <line num="10" count="90" type="stmt"/>
+        <line num="12" count="90" type="stmt"/>
         <line num="15" count="24" type="stmt"/>
-        <line num="16" count="91" type="stmt"/>
-        <line num="18" count="91" type="stmt"/>
+        <line num="16" count="89" type="stmt"/>
+        <line num="18" count="89" type="stmt"/>
         <line num="21" count="24" type="stmt"/>
-        <line num="22" count="65" type="stmt"/>
-        <line num="24" count="65" type="stmt"/>
+        <line num="22" count="64" type="stmt"/>
+        <line num="24" count="64" type="stmt"/>
         <line num="27" count="24" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
       </file>
@@ -497,26 +497,26 @@
         <line num="2" count="24" type="stmt"/>
         <line num="3" count="24" type="stmt"/>
         <line num="4" count="24" type="stmt"/>
-        <line num="8" count="39" type="stmt"/>
-        <line num="10" count="39" type="cond" truecount="1" falsecount="0"/>
-        <line num="12" count="38" type="stmt"/>
-        <line num="16" count="38" type="stmt"/>
-        <line num="18" count="38" type="cond" truecount="1" falsecount="0"/>
-        <line num="20" count="37" type="stmt"/>
-        <line num="24" count="37" type="stmt"/>
-        <line num="26" count="37" type="cond" truecount="1" falsecount="0"/>
-        <line num="30" count="36" type="stmt"/>
-        <line num="32" count="36" type="cond" truecount="1" falsecount="0"/>
-        <line num="36" count="35" type="stmt"/>
-        <line num="38" count="35" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="38" type="stmt"/>
+        <line num="10" count="38" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="37" type="stmt"/>
+        <line num="16" count="37" type="stmt"/>
+        <line num="18" count="37" type="cond" truecount="1" falsecount="0"/>
+        <line num="20" count="36" type="stmt"/>
+        <line num="24" count="36" type="stmt"/>
+        <line num="26" count="36" type="cond" truecount="1" falsecount="0"/>
+        <line num="30" count="35" type="stmt"/>
+        <line num="32" count="35" type="cond" truecount="1" falsecount="0"/>
+        <line num="36" count="34" type="stmt"/>
+        <line num="38" count="34" type="cond" truecount="1" falsecount="0"/>
         <line num="41" count="24" type="stmt"/>
-        <line num="42" count="39" type="stmt"/>
-        <line num="43" count="38" type="stmt"/>
-        <line num="45" count="37" type="stmt"/>
-        <line num="46" count="36" type="stmt"/>
-        <line num="47" count="35" type="cond" truecount="1" falsecount="0"/>
-        <line num="49" count="34" type="stmt"/>
-        <line num="59" count="34" type="stmt"/>
+        <line num="42" count="38" type="stmt"/>
+        <line num="43" count="37" type="stmt"/>
+        <line num="45" count="36" type="stmt"/>
+        <line num="46" count="35" type="stmt"/>
+        <line num="47" count="34" type="cond" truecount="1" falsecount="0"/>
+        <line num="49" count="33" type="stmt"/>
+        <line num="59" count="33" type="stmt"/>
         <line num="63" count="9" type="stmt"/>
         <line num="65" count="9" type="cond" truecount="1" falsecount="0"/>
         <line num="67" count="8" type="stmt"/>
@@ -589,14 +589,14 @@
         <line num="58" count="18" type="cond" truecount="4" falsecount="0"/>
         <line num="59" count="18" type="stmt"/>
         <line num="60" count="18" type="stmt"/>
-        <line num="65" count="20" type="stmt"/>
-        <line num="66" count="28" type="stmt"/>
-        <line num="69" count="20" type="stmt"/>
+        <line num="65" count="19" type="stmt"/>
+        <line num="66" count="27" type="stmt"/>
+        <line num="69" count="19" type="stmt"/>
         <line num="72" count="24" type="stmt"/>
-        <line num="73" count="20" type="stmt"/>
-        <line num="74" count="20" type="stmt"/>
-        <line num="76" count="20" type="stmt"/>
-        <line num="78" count="20" type="stmt"/>
+        <line num="73" count="19" type="stmt"/>
+        <line num="74" count="19" type="stmt"/>
+        <line num="76" count="19" type="stmt"/>
+        <line num="78" count="19" type="stmt"/>
         <line num="82" count="16" type="stmt"/>
         <line num="84" count="16" type="stmt"/>
         <line num="88" count="8" type="stmt"/>
@@ -660,8 +660,8 @@
         <line num="178" count="1" type="stmt"/>
         <line num="179" count="1" type="stmt"/>
         <line num="183" count="24" type="stmt"/>
-        <line num="184" count="2" type="stmt"/>
-        <line num="186" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="184" count="1" type="stmt"/>
+        <line num="186" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="188" count="0" type="stmt"/>
       </file>
       <file name="usersService.ts" path="/home/lucas/projetos/rating-backend/src/services/usersService.ts">
@@ -669,37 +669,37 @@
         <line num="2" count="24" type="stmt"/>
         <line num="4" count="24" type="stmt"/>
         <line num="5" count="24" type="stmt"/>
-        <line num="8" count="97" type="stmt"/>
-        <line num="10" count="97" type="stmt"/>
-        <line num="14" count="95" type="stmt"/>
-        <line num="16" count="95" type="stmt"/>
-        <line num="20" count="53" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="95" type="stmt"/>
+        <line num="10" count="95" type="stmt"/>
+        <line num="14" count="93" type="stmt"/>
+        <line num="16" count="93" type="stmt"/>
+        <line num="20" count="52" type="cond" truecount="1" falsecount="0"/>
         <line num="23" count="24" type="stmt"/>
-        <line num="24" count="53" type="stmt"/>
-        <line num="26" count="52" type="stmt"/>
-        <line num="27" count="52" type="cond" truecount="1" falsecount="0"/>
-        <line num="29" count="50" type="stmt"/>
-        <line num="30" count="50" type="cond" truecount="1" falsecount="0"/>
-        <line num="32" count="48" type="stmt"/>
-        <line num="33" count="48" type="stmt"/>
-        <line num="35" count="48" type="stmt"/>
-        <line num="39" count="43" type="stmt"/>
-        <line num="41" count="43" type="cond" truecount="1" falsecount="0"/>
-        <line num="45" count="42" type="cond" truecount="3" falsecount="1"/>
-        <line num="46" count="42" type="stmt"/>
-        <line num="48" count="42" type="stmt"/>
-        <line num="54" count="42" type="stmt"/>
-        <line num="58" count="42" type="stmt"/>
-        <line num="60" count="42" type="stmt"/>
+        <line num="24" count="52" type="stmt"/>
+        <line num="26" count="51" type="stmt"/>
+        <line num="27" count="51" type="cond" truecount="1" falsecount="0"/>
+        <line num="29" count="49" type="stmt"/>
+        <line num="30" count="49" type="cond" truecount="1" falsecount="0"/>
+        <line num="32" count="47" type="stmt"/>
+        <line num="33" count="47" type="stmt"/>
+        <line num="35" count="47" type="stmt"/>
+        <line num="39" count="42" type="stmt"/>
+        <line num="41" count="42" type="cond" truecount="1" falsecount="0"/>
+        <line num="45" count="41" type="cond" truecount="3" falsecount="1"/>
+        <line num="46" count="41" type="stmt"/>
+        <line num="48" count="41" type="stmt"/>
+        <line num="54" count="41" type="stmt"/>
+        <line num="58" count="41" type="stmt"/>
+        <line num="60" count="41" type="stmt"/>
         <line num="63" count="24" type="stmt"/>
-        <line num="64" count="45" type="stmt"/>
-        <line num="65" count="45" type="stmt"/>
-        <line num="67" count="45" type="cond" truecount="3" falsecount="0"/>
-        <line num="69" count="43" type="cond" truecount="2" falsecount="0"/>
-        <line num="70" count="42" type="stmt"/>
-        <line num="71" count="42" type="stmt"/>
-        <line num="72" count="41" type="stmt"/>
-        <line num="74" count="41" type="stmt"/>
+        <line num="64" count="44" type="stmt"/>
+        <line num="65" count="44" type="stmt"/>
+        <line num="67" count="44" type="cond" truecount="3" falsecount="0"/>
+        <line num="69" count="42" type="cond" truecount="2" falsecount="0"/>
+        <line num="70" count="41" type="stmt"/>
+        <line num="71" count="41" type="stmt"/>
+        <line num="72" count="40" type="stmt"/>
+        <line num="74" count="40" type="stmt"/>
         <line num="84" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="85" count="1" type="stmt"/>
         <line num="86" count="1" type="stmt"/>
@@ -707,9 +707,9 @@
         <line num="89" count="1" type="stmt"/>
         <line num="101" count="24" type="stmt"/>
         <line num="102" count="1" type="stmt"/>
-        <line num="109" count="48" type="stmt"/>
-        <line num="110" count="48" type="stmt"/>
-        <line num="112" count="48" type="stmt"/>
+        <line num="109" count="47" type="stmt"/>
+        <line num="110" count="47" type="stmt"/>
+        <line num="112" count="47" type="stmt"/>
       </file>
     </package>
     <package name="src.utils">
@@ -742,10 +742,10 @@
       <file name="crypts.ts" path="/home/lucas/projetos/rating-backend/src/utils/cripts/crypts.ts">
         <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="24" type="stmt"/>
-        <line num="4" count="48" type="stmt"/>
-        <line num="6" count="48" type="stmt"/>
-        <line num="10" count="42" type="stmt"/>
-        <line num="12" count="42" type="stmt"/>
+        <line num="4" count="47" type="stmt"/>
+        <line num="6" count="47" type="stmt"/>
+        <line num="10" count="41" type="stmt"/>
+        <line num="12" count="41" type="stmt"/>
         <line num="15" count="24" type="stmt"/>
       </file>
     </package>
