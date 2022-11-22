@@ -52,4 +52,65 @@ describe('UNIT TESTS about get place', () => {
         expect(placeRepository.findPlace).toBeCalled();
         expect(localizationRepository.existCityId).toBeCalled();
     });
+
+    it(`Have to return a place that isn't has reviews`, async() => {
+        const randomNumber: number = Number(faker.random.numeric());
+
+        jest.spyOn(placeRepository, 'findPlace').mockImplementation((): any => {
+            return {
+                iid: 5,
+                name: "Sushi",
+                score: "0",
+                description: "Sushi bar ",
+                website: null,
+                mainPhoto: "https://images.adsttc.com/media/images/5bf3/5d1c/08a5/e509/1100/014e/newsletter/FEATURE_IMAGE.jpg?1542675707",
+                address: "Rua Iata, 321",
+                typeId: 2,
+                cityId: 3000,
+                verify: false
+            };
+        });
+
+        jest.spyOn(placeRepository, 'getPlaceWithComments').mockImplementation((): any => {
+            return [
+                {
+                    id: 5,
+                    name: "Sushi",
+                    score: "0",
+                    description: "Sushi bar ",
+                    website: null,
+                    mainPhoto: "https://images.adsttc.com/media/images/5bf3/5d1c/08a5/e509/1100/014e/newsletter/FEATURE_IMAGE.jpg?1542675707",
+                    address: "Rua Iata, 321",
+                    typeId: 2,
+                    cityId: 3000,
+                    verify: false,
+                    city: "Juiz de Fora", 
+                    food: 5,
+                    attendance: 5,
+                    environment: 5,
+                    price: 5,
+                    ratings: [
+                    {
+                        userId: 2,
+                        username: "son",
+                        name: "son",
+                        mainPhoto: "https://images.adsttc.com/media/images/5bf3/5d1c/08a5/e509/1100/014e/newsletter/FEATURE_IMAGE.jpg?1542675707",
+                        food: 5,
+                        environment: 5,
+                        attendance: 5,
+                        price: 5,
+                        comment: "All is good"
+                    }
+                    ]
+                }
+            ];
+        });
+
+        jest.spyOn(localizationRepository, 'existCityId').mockImplementation((): any => {});
+
+        await placesService.getPlaceWithRatings(randomNumber);
+
+        expect(placeRepository.getPlaceWithComments).toBeCalled();
+        expect(placeRepository.findPlace).toBeCalled();
+    });
 });

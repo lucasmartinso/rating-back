@@ -92,12 +92,10 @@ export async function getPlaceWithRatings(placeId: number): Promise<any> {
     return place.map(element => element.json_build_object);
   } else { 
     const place: foodPlaces | null = await placeRepository.findPlace(placeId);
-    const cityId: number | undefined = place?.cityId;
-    if(cityId) {
-      const city: cities | null = await  localizationRepository.existCityId(cityId);
+    if(place?.cityId) {
+      const city: cities | null = await  localizationRepository.existCityId(place.cityId);
       return { ...place, city: city?.name}
     }
-    return place;
   }
 }
 
