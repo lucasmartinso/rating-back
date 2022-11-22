@@ -1,7 +1,7 @@
 import joi from "joi"
 
 export const restaurantSchema = joi.object({
-    name: joi.string().min(2).max(30).required(), 
+    name: joi.string().min(2).max(30).required().label('Name must be between 2 and 30 characters'), 
     description: joi.string(),
     website: joi.string().uri(),
     mainPhoto: joi.string().uri().required(),

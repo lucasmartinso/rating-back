@@ -1,7 +1,6 @@
 import serverSupertest from "../../jestConfig";
 import httpStatus from 'http-status';
 import { connectPrisma, disconnectPrisma, deleteAllData } from "../../factories/scenary-factory";
-import { faker } from "@faker-js/faker";
 import { __createRating } from "../../factories/rating-factory";
 import { __createToken } from "../../factories/login-factory";
 import { ratingInfo } from "../../../src/types/ratingType";
