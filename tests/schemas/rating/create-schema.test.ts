@@ -20,13 +20,15 @@ describe('TEST SCHEMAS POST /rating/:id', () => {
     it(`Should answer 422, if user send food rating that isn't a number or is null`, async () => {
         const ratingData: ratingInfo = await __createRating();
         const token: string = await __createToken();
+        const errorMessage: string = 'Food field has to be a number'
 
         const placeData: placeInfo = await __createRestaurant();
-
         await server.post('/places/create').set("Authorization",token).send(placeData);
         const { body }: { body: foodPlaces[] } = await server.get('/places').send({});
-        const { status, text }: { status: number, text: string } = await server.post(`/rating/${body[0].id}`)
-
+        const { status, text }: { status: number, text: string } = await server.post(`/rating/${body[0].id}`).set("Authorization",token).send({ ...ratingData, food: 'food'})
+        
+        expect(status).toBe(httpStatus.UNPROCESSABLE_ENTITY);
+        expect(text).toContain(errorMessage);
     });
 });
 
