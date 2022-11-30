@@ -1,4 +1,4 @@
-import { ratingFoodPlaces } from "@prisma/client";
+import { ratingFoodPlaces, typeFoodPlaces } from "@prisma/client";
 import { Request, Response } from "express"
 import * as ratingService from "../services/ratingService"
 import { ratingInfo } from "../types/ratingType";
@@ -55,6 +55,10 @@ export async function pricePlaces(req: Request, res: Response) {
     
     res.status(200).send(placeFilterPrice);
 }
+
+//export async function getTypes(req: Request, res: Response) {
+//    const types: typeFoodPlaces = a
+//}
 
 export async function filterFoodType(req: Request, res: Response) {
     const type: number = Number(req.params.typeId); 
