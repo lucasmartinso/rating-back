@@ -56,12 +56,6 @@ export async function pricePlaces(req: Request, res: Response) {
     res.status(200).send(placeFilterPrice);
 }
 
-export async function getTypes(req: Request, res: Response) {
-    const types: typeFoodPlaces[] = await ratingService.getTypes();
-
-    res.status(200).send(types);
-}
-
 export async function filterFoodType(req: Request, res: Response) {
     const type: number = Number(req.params.typeId); 
     const placeFilterTypeFood: any = await ratingService.getFilterByFoodType(type);
