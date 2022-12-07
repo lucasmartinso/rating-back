@@ -12,6 +12,6 @@ ratingRouter.get("/places/food/:type",ratingController.foodPlaces);
 ratingRouter.get("/places/environment/:type",ratingController.enviromentPlaces);
 ratingRouter.get("/places/attendance/:type",ratingController.attendancePlaces);
 ratingRouter.get("/places/price/:type",ratingController.pricePlaces);
-ratingRouter.get("/places/food-type/:typeId",ratingController.filterFoodType)
+ratingRouter.get("/places/food-type/:typeId",ratingController.filterFoodType);
 
 export default ratingRouter;

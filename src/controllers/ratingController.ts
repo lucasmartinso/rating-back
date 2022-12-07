@@ -1,4 +1,4 @@
-import { ratingFoodPlaces } from "@prisma/client";
+import { ratingFoodPlaces, typeFoodPlaces } from "@prisma/client";
 import { Request, Response } from "express"
 import * as ratingService from "../services/ratingService"
 import { ratingInfo } from "../types/ratingType";

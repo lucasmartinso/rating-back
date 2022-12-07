@@ -187,3 +187,9 @@ export async function getFilterByFoodType(typeId: number) {
 
   return placesTypeFood;
 }
+
+export async function getTypes() { 
+  const types: typeFoodPlaces[] = await foodTypeRepository.getTypes();
+
+  return types;
+}
